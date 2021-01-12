@@ -1,0 +1,26 @@
+.btn-custom {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: normal;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px;
+    line-height: 22px;
+    width: 200px;
+}
+
+.btn-check {
+    background: #4285F4;
+    color: #12B6A6;
+}
+
+.btn-check:disabled {
+    background: #12B6A6;
+    opacity: 0.26;
+    color: #000000;
+}
+
+.btn-waiting:disabled {
+    opacity: 1 !important;
+}

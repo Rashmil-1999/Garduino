@@ -16,7 +16,7 @@ const UserApp = (props) => {
   return (
     <div>
       <ApolloProvider client={client}>
-        <switch>{/* Your components here with paths */}</switch>
+        <Switch>{/* Your components here with paths */}</Switch>
       </ApolloProvider>
     </div>
   );

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 
 //import the login and signup pages
+import Login from "./containers/LoginSignUp/Login"
 //import the user app
+import UserApp from "./UserApp"
 
 import * as tokenUtils from "./utils/tokenUtils";
 
@@ -25,7 +27,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Login} />
-        <Route exact path="/signup" component={SignUp} />
+        {/* <Route exact path="/signup" component={SignUp} /> */}
         <UserApp />
       </Switch>
     </div>
