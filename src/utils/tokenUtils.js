@@ -1,3 +1,4 @@
+// @ts-ignore 
 import * as jwt from "jwt-decode";
 import { Cookies } from "react-cookie";
 
