@@ -7,7 +7,6 @@ import * as serviceWorker from "./serviceWorker";
 // Import the CSS libraries for the toast and the app
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
-import 'semantic-ui-css/semantic.min.css'
 
 import {toast,Zoom} from 'react-toastify';
 
