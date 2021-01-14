@@ -5,8 +5,8 @@ import axios from '../../axios';
 import Button from '../../components/Button/Login/Button'; 
 import {toast} from 'react-toastify';
 import * as tokenUtils from '../../utils/tokenUtils'
-import pf1 from '../../assets/images/pf1.png'
-
+import pf1 from '../../assets/images/pf1.png';
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
     const [email,setEmail] = useState('')
@@ -91,6 +91,8 @@ const Login = (props) => {
                     onClick={onLogin}
                     isLoading={loading}
                     isDisabled={!isValidEmail || !isValidPassword}/>
+                <Link className="nav-link" to={"/signup"}>Sign up</Link>
+                
             </CardText>                   
         </Card>
         <Jumbotron style={{ paddingTop:"0.4em",background: "transparent linear-gradient(260deg, #04CBAA 0%, #67C5DD 100%) 0% 0% no-repeat padding-box" }} fluid>
