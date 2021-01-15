@@ -1,10 +1,10 @@
-import React, {useState } from 'react';
-import { useQuery } from '@apollo/client';
-import DisplayPlant from '../components/DisplayPlant'
-import GET_PLANT_INFO from '../queries/Home';
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
+import DisplayPlant from "../components/DisplayPlant";
+import * as queries from "../queries/Home";
 
 const Home = () => {
-    /*const info=[{name:"Tomato",desc:"hvchjhsh"},{name:"AloeVera",desc:"bhgshg"},{name:"Bell pepper",desc:"hvsdjh"}]
+  /*const info=[{name:"Tomato",desc:"hvchjhsh"},{name:"AloeVera",desc:"bhgshg"},{name:"Bell pepper",desc:"hvsdjh"}]
     const [plantinfo,setPlantInfo] = useState(info)
     return (
         <div>
@@ -13,11 +13,14 @@ const Home = () => {
             ))}
         </div>
     );*/
-    const {error, loading, data } = useQuery(GET_PLANT_INFO);
-    return(
-        <div>
-        <DisplayPlant name={data}></DisplayPlant>
-        </div>
-        )
-}
+  const { error, loading, data } = useQuery(queries.GET_PLANT_INFO);
+
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
+  return (
+    <div>
+      <DisplayPlant name={data}></DisplayPlant>
+    </div>
+  );
+};
 export default Home;

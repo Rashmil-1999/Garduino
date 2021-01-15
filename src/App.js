@@ -1,14 +1,14 @@
 import React, { useState, useMemo } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import {  BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //import the login and signup pages
-import Login from "./containers/LoginSignUp/Login"
+import Login from "./containers/LoginSignUp/Login";
 //import the user app
-import UserApp from "./UserApp"
+import UserApp from "./UserApp";
 import SignUp from "./containers/LoginSignUp/Signup";
-import Home from "./containers/Home";
+
 import * as tokenUtils from "./utils/tokenUtils";
 
 function App() {
@@ -26,11 +26,10 @@ function App() {
     roles = roles[0];
   }
   return (
-    <div className="App">
+    <div className='App'>
       <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/signup" component={SignUp} /> 
-        <Route exact path="/home" component={Home}/>
+        <Route exact path='/' component={Login} />
+        <Route exact path='/signup' component={SignUp} />
         <UserApp />
       </Switch>
     </div>

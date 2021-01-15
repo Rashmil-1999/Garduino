@@ -8,30 +8,20 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import {toast,Zoom} from 'react-toastify';
+import { toast, Zoom } from "react-toastify";
 
 // For the top level component for browser router
 import { BrowserRouter } from "react-router-dom";
-import {ApolloClient,InMemoryCache,ApolloProvider,HttpLink,from} from "@apollo/client";
+
 toast.configure({
   toastClassName: "toast_container",
-  transition: Zoom
-})
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  link: new HttpLink({
-    uri: process.env.REACT_APP_GRAPHQL_URL,
-  }),
+  transition: Zoom,
 });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ApolloProvider client={client}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-    </ApolloProvider>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

@@ -4,6 +4,7 @@ import { ApolloProvider } from "@apollo/client";
 
 // import apollo-wrapper
 import apollo from "./apollo-wrapper";
+import Home from "./containers/Home";
 
 //import the function to get user-id from the utils
 import { userId } from "./utils/tokenUtils";
@@ -16,7 +17,9 @@ const UserApp = (props) => {
   return (
     <div>
       <ApolloProvider client={client}>
-        <Switch>{/* Your components here with paths */}</Switch>
+        <Switch>
+          <Route exact path='/home' component={Home} />
+        </Switch>
       </ApolloProvider>
     </div>
   );
