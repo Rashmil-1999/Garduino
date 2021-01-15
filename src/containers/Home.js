@@ -1,21 +1,23 @@
 import React, {useState } from 'react';
+import { useQuery } from '@apollo/client';
 import DisplayPlant from '../components/DisplayPlant'
+import GET_PLANT_INFO from '../queries/Home';
 
 const Home = () => {
-    const info = {no_of_plants:4,
-        plants:{name:"Tomato",desc:"hvchjhsh"} }
-    
+    /*const info=[{name:"Tomato",desc:"hvchjhsh"},{name:"AloeVera",desc:"bhgshg"},{name:"Bell pepper",desc:"hvsdjh"}]
     const [plantinfo,setPlantInfo] = useState(info)
-    console.log("This works");
+    return (
+        <div>
+            {plantinfo.map((plant,index)=>(
+            <DisplayPlant name={plant.name} desc={plant.desc}></DisplayPlant>
+            ))}
+        </div>
+    );*/
+    const {error, loading, data } = useQuery(GET_PLANT_INFO);
     return(
         <div>
-            
-            <DisplayPlant name={plantinfo.plants.name} desc={plantinfo.plants.desc}></DisplayPlant>
-            
+        <DisplayPlant name={data}></DisplayPlant>
         </div>
-    );
+        )
 }
 export default Home;
-/*const plantinfo ={
-    name:"tomato",
-    age:"4"}*/
