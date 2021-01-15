@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 
 const DisplayPlant = (props) =>{
-  console.log("This works");
+
    return(
     
 
