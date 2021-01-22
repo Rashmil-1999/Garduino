@@ -44,27 +44,8 @@ const SignUp = (props) => {
     },
   });
 
-  //   const onSignUp = (postMutation) => {
-  //     let role = 1;
-
-  //     const variables = {
-  //       first_name: fname,
-  //       last_name: lname,
-  //       email: email,
-  //       password: password,
-  //       plant_count: plantsno,
-  //       role: role,
-  //     };
-  //     console.log(variables);
-  //     postMutation({ variables }).then((resp) => {
-  //       console.log(resp);
-  //       window.location = `${process.env.REACT_APP_LOGIN_URL}`;
-  //     });
-  //   };
-
   return (
     <ApolloProvider client={client}>
-      {/* <div> */}
       <Jumbotron
         style={{
           paddingBottom: "0.4em",
@@ -148,26 +129,6 @@ const SignUp = (props) => {
             <Button outline color='info' type='submit'>
               SignUp
             </Button>
-            {/* <Mutation mutation={queries.CREATE_USER}>
-            {(postMutation, { loading, error }) => {
-              if (loading) {
-                return <LoadingPopup isOpen />;
-              }
-              if (error) {
-                createToast(error);
-                return null;
-              }
-
-              return (
-                <Button
-                  outline
-                  color='info'
-                  onClick={() => onSignUp(postMutation)}>
-                  SignUp
-                </Button>
-              );
-            }}
-          </Mutation> */}
           </form>
           {mutationLoading && <LoadingPopup isOpen />}
           {mutationError && createToast({ message: "some Error Occurred" })}
@@ -184,8 +145,6 @@ const SignUp = (props) => {
             "transparent linear-gradient(260deg, #04CBAA 0%, #67C5DD 100%) 0% 0% no-repeat padding-box",
         }}
         fluid></Jumbotron>
-
-      {/* </div> */}
     </ApolloProvider>
   );
 };

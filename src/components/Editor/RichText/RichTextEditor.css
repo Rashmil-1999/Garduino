@@ -1,0 +1,19 @@
+.editor {
+    min-height: 140px !important;
+    padding: 8px !important;
+    border-radius: 4px !important;
+}
+
+.toolbar {
+    padding: 6px !important;
+    display: flex;
+    justify-content: flex-start;
+    background: white;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin-bottom: 0px !important;
+}
+
+.editor-container {
+    padding: 4px;
+}

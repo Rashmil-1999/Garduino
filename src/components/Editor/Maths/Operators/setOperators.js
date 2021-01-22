@@ -1,0 +1,21 @@
+export const symbols = [
+    { name: '\\emptyset', value: '\\emptyset' },
+    { name: '\\N', value: '\\N' },
+    { name: '\\Z', value: '\\Z' },
+    { name: '\\Q', value: '\\Q' },
+    { name: '\\R', value: '\\R' },
+    { name: '\\C', value: '\\C' },
+
+    { name: '\\subset', value: '\\subset' },
+    { name: '\\supset', value: '\\supset' },
+    { name: '\\subseteq', value: '\\subseteq' },
+    { name: '\\supseteq', value: '\\supseteq' },
+    { name: '\\nsubseteq', value: '\\nsubseteq' },
+    { name: '\\nsupseteq', value: '\\nsupseteq' },
+    { name: '\\in', value: '\\in' },
+    { name: '\\ni', value: '\\ni' },
+    { name: '\\notin', value: '\\notin' },
+    { name: '\\cap', value: '\\cap' },
+    { name: '\\cup', value: '\\cup' },
+    { name: '\\setminus', value: '\\setminus' },
+];

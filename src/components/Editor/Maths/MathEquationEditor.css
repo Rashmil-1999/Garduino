@@ -1,0 +1,9 @@
+.math-editor {
+    width: 100%;
+    height: 50px;
+}
+
+.tab-functions {
+    height: 200px;
+    overflow-y: scroll;
+}

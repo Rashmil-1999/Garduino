@@ -1,0 +1,14 @@
+.op-btn {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #ddd;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    background: #F9F9F9;
+    cursor: pointer;
+    overflow: hidden;
+    vertical-align: middle;
+    display: inline-block;
+}
