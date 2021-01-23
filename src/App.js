@@ -2,12 +2,11 @@ import React, { useState, useMemo } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import MainForm from '../src/containers/LoginSignUp/Mainform';
 //import the login and signup pages
 import Login from "./containers/LoginSignUp/Login";
 //import the user app
 import UserApp from "./UserApp";
-import SignUp from "./containers/LoginSignUp/Signup";
 
 import * as tokenUtils from "./utils/tokenUtils";
 
@@ -29,7 +28,7 @@ function App() {
     <div className='App'>
       <Switch>
         <Route exact path='/' component={Login} />
-        <Route exact path='/signup' component={SignUp} />
+        <Route exact path='/signup' component={MainForm} />
         <UserApp />
       </Switch>
     </div>

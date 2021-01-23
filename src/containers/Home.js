@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import DisplayPlant from "../components/DisplayPlant";
-import * as queries from "../queries/Home";
+import * as plant_queries from "../queries/Plant";
 
 const Home = () => {
-  const { error, loading, data } = useQuery(queries.GET_PLANT_INFO);
+  const { error, loading, data } = useQuery(plant_queries.GET_PLANT_INFO);
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
