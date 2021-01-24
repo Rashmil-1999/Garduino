@@ -18,7 +18,7 @@ const UserApp = (props) => {
     <div>
       <ApolloProvider client={client}>
         <Switch>
-          <Route exact path='/home' component={Home} />
+          <Route exact path='/dashboard' component={Home} />
         </Switch>
       </ApolloProvider>
     </div>

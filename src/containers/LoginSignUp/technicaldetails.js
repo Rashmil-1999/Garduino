@@ -1,87 +1,114 @@
 import React from "react";
-import { Card } from 'reactstrap';
-import AliasDrop from "./AliasDrop";
-import checkbox from '../../components/Input/Checkbox';
-import Input from '../../components/Input/Input';
-const TechnicalDetails = ({ setForm, formData, navigation }) => {
-    const { temp_21,
-        alias_21,
-        temp_16,
-        alias_16,
-        temp_26,
-        alias_26,
-        temp_19,
-        alias_19,
-        temp_13,
-        alias_13 } = formData;
 
-    const { previous, next } = navigation;
+import {
+  Card,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardFooter,
+  Button,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
 
+import Input from "../../components/Input/Input";
+
+const TechnicalDetails = ({ plantCount, techDetails, navigation }) => {
+  const { previous, next } = navigation;
+
+  if (plantCount === 0) {
     return (
-        <div>
-            <h3>Technical Configurations</h3>
-            <Card style={{ width: '40em' }} className="my-5 mx-auto shadow p-3 mb-5 bg-white rounded">
-                <checkbox label="GPIO 21" />
-                <Input type='text'
-                    label={"Temp Sensor for pin 21 "}
-                    valid={true}
-                    value={temp_21}
-                    onChange={setForm}
-                />
-            <AliasDrop name="alias_21" label="Alias for pin 21" value={alias_21} onChange={setForm} />
-
-            <checkbox label="GPIO 16" />
-                <Input type='text'
-                    label={"Temp sensor for pin 16"}
-                    valid={true}
-                    value={temp_16}
-                    onChange={setForm}
-                />
-            <AliasDrop name="alias_16" label="Alias for pin 21" value={alias_16} onChange={setForm} />
-
-            <checkbox label="GPIO 26" />
-                <Input type='text'
-                    label={"Temp sensor for pin 26"}
-                    valid={true}
-                    value={temp_26}
-                    onChange={setForm}
-                />
-            <AliasDrop name="alias_26" label="Alias for pin 26" value={alias_26} onChange={setForm} />
-
-            <checkbox label="GPIO 19" />
-                <Input type='text'
-                    label={"Temp sensor for pin 19"}
-                    valid={true}
-                    value={temp_19}
-                    onChange={setForm}
-                />
-            <AliasDrop name="alias_19" label="Alias for pin 19" value={alias_19} onChange={setForm} />
-
-            <checkbox label="GPIO 13" />
-                <Input type='text'
-                    label={"Temp sensor for pin 13"}
-                    valid={true}
-                    value={temp_13}
-                    onChange={setForm}
-                />
-            <AliasDrop name="alias_13" label="Alias for pin 13" value={alias_13} onChange={setForm} />
-
-
-    
-
-
-                
-
-
-
-                <div>
-                    <button onClick={previous}>Previous</button>
-                    <button onClick={next}>Next</button>
-                </div>
-                </Card>
-        </div>
-
+      <Card
+        style={{ width: "40em" }}
+        className='my-5 mx-auto shadow p-3 mb-5 bg-white rounded'>
+        <CardBody>
+          <CardTitle tag='h5'>Plant Count not Specified</CardTitle>
+          <CardText>
+            Go back to the User Details page to set plant count.
+          </CardText>
+          <Button
+            outline
+            color='info'
+            className='text-center'
+            onClick={previous}>
+            Previous
+          </Button>
+        </CardBody>
+      </Card>
     );
+  }
+
+  let sensorFields = [];
+  for (var i = 0; i < plantCount; i++) {
+    sensorFields.push(
+      <Container key={techDetails[i].channel.alias}>
+        <Row>
+          <Col>
+            <Input
+              type='text'
+              placeholder={"Alias"}
+              label={"Alias: "}
+              valid={true}
+              value={techDetails[i].channel.alias}
+              disabled={true}
+            />
+          </Col>
+          <Col>
+            <Input
+              type='number'
+              placeholder={"GPIO Pin"}
+              label={"GPIO Pin Number: "}
+              valid={true}
+              value={techDetails[i].channel.pin_num}
+              disabled={true}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Input
+              type='text'
+              placeholder={"Address starting with (28-)"}
+              label={"Temperature Sensor Address: "}
+              valid={true}
+              value={techDetails[i].temp}
+              onChange={techDetails[i].setTemp}
+            />
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+
+  return (
+    <div>
+      <Card
+        style={{ width: "40em" }}
+        className='my-5 mx-auto shadow p-3 mb-5 bg-white rounded'>
+        <CardBody>
+          <CardText>
+            <h3>Technical Configurations</h3>
+            {sensorFields}
+          </CardText>
+        </CardBody>
+        <CardFooter>
+          <Row>
+            <Col>
+              <Button outline color='info' onClick={previous}>
+                Previous
+              </Button>
+            </Col>
+            <Col>
+              <Button outline color='info' onClick={next}>
+                Next
+              </Button>
+            </Col>
+          </Row>
+        </CardFooter>
+      </Card>
+    </div>
+  );
 };
 
 export default TechnicalDetails;
