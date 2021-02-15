@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RouteLink } from 'react-router-dom';
 // import unicodelogo from './unicodelogo.png'
-import navlogo from '../../assets/images/navlogo.png'
+//import navlogo from '../../assets/images/navlogo.png'
 
 
 function LoginSignupNavbar(props) {
@@ -11,7 +11,7 @@ function LoginSignupNavbar(props) {
         <Navbar style={{"height":"4.3em"}} color="white" light expand="md">
           {/* {props.children} */}
           <NavbarBrand href="/">
-          <img src={navlogo} style={{ height: "45px" }} />
+          
           {/* <img src={unicodelogo} style={{width:"224px", height:"44px"}}/> */}
           </NavbarBrand>
           <Nav className="ml-auto" navbar>

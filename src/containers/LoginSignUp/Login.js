@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import * as tokenUtils from "../../utils/tokenUtils";
 import pf1 from "../../assets/images/pf1.png";
 import { Link } from "react-router-dom";
+import LoginSignupNavbar from "../../components/Toolbar/LoginSignupNavbar";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -83,20 +84,15 @@ const Login = (props) => {
   };
   return (
     <>
-      <Jumbotron
-        style={{
-          paddingBottom: "0.4em",
-          background:
-            "transparent linear-gradient(260deg, #04CBAA 0%, #67C5DD 100%) 0% 0% no-repeat padding-box",
-        }}
-        fluid></Jumbotron>
+      <LoginSignupNavbar/>
       <Card
-        style={{ width: "400px" }}
-        className='my-5 shadow p-3 mb-5 bg-white rounded mx-auto'>
-        <CardImg src={pf1} style={{ height: "20em" }} />
+        style={{ width: "400px", top:200  }}
+        className="my-5 shadow p-3 mb-5 bg-white rounded mx-auto"
+      >
+        <CardImg src={pf1} style={{ height: "15em" }} />
         <CardText>
           <Input
-            type='email'
+            type="email"
             placeholder={"E-mail"}
             label={"Email "}
             valid={isValidEmail}
@@ -104,7 +100,7 @@ const Login = (props) => {
             onChange={onEmailChange}
           />
           <Input
-            type='password'
+            type="password"
             placeholder={"password"}
             label={"Password "}
             valid={isValidPassword}
@@ -112,24 +108,17 @@ const Login = (props) => {
             onChange={onPassChange}
           />
           <Button
-            name='Log In'
+            name="Log In"
             classes={["btn-check"]}
             onClick={onLogin}
             isLoading={loading}
             isDisabled={!isValidEmail || !isValidPassword}
           />
-          <Link className='nav-link' to={"/signup"}>
+          <Link className="nav-link" to={"/signup"}>
             Sign up
           </Link>
         </CardText>
       </Card>
-      <Jumbotron
-        style={{
-          paddingTop: "0.4em",
-          background:
-            "transparent linear-gradient(260deg, #04CBAA 0%, #67C5DD 100%) 0% 0% no-repeat padding-box",
-        }}
-        fluid></Jumbotron>
     </>
   );
 };

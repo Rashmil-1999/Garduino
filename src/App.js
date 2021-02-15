@@ -26,10 +26,10 @@ function App() {
     roles = roles[0];
   }
   return (
-    <div className='App'>
+    <div className="App" style={{ backgroundColor: "lightgreen",height:1000 }}>
       <Switch>
-        <Route exact path='/' component={Login} />
-        <Route exact path='/signup' component={SignUp} />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
         <UserApp />
       </Switch>
     </div>

@@ -46,16 +46,10 @@ const SignUp = (props) => {
 
   return (
     <ApolloProvider client={client}>
-      <Jumbotron
-        style={{
-          paddingBottom: "0.4em",
-          background:
-            "transparent linear-gradient(260deg, #04CBAA 0%, #67C5DD 100%) 0% 0% no-repeat padding-box",
-        }}
-        fluid></Jumbotron>
       <Card
         style={{ width: "40em" }}
-        className='my-5 mx-auto shadow p-3 mb-5 bg-white rounded'>
+        className="my-5 mx-auto shadow p-3 mb-5 bg-white rounded"
+      >
         <CardText>
           <form
             onSubmit={(e) => {
@@ -75,9 +69,10 @@ const SignUp = (props) => {
               createUser({
                 variables: variables,
               });
-            }}>
+            }}
+          >
             <Input
-              type='text'
+              type="text"
               placeholder={"First Name"}
               label={"First Name "}
               valid={true}
@@ -85,7 +80,7 @@ const SignUp = (props) => {
               onChange={(curr) => setfName(curr)}
             />
             <Input
-              type='text'
+              type="text"
               placeholder={"Last Name"}
               label={"Last Name "}
               valid={true}
@@ -93,7 +88,7 @@ const SignUp = (props) => {
               onChange={(curr) => setlName(curr)}
             />
             <Input
-              type='email'
+              type="email"
               placeholder={"E-mail"}
               label={"Email "}
               valid={true}
@@ -101,7 +96,7 @@ const SignUp = (props) => {
               onChange={(curr) => setEmail(curr)}
             />
             <Input
-              type='password'
+              type="password"
               placeholder={"password"}
               label={"Password "}
               valid={true}
@@ -109,7 +104,7 @@ const SignUp = (props) => {
               onChange={(curr) => setPassword(curr)}
             />
             <Input
-              type='password'
+              type="password"
               placeholder={"Confirm password"}
               label={"Confirm Password "}
               valid={true}
@@ -117,7 +112,7 @@ const SignUp = (props) => {
               onChange={(curr) => setPassword2(curr)}
             />
             <Input
-              type='text'
+              type="text"
               placeholder={"No of plants"}
               label={"Enter No of plants "}
               valid={true}
@@ -126,7 +121,7 @@ const SignUp = (props) => {
             />
             {/* <label>Enter the no of plants in your garden</label>
             <Dropdown onChange={(curr) => setPlantsNo(curr)} /> */}
-            <Button outline color='info' type='submit'>
+            <Button outline color="info" type="submit">
               SignUp
             </Button>
           </form>
@@ -134,17 +129,9 @@ const SignUp = (props) => {
           {mutationError && createToast({ message: "some Error Occurred" })}
         </CardText>
       </Card>
-      <Link className='nav-link' to={"/"}>
+      <Link className="nav-link" to={"/"}>
         login
       </Link>
-
-      <Jumbotron
-        style={{
-          paddingTop: "0.4em",
-          background:
-            "transparent linear-gradient(260deg, #04CBAA 0%, #67C5DD 100%) 0% 0% no-repeat padding-box",
-        }}
-        fluid></Jumbotron>
     </ApolloProvider>
   );
 };
