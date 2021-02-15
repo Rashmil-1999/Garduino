@@ -7,3 +7,15 @@ export const CREATE_USER = gql`
     }
   }
 `;
+
+export const GET_USER_INFO = gql`
+  query getuserinfo($userid: uuid!) {
+    users(where: {u_uuid: {_eq: $userid }}) {
+      first_name
+      last_name
+      full_name
+    }
+  }
+`;
+
+
