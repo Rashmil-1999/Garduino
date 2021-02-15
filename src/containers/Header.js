@@ -6,7 +6,7 @@ const Header = ({ u_name }) => {
     const toggleNavbar = () => setCollapsed(!collapsed);
     
     return (
-        <div>
+        
         <Navbar color="faded" light>
         <NavbarBrand href="/" className="mr-auto">Welcome {u_name.users[0].full_name}</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
@@ -21,7 +21,7 @@ const Header = ({ u_name }) => {
           </Nav>
         </Collapse>
         </Navbar>  
-        </div>
+        
     )
 }
 
