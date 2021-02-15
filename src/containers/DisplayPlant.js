@@ -13,18 +13,17 @@ const DisplayPlant = ({ name, u_id }) => {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <div className="container">
+    <div className='container'>
       <Header u_name={name} />
       <br />
       <Card>
         <CardBody>
-          <CardTitle tag="h5"> </CardTitle>
-          <CardSubtitle tag="h5">Here are your plants: </CardSubtitle>
+          <CardTitle tag='h5'> </CardTitle>
+          <CardSubtitle tag='h5'>Here are your plants: </CardSubtitle>
           <br />
           <CardText>
-            <Plants info={data}></Plants>
+            <Plants info={data} u_id={u_id}/>
           </CardText>
-          {/*<p>{props.name.plant_info[0].common_name +" " + props.name.plant_info[0].pi_id + " " + props.id} </p>*/}
         </CardBody>
       </Card>
     </div>

@@ -1,30 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Plant from "../containers/plant";
-import Addnewplant from "../containers/Addnewplant";
-import {CardDeck,Card,CardBody,CardImg} from "reactstrap";
+import Addnewplant from "./Plants/Addnewplant";
+import { CardDeck, Card, CardBody, CardImg, Row, Col } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusSquare } from '@fortawesome/free-regular-svg-icons';
+import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 
-
-const Plants = ({info}) => {
+const Plants = ({ info }) => {
   const [showform, setshowform] = useState(false);
-  
+
   return (
     <>
-    <CardDeck>
-      {info.plants.map((plant, index) => (
-        <Plant key={index} each_plant={plant}  />
-      ))}
-      <Card>
-        <CardBody><FontAwesomeIcon icon={faPlusSquare} size="10x" onClick={() => setshowform(true)} /></CardBody>
-      </Card>
-    </CardDeck>
-      <div>
-        {showform === true && <Addnewplant />}
-      </div>
-      
+      <Row xs="4">
+        {info.plants.map((plant, index) => (
+          <Col>
+            <Plant key={index} each_plant={plant}  />
+            <br />
+          </Col>
+        ))}
+        {/*<CardBody><FontAwesomeIcon icon={faPlusSquare} size="10x" onClick={() => setshowform(true)} /></CardBody>*/}
+      </Row>
+      <div>{showform === true && <Addnewplant />}</div>
     </>
-  )
-}
+  );
+};
 
 export default Plants;
