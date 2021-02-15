@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Input from "../../components/Input/Input";
-import { Container, Card, CardImg, CardText, Jumbotron } from "reactstrap";
+import { Card, CardImg, CardText, Jumbotron } from "reactstrap";
 import axios from "../../axios";
 import Button from "../../components/Button/Login/Button";
 import { toast } from "react-toastify";
@@ -49,21 +49,9 @@ const Login = (props) => {
           console.log(resp.message);
           alert(resp.message);
         } else if (resp.status === "success") {
-          // let roles = tokenUtils.roles(tokenUtils.getToken());
-          // roles = roles[0]
-          // if(roles === 'student')
-          // {
-          //     window.location.pathname = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
-          // }
-          // else {
-          //     //TODO: Use Env variable here
-          //     window.location.pathname = `/ownteacher`
-          // }
+          window.location.pathname = `/dashboard`;
           // if successful login then redirect to Dashboard page
-          createToast(
-            "Successful Login! Welcome " + resp.user.u_uuid,
-            "success"
-          );
+          createToast("Successful Login! Welcome ", "success");
         }
 
         console.log(resp);
@@ -76,10 +64,6 @@ const Login = (props) => {
 
   const onLogin = () => {
     authenticate("/signin", { email: email, password: password });
-    const variables = {
-      email: email,
-      password: password,
-    };
     // The Mutation Of user will be carried out here
   };
   return (
