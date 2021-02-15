@@ -11,12 +11,11 @@
 }
 
 .btn-check {
-    background: #4285F4;
-    color: #12B6A6;
+    background: #25b13c;
+    color:#000000;
 }
-
 .btn-check:disabled {
-    background: #12B6A6;
+    background: #25b13c;
     opacity: 0.26;
     color: #000000;
 }

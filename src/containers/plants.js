@@ -10,19 +10,16 @@ const Plants = ({ info }) => {
 
   return (
     <>
-    <Row xs="4">
-      {info.plants.map((plant, index) => (
-        <Col>
-        <Plant key={index} each_plant={plant}  />
-        <br />
-        </Col>
-      ))}
+      <Row xs="4">
+        {info.plants.map((plant, index) => (
+          <Col>
+            <Plant key={index} each_plant={plant}  />
+            <br />
+          </Col>
+        ))}
         {/*<CardBody><FontAwesomeIcon icon={faPlusSquare} size="10x" onClick={() => setshowform(true)} /></CardBody>*/}
-    </Row>
-      <div>
-        {showform === true && <Addnewplant />}
-      </div>
-      
+      </Row>
+      <div>{showform === true && <Addnewplant />}</div>
     </>
   );
 };

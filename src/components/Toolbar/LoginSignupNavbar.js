@@ -8,7 +8,7 @@ import { NavLink as RouteLink } from 'react-router-dom';
 function LoginSignupNavbar(props) {
 
   return (
-        <Navbar style={{"height":"4.3em"}} color="white" light expand="md">
+        <Navbar style={{"height":"4.3em"}}  light expand="md">
           {/* {props.children} */}
           <NavbarBrand href="/">
           
@@ -19,11 +19,9 @@ function LoginSignupNavbar(props) {
                     <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <NavItem style={{fontSize: "20px", cursor:"pointer", margin:"10px"}}>
-                  <NavLink tag={RouteLink} to="/" activeStyle={{color:"#12B6A6"}}>Login</NavLink>
-              </NavItem>
-              <NavItem style={{fontSize: "20px", cursor:"pointer", margin:"10px"}}>
-                  <NavLink tag={RouteLink} to="/signup" activeStyle={{color:"#12B6A6"}}>Sign Up</NavLink>
+              
+              <NavItem style={{fontSize: "20px", cursor:"pointer", margin:"10px", color:"white"}}>
+                  <NavLink tag={RouteLink} to="/signup" activeStyle={{color:"white"}}>Sign Up</NavLink>
               </NavItem>
               </div>
           </Nav>
