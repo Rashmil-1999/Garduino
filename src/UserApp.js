@@ -15,13 +15,11 @@ export const client = apollo.create();
 const UserApp = (props) => {
   const [user_Id, setUser_Id] = useState(userId());
   return (
-    <div>
-      <ApolloProvider client={client}>
-        <Route exact path="/dashboard">
-          <Home userid={user_Id} />
-        </Route>
-      </ApolloProvider>
-    </div>
+    <ApolloProvider client={client}>
+      <Route exact path='/dashboard'>
+        <Home userid={user_Id} />
+      </Route>
+    </ApolloProvider>
   );
 };
 
