@@ -24,7 +24,7 @@ function App() {
     roles = roles[0];
   }
   return (
-    <div className="App" style={{ backgroundColor: "lightgreen",height:1000 }}>
+    <div className="App" style={{ backgroundColor: " rgb(21, 36, 61)" }}>
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={SignUp} />
