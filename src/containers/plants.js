@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Plant from "../containers/plant";
 import Addnewplant from "./Plants/Addnewplant";
-import { CardDeck, Card, CardBody, CardImg } from "reactstrap";
+import { CardDeck, Card, CardBody, CardImg, Row, Col } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 
@@ -13,7 +13,7 @@ const Plants = ({ info }) => {
     <Row xs="4">
       {info.plants.map((plant, index) => (
         <Col>
-        <Plant key={index} each_plant={plant} u_id={u_id}  />
+        <Plant key={index} each_plant={plant}  />
         <br />
         </Col>
       ))}
