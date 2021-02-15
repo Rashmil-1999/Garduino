@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Plant from "../containers/plant";
-import Addnewplant from "../containers/Addnewplant";
-import {CardDeck,Card,CardBody,CardImg,CardColumns,Row,Col} from "reactstrap";
+import Addnewplant from "./Plants/Addnewplant";
+import { CardDeck, Card, CardBody, CardImg } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusSquare } from '@fortawesome/free-regular-svg-icons';
+import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 
-
-const Plants = ({ info,u_id }) => {
+const Plants = ({ info }) => {
   const [showform, setshowform] = useState(false);
-  
+
   return (
     <>
     <Row xs="4">
@@ -25,7 +24,7 @@ const Plants = ({ info,u_id }) => {
       </div>
       
     </>
-  )
-}
+  );
+};
 
 export default Plants;
