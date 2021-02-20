@@ -21,14 +21,14 @@ export const GET_USER_PLANT_INFO = gql`
   }
 `;
 
-export const GET_EACH_PLANT_INFO = gql` 
-  query geteachplantinfo($p_uuid: uuid!){
-    plants(where: {p_uuid: {_eq: $p_uuid}}) {
+export const GET_EACH_PLANT_INFO = gql`
+  query geteachplantinfo($p_uuid: uuid!) {
+    plants(where: { p_uuid: { _eq: $p_uuid } }) {
       plant_info {
         common_name
+      }
     }
   }
-}
 `;
 
 export const CREATE_USER_PLANT = gql`

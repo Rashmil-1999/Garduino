@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-import * as plant_queries from "../queries/plant";
-import Plants from "./plants";
-import Header from "../containers/Header";
+import * as plant_queries from "../../queries/plant_queries";
+import PlantsDeck from "./PlantsDeck";
+import Header from "./Header";
 
 const DisplayPlant = ({ name, u_id }) => {
   const { error, loading, data } = useQuery(plant_queries.GET_USER_PLANT_INFO, {
@@ -22,7 +22,7 @@ const DisplayPlant = ({ name, u_id }) => {
           <CardSubtitle tag='h5'>Here are your plants: </CardSubtitle>
           <br />
           <CardText>
-            <Plants info={data} u_id={u_id}/>
+            <PlantsDeck info={data} u_id={u_id} />
           </CardText>
         </CardBody>
       </Card>

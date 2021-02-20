@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useQuery, useLazyQuery } from "@apollo/client";
 
-import DisplayPlant from "../containers/DisplayPlant";
-import AddPlantButton from "../components/Button/AddPlantButton";
-import AddPlantModal from "../components/Modal/AddPlantModal";
+import DisplayPlant from "./DisplayPlant";
+import AddPlantButton from "../../components/Button/AddPlantButton";
+import AddPlantModal from "./AddPlantModal";
 
-import * as plantQueries from "../queries/plant";
-import * as user_queries from "../queries/user";
+// import * as plantQueries from "../queries/plant_queries";
+import * as user_queries from "../../queries/user_queries";
 
-const Home = ({ userid }) => {
+const Dashboard = ({ userid }) => {
   //const { error, loading, data } = useQuery(plant_queries.GET_PLANT_INFO);
   const { error, loading, data } = useQuery(user_queries.GET_USER_INFO, {
     variables: { userid },
@@ -27,10 +27,11 @@ const Home = ({ userid }) => {
         modal={modal}
         toggle={toggle}
         u_uuid={userid}
-        sm_data={data.sensor_mapping}
+        asm_data={data.sensor_mapping}
+        sm_data={data.all_sensor_mappings}
         pi_data={data.plant_info}
       />
     </div>
   );
 };
-export default Home;
+export default Dashboard;

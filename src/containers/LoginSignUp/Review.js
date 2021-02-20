@@ -21,7 +21,7 @@ import {
   Col,
 } from "reactstrap";
 
-import * as user_queries from "../../queries/user";
+import * as user_queries from "../../queries/user_queries";
 import Input from "../../components/Input/Input";
 import LoadingPopup from "../../components/Loader/LoadingPopup";
 import { createToast } from "../../utils/toast";

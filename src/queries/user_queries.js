@@ -18,8 +18,16 @@ export const GET_USER_INFO = gql`
     sensor_mapping(
       where: {
         u_uuid: { _eq: $userid }
-        plant_sensor_mappings: { is_valid: { _eq: false } }
+        plant_sensor_mappings: { is_valid: { _eq: true } }
       }
+      order_by: { alias: asc }
+    ) {
+      alias
+      sm_uuid
+    }
+    all_sensor_mappings: sensor_mapping(
+      where: { u_uuid: { _eq: $userid } }
+      order_by: { alias: asc }
     ) {
       alias
       sm_uuid
