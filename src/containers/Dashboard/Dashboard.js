@@ -4,6 +4,7 @@ import { useQuery, useLazyQuery } from "@apollo/client";
 import DisplayPlant from "./DisplayPlant";
 import AddPlantButton from "../../components/Button/AddPlantButton";
 import AddPlantModal from "./AddPlantModal";
+import LoadingPopup from "../../components/Loader/LoadingPopup";
 
 // import * as plantQueries from "../queries/plant_queries";
 import * as user_queries from "../../queries/user_queries";
@@ -17,7 +18,7 @@ const Dashboard = ({ userid }) => {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
-  if (loading) return "Loading...";
+  if (loading) return loading && <LoadingPopup isOpen />;
   if (error) return `Error! ${error.message}`;
   return (
     <div>

@@ -25,10 +25,15 @@ function App() {
   }
   const DeviceHeight = window.screen.height;
   return (
-    <div className="App" style={{ backgroundColor: " rgb(21, 36, 61)" }}>
+    <div
+      className='App'
+      style={{
+        backgroundColor: " rgb(21, 36, 61)",
+        height: window.innerHeight,
+      }}>
       <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/signup" component={SignUp} />
+        <Route exact path='/' component={Login} />
+        <Route exact path='/signup' component={SignUp} />
         <UserApp />
       </Switch>
     </div>

@@ -15,17 +15,25 @@ const Header = ({ u_name }) => {
 
   return (
     <Navbar color='faded' light>
-      <NavbarBrand href='/' className='mr-auto'>
+      <NavbarBrand href='/' className='mr-auto' style={{ color: "white" }}>
         Welcome {u_name.users[0].full_name}
       </NavbarBrand>
-      <NavbarToggler onClick={toggleNavbar} className='mr-2' />
+      <NavbarToggler
+        onClick={toggleNavbar}
+        className='mr-2'
+        style={{ color: "white" }}
+      />
       <Collapse isOpen={!collapsed} navbar>
         <Nav navbar>
           <NavItem>
-            <NavLink href='#'>Profile Settings</NavLink>
+            <NavLink href='#' style={{ color: "white" }}>
+              Profile Settings
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href='#'>Logout</NavLink>
+            <NavLink href='#' style={{ color: "white" }}>
+              Logout
+            </NavLink>
           </NavItem>
         </Nav>
       </Collapse>

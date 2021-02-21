@@ -19,11 +19,12 @@ const AddPlantModal = (props) => {
   const { className, modal, toggle } = props;
   const u_uuid = props.u_uuid;
   const [pi_id, setPI_ID] = useState(1);
-  const [sm_uuid, setSM_UUID] = useState();
+  const [sm_uuid, setSM_UUID] = useState("");
   const [plantedOn, setPlantedOn] = useState("");
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [fruitCount, setFruitCount] = useState(0);
+  const [isValidSensorMap, setIsValidSensorMap] = useState(false);
   const plantOptions = [];
   const sensorMappingOptions = [];
   const { asm_data, sm_data, pi_data } = props;
@@ -165,10 +166,15 @@ const AddPlantModal = (props) => {
               <h3 className='text-center'>Select Channel</h3>
               <Select
                 label={"Sensor Mapping channels "}
-                valid={true}
+                valid={isValidSensorMap}
                 value={sm_uuid}
                 options={sensorMappingOptions}
-                onChange={(curr) => setSM_UUID(curr)}
+                onChange={(curr) => {
+                  if (curr !== "") {
+                    setIsValidSensorMap(true);
+                  }
+                  setSM_UUID(curr);
+                }}
               />
               <Row form className='text-center'>
                 <Col className='text-center'>
@@ -176,7 +182,8 @@ const AddPlantModal = (props) => {
                     outline
                     color='info'
                     type='submit'
-                    className='text-center'>
+                    className='text-center'
+                    disabled={!isValidSensorMap}>
                     Submit
                   </Button>
                 </Col>

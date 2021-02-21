@@ -14,6 +14,7 @@ import PlantDetails from "../PlantDetails/PlantDetails";
 
 const PlantCard = ({ each_plant, u_id }) => {
   const handleCardClick = (e) => {
+    console.log(each_plant.p_uuid);
     window.location = `/plants/${each_plant.p_uuid}`;
   };
 
