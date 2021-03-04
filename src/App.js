@@ -23,7 +23,7 @@ function App() {
     roles = tokenUtils.roles(tokenUtils.getToken());
     roles = roles[0];
   }
-  const DeviceHeight = window.screen.height;
+
   return (
     <div
       className='App'
