@@ -31,6 +31,17 @@ export const GET_EACH_PLANT_INFO = gql`
       fruit_count
       plant_info {
         common_name
+        description
+        scientific_name
+        soil_quality_suited
+        planting_instructions
+      }
+      sensor_data {
+        timestamp
+        soil_temp
+        soil_moisture
+        air_humidity
+        air_temperature
       }
     }
   }

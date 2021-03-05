@@ -15,6 +15,7 @@ import {
   Button,
 } from "reactstrap";
 import plant_icon from "../../assets/images/plant_icon1.png";
+import Multitabs from "../PlantDetails/Multitabs";
 
 const PlantDetails = (props) => {
   const p_uuid = props.match.params.plant_id;
@@ -104,6 +105,7 @@ const PlantDetails = (props) => {
           </Row>
         </Card>
       </Row>
+      <Multitabs p_uuid={p_uuid}></Multitabs>
     </Container>
   );
 };
