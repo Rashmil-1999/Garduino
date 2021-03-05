@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Input from "../../components/Input/Input";
 import {
+  Container,
+  Row,
+  Col,
   Card,
   CardImg,
   CardTitle,
@@ -9,6 +12,7 @@ import {
   CardSubtitle,
   CardBody,
   Jumbotron,
+  CardColumns,
 } from "reactstrap";
 import axios from "../../axios";
 import Button from "../../components/Button/Login/Button";
@@ -83,119 +87,182 @@ const Login = (props) => {
     <>
       <LoginSignupNavbar />
       <br></br>
-      <h3 style={{ color: "white" }}>
-        {" "}
-        Welcome to Garduino- A smart gardening system{" "}
-      </h3>
-      <br></br>
-      <h4 style={{ textAlign: "left", paddingLeft: 50, color: "whitesmoke" }}>
-        A Glimpse of who we are and what we have to Offer:
-      </h4>
-      <br></br>
-      <pre style={{ textAlign: "left", color: "whitesmoke" }}>
-        {" "}
-        It all started with a resolve to use the umpteen opportunities offered
-        by technology in doing something for the society.{" "}
-      </pre>
-      <pre style={{ textAlign: "left", color: "whitesmoke" }}>
-        {" "}
-        Our Government has been making numerous attempts to encourage households
-        to indulge in urban farming through automation.<br></br>
-        <br></br> Researchers have predicted that:<br></br>
-        <br></br>- A family that practices gardening tends to be more inclined
-        towards adopting a healthy lifestyle.<br></br>
-        <br></br>- Home gardening promotes values of science, environmental
-        stewardship and healthy eating among children. <br></br>
-      </pre>
-      <br></br>
-      <br></br>
-      <h2 style={{ color: "white", textAlign: "left" }}>
-        The Key Features that Our system has are depicted below:
-      </h2>
-      <br></br>
-      <CardDeck style={{ width: "70%" }}>
-        <Card>
-          <CardImg top width='100%' src={gif2} alt='Card image cap' />
-          <CardBody>
-            <CardTitle tag='h5'>Card title</CardTitle>
-            <CardSubtitle tag='h6' className='mb-2 text-muted'>
-              Card subtitle
-            </CardSubtitle>
-            <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardImg top width='100%' src={pm} alt='Card image cap' />
-          <CardBody>
-            <CardTitle tag='h5'>Card title</CardTitle>
-            <CardSubtitle tag='h6' className='mb-2 text-muted'>
-              Card subtitle
-            </CardSubtitle>
-            <CardText>
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardImg top width='100%' src={gif1} alt='Card image cap' />
-          <CardBody>
-            <CardTitle tag='h5'>Card title</CardTitle>
-            <CardSubtitle tag='h6' className='mb-2 text-muted'>
-              Card subtitle
-            </CardSubtitle>
-            <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-      </CardDeck>
+      <div style={{}}>
+        <h3
+          style={{
+            color: "white",
+            fontStyle: "geneva",
+            fontSize: 60,
+            fontWeight: 800,
+          }}
+        >
+          {" "}
+          Welcome to Garduino- A smart gardening system{" "}
+        </h3>
+        <br></br>
+        
+          <br></br>
+        
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
+        <h4
+          style={{
+            textAlign: "left",
+            paddingLeft: 50,
+            color: "whitesmoke",
+            fontFamily: "cursive",
+            fontWeight: 1000,
+          }}
+        >
+          A Glimpse of who we are and what we have to Offer:
+        </h4>
+        <br></br>
+        <pre
+          style={{
+            textAlign: "left",
+            color: "whitesmoke",
+            fontFamily: "cursive",
+            paddingLeft:50
+          }}
+        >
+          {" "}
+          It all started with a resolve to use the umpteen opportunities offered
+          by technology in doing something for the society.{" "}
+        </pre>
+        <p
+          style={{
+            textAlign: "left",
+            color: "whitesmoke",
+            fontFamily: "cursive",
+            paddingLeft:50
+          }}
+        >
+          {" "}
+          Our Government has been making numerous attempts to encourage
+          households to indulge in urban farming through automation.<br></br>
+          <br></br> Researchers have predicted that:<br></br>
+          <br></br>- A family that practices gardening tends to be more inclined
+          towards adopting a healthy lifestyle.<br></br>
+          <br></br>- Home gardening promotes values of science, environmental
+          stewardship and healthy eating among children. <br></br>
+        </p>
+      </div>
+
       <br></br>
       <br></br>
       <br></br>
-      <video style={{ width: 600, left: -500 }} autoPlay loop muted id='video'>
-        <source src={vid} type='video/mp4' />
+      <br></br>
+      
+      <div>
+        <br></br>
+        <h2
+          style={{ color: "white", textAlign: "center", fontFamily: "cursive" }}
+        >
+    
+          The Key Features that Our system has are depicted below:
+        </h2>
+        <br></br>
+        <Container fluid={true}>
+         
+            
+        <CardDeck style={{ width: "100%" }}>
+        <Row>
+        <Col>
+          <Card>
+            <CardImg top width="100%" src={gif2} alt="Card image cap" />
+            <CardBody>
+              <CardTitle tag="h5">Automated Irrigation</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted"></CardSubtitle>
+              <CardText>
+                A smart irrigation module implemented with the help of sensors
+                and relay, which enables the user to switch between automatic
+                and manual modes of irrigation. This is indeed the most crucial
+                feature for people who indulge in frequent holidays or have an
+                erratic work schedule.
+              </CardText>
+              <Button>Button</Button>
+            </CardBody>
+          </Card>
+            </Col>
+<Col></Col><Col></Col>
+          <Col>
+          <Card>
+            <CardImg top width="100%" src={pm} alt="Card image cap" />
+            <CardBody>
+              <CardTitle tag="h5"> Live Video feed </CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted"></CardSubtitle>
+              <CardText>
+                This module enables the user to look at their plants at any time
+                that they want. This will help the user to actively monitor the
+                plant and it's surroundings. It also serves as a security
+                feature and the user is apprised of the possible intrusions.
+              </CardText>
+              <Button>Button</Button>
+            </CardBody>
+          </Card>
+            </Col>
+
+          </Row>
+          <Row></Row><Row></Row>
+          <Card>
+            <CardImg top width="100%" src={gif1} alt="Card image cap" />
+            <CardBody>
+              <CardTitle tag="h5">Data Visualisations</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted"></CardSubtitle>
+              <CardText>
+                The data collected is used for giving the user a glimpse of the
+                activities performed by the system. It also enables the system
+                to make smart decisions on it's own.
+              </CardText>
+              <Button>Button</Button>
+            </CardBody>
+          </Card>
+        </CardDeck>
+        </Container>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <video style={{ width: 600, left: -500 }} autoPlay loop muted id="video">
+        <source src={vid} type="video/mp4" />
       </video>
-      <Card
-        style={{ width: "400px", top: -1350, left: 520 }}
-        className='my-5 shadow p-3 mb-5 bg-white rounded mx-auto'>
-        <CardImg src={pf1} style={{ height: "15em" }} />
-        <CardText>
-          <Input
-            type='email'
-            placeholder={"E-mail"}
-            label={"Email "}
-            valid={isValidEmail}
-            value={email}
-            onChange={onEmailChange}
-          />
-          <Input
-            type='password'
-            placeholder={"password"}
-            label={"Password "}
-            valid={isValidPassword}
-            value={password}
-            onChange={onPassChange}
-          />
-          <Button
-            style={{}}
-            name='Log In'
-            classes={["btn-check"]}
-            onClick={onLogin}
-            isLoading={loading}
-            isDisabled={!isValidEmail || !isValidPassword}
-          />
-        </CardText>
-      </Card>
+      <div>
+        <Card
+          style={{ width: "400px", top: -2850, left: 520 }}
+          className="my-5 shadow p-3 mb-5 bg-white rounded mx-auto"
+        >
+          <CardImg src={pf1} style={{ height: "15em" }} />
+          <CardText>
+            <Input
+              type="email"
+              placeholder={"E-mail"}
+              label={"Email "}
+              valid={isValidEmail}
+              value={email}
+              onChange={onEmailChange}
+            />
+            <Input
+              type="password"
+              placeholder={"password"}
+              label={"Password "}
+              valid={isValidPassword}
+              value={password}
+              onChange={onPassChange}
+            />
+            <Button
+              style={{}}
+              name="Log In"
+              classes={["btn-check"]}
+              onClick={onLogin}
+              isLoading={loading}
+              isDisabled={!isValidEmail || !isValidPassword}
+            />
+          </CardText>
+        </Card>
+      </div>
     </>
   );
 };

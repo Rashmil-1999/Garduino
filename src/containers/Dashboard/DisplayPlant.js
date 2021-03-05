@@ -17,7 +17,7 @@ const DisplayPlant = ({ name, u_id }) => {
       <Header u_name={name} />
       <br />
       <Card
-        className='mt-4 shadow p-3 mb-5 bg-white mx-auto'
+        className='mt-4 shadow p-3 mb-5 bg-wite mx-auto'
         style={{ borderRadius: "15px" }}>
         <CardBody>
           <CardTitle tag='h5'> </CardTitle>
