@@ -10,7 +10,6 @@ import {
   Button,
 } from "reactstrap";
 import plant_icon from "../../assets/images/plant_icon.png";
-import PlantDetails from "../PlantDetails/PlantDetails";
 
 const PlantCard = ({ each_plant, u_id }) => {
   const handleCardClick = (e) => {
