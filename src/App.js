@@ -29,7 +29,7 @@ function App() {
     <div
       className='App'
       style={{
-        backgroundColor: " rgb(21, 36, 61)",
+        // backgroundColor: " rgb(21, 36, 61)",
         height: window.innerHeight,
       }}>
       <Switch>
