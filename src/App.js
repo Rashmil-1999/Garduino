@@ -28,16 +28,15 @@ function App() {
 
   return (
     <div
-      className="App"
+      className='App'
       style={{
         backgroundColor: " white ",
         height: "100%",
-      }}
-    >
+      }}>
       <Toolbar user={roles} />
       <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/signup" component={SignUp} />
+        <Route exact path='/' component={Login} />
+        <Route exact path='/signup' component={SignUp} />
         <UserApp />
       </Switch>
     </div>
