@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./containers/LoginSignUp/Login";
 import SignUp from "../src/containers/LoginSignUp/SignUp";
 import PlantDetails from "./containers/PlantDetails/PlantDetails";
+import Toolbar from "./components/Toolbar/Toolbar";
 //import the user app
 import UserApp from "./UserApp";
 
@@ -27,14 +28,16 @@ function App() {
 
   return (
     <div
-      className='App'
+      className="App"
       style={{
-        backgroundColor: " rgb(21, 36, 61)",
-        height:"100%",
-      }}>
+        backgroundColor: " white ",
+        height: "100%",
+      }}
+    >
+      <Toolbar user={roles} />
       <Switch>
-        <Route exact path='/' component={Login} />
-        <Route exact path='/signup' component={SignUp} />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
         <UserApp />
       </Switch>
     </div>

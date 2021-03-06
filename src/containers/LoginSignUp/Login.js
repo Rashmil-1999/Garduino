@@ -20,11 +20,12 @@ import { toast } from "react-toastify";
 import * as tokenUtils from "../../utils/tokenUtils";
 import pf1 from "../../assets/images/pf1.png";
 import { Link } from "react-router-dom";
-import LoginSignupNavbar from "../../components/Toolbar/LoginSignupNavbar";
+//import LoginSignupNavbar from "../../components/Toolbar/LoginSignupNavbar";
 import vid from "../../assets/Videos/vid2.mp4";
 import gif1 from "../../assets/images/giphy-1.gif";
 import gif2 from "../../assets/images/giphy-3.gif";
 import pm from "../../assets/images/plantmonitor.png";
+import wd from "../../assets/images/wood-5.jpeg";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -85,12 +86,12 @@ const Login = (props) => {
   };
   return (
     <>
-      <LoginSignupNavbar />
+      {/* <LoginSignupNavbar /> */}
       <br></br>
       <div style={{}}>
         <h3
           style={{
-            color: "white",
+            color: "black",
             fontStyle: "geneva",
             fontSize: 60,
             fontWeight: 800,
@@ -101,18 +102,15 @@ const Login = (props) => {
         </h3>
         <br></br>
         
-          <br></br>
+         
         
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        
         
         <h4
           style={{
             textAlign: "left",
             paddingLeft: 50,
-            color: "whitesmoke",
+            color: "black",
             fontFamily: "cursive",
             fontWeight: 1000,
           }}
@@ -120,35 +118,18 @@ const Login = (props) => {
           A Glimpse of who we are and what we have to Offer:
         </h4>
         <br></br>
+        <img src={wd} style={{width:"50", position:"relative"}}></img>
         <pre
           style={{
             textAlign: "left",
-            color: "whitesmoke",
+            color: "black",
             fontFamily: "cursive",
             paddingLeft:50
           }}
         >
-          {" "}
-          It all started with a resolve to use the umpteen opportunities offered
-          by technology in doing something for the society.{" "}
+          
         </pre>
-        <p
-          style={{
-            textAlign: "left",
-            color: "whitesmoke",
-            fontFamily: "cursive",
-            paddingLeft:50
-          }}
-        >
-          {" "}
-          Our Government has been making numerous attempts to encourage
-          households to indulge in urban farming through automation.<br></br>
-          <br></br> Researchers have predicted that:<br></br>
-          <br></br>- A family that practices gardening tends to be more inclined
-          towards adopting a healthy lifestyle.<br></br>
-          <br></br>- Home gardening promotes values of science, environmental
-          stewardship and healthy eating among children. <br></br>
-        </p>
+        
       </div>
 
       <br></br>
@@ -159,7 +140,7 @@ const Login = (props) => {
       <div>
         <br></br>
         <h2
-          style={{ color: "white", textAlign: "center", fontFamily: "cursive" }}
+          style={{ color: "black", textAlign: "center", fontFamily: "cursive" }}
         >
     
           The Key Features that Our system has are depicted below:
@@ -231,7 +212,7 @@ const Login = (props) => {
       </video>
       <div>
         <Card
-          style={{ width: "400px", top: -2850, left: 520 }}
+          style={{ width: "400px", top: -2900, left: 520 }}
           className="my-5 shadow p-3 mb-5 bg-white rounded mx-auto"
         >
           <CardImg src={pf1} style={{ height: "15em" }} />

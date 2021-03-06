@@ -1,15 +1,12 @@
 import React from 'react'
 
 import LoginSignupNavbar from './LoginSignupNavbar';
-import ProfessorNavbar from './ProfessorNavbar';
-import StudentNavbar from './StudentNavbar'
+import Header from './Header';
 
 function Toolbar(props){
-    if (props.user === 'student'){
-        return <StudentNavbar />
-    }
-    if (props.user === 'teacher'){
-        return <ProfessorNavbar />
+    
+    if (props.user === 'user'){
+        return <Header/>
     }
     if(props.user === null){
         return <LoginSignupNavbar/>

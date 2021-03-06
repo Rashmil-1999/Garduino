@@ -10,9 +10,9 @@ const LogOut = (props) => {
 
     }
     return (
-        <button class="ui sign-out icon button" onClick={() => logout()}>
-            <i class="sign-out icon"></i>
-        </button>
+         logout()
+           
+        
 
     );
 }

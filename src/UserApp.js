@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 
+
 // import apollo-wrapper
 import apollo from "./apollo-wrapper";
 import Dashboard from "./containers/Dashboard/Dashboard";
@@ -9,6 +10,7 @@ import Dashboard from "./containers/Dashboard/Dashboard";
 //import the function to get user-id from the utils
 import { userId } from "./utils/tokenUtils";
 import PlantDetails from "./containers/PlantDetails/PlantDetails";
+import Logout from "./containers/LoginSignUp/Logout";
 
 // create the client that will be user client
 export const client = apollo.create();
@@ -22,6 +24,7 @@ const UserApp = (props) => {
           <Dashboard userid={user_Id} />
         </Route>
         <Route path='/plants/:plant_id' component={PlantDetails} />
+        <Route path='/logout' component={Logout} />
       </ApolloProvider>
     </div>
   );
