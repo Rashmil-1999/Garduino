@@ -25,7 +25,7 @@ import vid from "../../assets/Videos/vid2.mp4";
 import gif1 from "../../assets/images/giphy-1.gif";
 import gif2 from "../../assets/images/giphy-3.gif";
 import pm from "../../assets/images/plantmonitor.png";
-import wd from "../../assets/images/wood-5.jpeg";
+import wd from "../../assets/images/gif_1.gif";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -89,17 +89,17 @@ const Login = (props) => {
       {/* <LoginSignupNavbar /> */}
       <br></br>
       <div style={{}}>
-        <h3
+        <h5
           style={{
             color: "black",
-            fontStyle: "geneva",
-            fontSize: 60,
-            fontWeight: 800,
+            fontFamily: "cursive",
+            fontSize: 50,
+            fontWeight: 500,
           }}
         >
           {" "}
           Welcome to Garduino- A smart gardening system{" "}
-        </h3>
+        </h5>
         <br></br>
         
          
@@ -112,13 +112,15 @@ const Login = (props) => {
             paddingLeft: 50,
             color: "black",
             fontFamily: "cursive",
-            fontWeight: 1000,
+            fontWeight: 500,
           }}
         >
           A Glimpse of who we are and what we have to Offer:
         </h4>
         <br></br>
-        <img src={wd} style={{width:"50", position:"relative"}}></img>
+        <div style={{ textAlign: "left"}}>
+        <img src={wd} style={{width:"50", position:"relative" }}></img>
+        </div>
         <pre
           style={{
             textAlign: "left",
@@ -212,7 +214,7 @@ const Login = (props) => {
       </video>
       <div>
         <Card
-          style={{ width: "400px", top: -2900, left: 520 }}
+          style={{ width: "400px", top: -3050, left: 520 }}
           className="my-5 shadow p-3 mb-5 bg-white rounded mx-auto"
         >
           <CardImg src={pf1} style={{ height: "15em" }} />
