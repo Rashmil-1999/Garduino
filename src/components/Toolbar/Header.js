@@ -31,10 +31,10 @@ const Header = () => {
       
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Profile Settings</NavLink>
+              <NavLink href="/components/" className="mr-2">Profile Settings</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/logout"><i class="fas fa-sign-out-alt fa-2x"> Logout</i></NavLink>
+              <NavLink href="/logout"><i class="fas fa-sign-out-alt fa-x"> Logout</i></NavLink>
             </NavItem>
             
           </Nav>
