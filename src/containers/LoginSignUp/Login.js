@@ -118,7 +118,7 @@ const Login = (props) => {
           A Glimpse of who we are and what we have to Offer:
         </h4>
         <br></br>
-        <img src={wd} style={{width:"50", position:"relative"}}></img>
+        
         <pre
           style={{
             textAlign: "left",
