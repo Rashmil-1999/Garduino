@@ -11,9 +11,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
+  NavbarText,
 } from "reactstrap";
-import Logout from "../../containers/LoginSignUp/Logout"
 
 const Header = () => {
   //const [collapsed, setCollapsed] = useState(true);
@@ -23,22 +22,34 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar className="w-100" color='faded' light style={{backgroundColor:'rgb(214,177,177)'}}>
+    <Navbar
+      className='w-100'
+      color='faded'
+      light
+      style={{ backgroundColor: "rgb(214,177,177)" }}
+      expand='sm'>
       <NavbarBrand href='/' className='mr-auto' style={{ color: "white" }}>
         Welcome!
       </NavbarBrand>
-      
-      
-          <Nav className="me-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Profile Settings</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/logout"><i class="fas fa-sign-out-alt fa-2x"> Logout</i></NavLink>
-            </NavItem>
-            
-          </Nav>
-          
+
+      <Nav className='me-auto' navbar>
+        <UncontrolledDropdown nav inNavbar>
+          <DropdownToggle nav caret>
+            Options
+          </DropdownToggle>
+          <DropdownMenu right>
+            <DropdownItem>
+              <NavLink href='/components/'>Profile Settings</NavLink>
+            </DropdownItem>
+            <DropdownItem divider />
+            <DropdownItem>
+              <NavLink href='/logout'>
+                <i class='fas fa-sign-out-alt fa-x'> Logout</i>
+              </NavLink>
+            </DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      </Nav>
     </Navbar>
   );
 };
