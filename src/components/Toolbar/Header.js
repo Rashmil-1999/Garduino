@@ -28,7 +28,10 @@ const Header = () => {
       light
       style={{ backgroundColor: "rgb(214,177,177)" }}
       expand='sm'>
-      <NavbarBrand href='/' className='mr-auto' style={{ color: "white" }}>
+      <NavbarBrand
+        href='/dashboard'
+        className='mr-auto'
+        style={{ color: "white" }}>
         Welcome!
       </NavbarBrand>
 

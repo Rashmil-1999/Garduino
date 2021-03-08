@@ -38,3 +38,24 @@ export const GET_USER_INFO = gql`
     }
   }
 `;
+
+export const SET_MANUAL_MODE = gql`
+  mutation MyMutation($u_uuid: uuid!, $manualMode: Boolean!) {
+    update_irrigation_mode(
+      where: { u_uuid: { _eq: $u_uuid } }
+      _set: {
+        ch_1: 0
+        ch_2: 0
+        ch_3: 0
+        ch_4: 0
+        ch_5: 0
+        ch_6: 0
+        ch_7: 0
+        ch_8: 0
+        manual: $manualMode
+      }
+    ) {
+      affected_rows
+    }
+  }
+`;

@@ -28,9 +28,6 @@ const PlantCard = ({ each_plant, u_id }) => {
       />
       <CardBody>
         <CardTitle tag='h5'>{each_plant.plant_info.common_name}</CardTitle>
-        <CardSubtitle tag='h6' className='mb-2 text-muted'>
-          {each_plant.plant_info.description}
-        </CardSubtitle>
         <CardText></CardText>
       </CardBody>
     </Card>

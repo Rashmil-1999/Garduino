@@ -43,6 +43,11 @@ export const GET_EACH_PLANT_INFO = gql`
         air_humidity
         air_temperature
       }
+      user {
+        irrigation_modes {
+          manual
+        }
+      }
     }
   }
 `;

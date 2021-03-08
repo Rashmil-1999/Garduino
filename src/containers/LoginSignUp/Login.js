@@ -95,17 +95,12 @@ const Login = (props) => {
             fontStyle: "geneva",
             fontSize: 60,
             fontWeight: 800,
-          }}
-        >
+          }}>
           {" "}
           Welcome to Garduino- A smart gardening system{" "}
         </h3>
         <br></br>
-        
-         
-        
-        
-        
+
         <h4
           style={{
             textAlign: "left",
@@ -113,112 +108,114 @@ const Login = (props) => {
             color: "black",
             fontFamily: "cursive",
             fontWeight: 1000,
-          }}
-        >
+          }}>
           A Glimpse of who we are and what we have to Offer:
         </h4>
         <br></br>
-        <img src={wd} style={{width:"50", position:"relative"}}></img>
+        <img src={wd} style={{ width: "50", position: "relative" }}></img>
         <pre
           style={{
             textAlign: "left",
             color: "black",
             fontFamily: "cursive",
-            paddingLeft:50
-          }}
-        >
-          
-        </pre>
-        
+            paddingLeft: 50,
+          }}></pre>
       </div>
 
       <br></br>
       <br></br>
       <br></br>
       <br></br>
-      
+
       <div>
         <br></br>
         <h2
-          style={{ color: "black", textAlign: "center", fontFamily: "cursive" }}
-        >
-    
+          style={{
+            color: "black",
+            textAlign: "center",
+            fontFamily: "cursive",
+          }}>
           The Key Features that Our system has are depicted below:
         </h2>
         <br></br>
         <Container fluid={true}>
-         
-            
-        <CardDeck style={{ width: "100%" }}>
-        <Row>
-        <Col>
-          <Card>
-            <CardImg top width="100%" src={gif2} alt="Card image cap" />
-            <CardBody>
-              <CardTitle tag="h5">Automated Irrigation</CardTitle>
-              <CardSubtitle tag="h6" className="mb-2 text-muted"></CardSubtitle>
-              <CardText>
-                A smart irrigation module implemented with the help of sensors
-                and relay, which enables the user to switch between automatic
-                and manual modes of irrigation. This is indeed the most crucial
-                feature for people who indulge in frequent holidays or have an
-                erratic work schedule.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-            </Col>
-<Col></Col><Col></Col>
-          <Col>
-          <Card>
-            <CardImg top width="100%" src={pm} alt="Card image cap" />
-            <CardBody>
-              <CardTitle tag="h5"> Live Video feed </CardTitle>
-              <CardSubtitle tag="h6" className="mb-2 text-muted"></CardSubtitle>
-              <CardText>
-                This module enables the user to look at their plants at any time
-                that they want. This will help the user to actively monitor the
-                plant and it's surroundings. It also serves as a security
-                feature and the user is apprised of the possible intrusions.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-            </Col>
-
-          </Row>
-          <Row></Row><Row></Row>
-          <Card>
-            <CardImg top width="100%" src={gif1} alt="Card image cap" />
-            <CardBody>
-              <CardTitle tag="h5">Data Visualisations</CardTitle>
-              <CardSubtitle tag="h6" className="mb-2 text-muted"></CardSubtitle>
-              <CardText>
-                The data collected is used for giving the user a glimpse of the
-                activities performed by the system. It also enables the system
-                to make smart decisions on it's own.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Card>
-        </CardDeck>
+          <CardDeck style={{ width: "100%" }}>
+            <Row>
+              <Col>
+                <Card>
+                  <CardImg top width='100%' src={gif2} alt='Card image cap' />
+                  <CardBody>
+                    <CardTitle tag='h5'>Automated Irrigation</CardTitle>
+                    <CardSubtitle
+                      tag='h6'
+                      className='mb-2 text-muted'></CardSubtitle>
+                    <CardText>
+                      A smart irrigation module implemented with the help of
+                      sensors and relay, which enables the user to switch
+                      between automatic and manual modes of irrigation. This is
+                      indeed the most crucial feature for people who indulge in
+                      frequent holidays or have an erratic work schedule.
+                    </CardText>
+                    <Button>Button</Button>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col></Col>
+              <Col></Col>
+              <Col>
+                <Card>
+                  <CardImg top width='100%' src={pm} alt='Card image cap' />
+                  <CardBody>
+                    <CardTitle tag='h5'> Live Video feed </CardTitle>
+                    <CardSubtitle
+                      tag='h6'
+                      className='mb-2 text-muted'></CardSubtitle>
+                    <CardText>
+                      This module enables the user to look at their plants at
+                      any time that they want. This will help the user to
+                      actively monitor the plant and it's surroundings. It also
+                      serves as a security feature and the user is apprised of
+                      the possible intrusions.
+                    </CardText>
+                    <Button>Button</Button>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
+            <Row></Row>
+            <Row></Row>
+            <Card>
+              <CardImg top width='100%' src={gif1} alt='Card image cap' />
+              <CardBody>
+                <CardTitle tag='h5'>Data Visualisations</CardTitle>
+                <CardSubtitle
+                  tag='h6'
+                  className='mb-2 text-muted'></CardSubtitle>
+                <CardText>
+                  The data collected is used for giving the user a glimpse of
+                  the activities performed by the system. It also enables the
+                  system to make smart decisions on it's own.
+                </CardText>
+                <Button>Button</Button>
+              </CardBody>
+            </Card>
+          </CardDeck>
         </Container>
       </div>
       <br></br>
       <br></br>
       <br></br>
-      <video style={{ width: 600, left: -500 }} autoPlay loop muted id="video">
-        <source src={vid} type="video/mp4" />
+      <video style={{ width: 600, left: -500 }} autoPlay loop muted id='video'>
+        <source src={vid} type='video/mp4' />
       </video>
       <div>
         <Card
           style={{ width: "400px", top: -2900, left: 520 }}
-          className="my-5 shadow p-3 mb-5 bg-white rounded mx-auto"
-        >
+          className='my-5 shadow p-3 mb-5 bg-white rounded mx-auto'>
           <CardImg src={pf1} style={{ height: "15em" }} />
           <CardText>
             <Input
-              type="email"
+              type='email'
               placeholder={"E-mail"}
               label={"Email "}
               valid={isValidEmail}
@@ -226,7 +223,7 @@ const Login = (props) => {
               onChange={onEmailChange}
             />
             <Input
-              type="password"
+              type='password'
               placeholder={"password"}
               label={"Password "}
               valid={isValidPassword}
@@ -235,7 +232,7 @@ const Login = (props) => {
             />
             <Button
               style={{}}
-              name="Log In"
+              name='Log In'
               classes={["btn-check"]}
               onClick={onLogin}
               isLoading={loading}
