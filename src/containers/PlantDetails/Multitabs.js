@@ -13,10 +13,13 @@ import {
   Row,
   Col,
   CardHeader,
+  Table,
 } from "reactstrap";
+
 import classnames from "classnames";
 import { useQuery } from "@apollo/client";
 import * as plant_queries from "../../queries/plant_queries";
+import IrrigationLogTable from "./IrrigationLogTable";
 
 const Multitabs = ({ p_uuid }) => {
   const [activeTab, setActiveTab] = useState("1");
@@ -143,12 +146,13 @@ const Multitabs = ({ p_uuid }) => {
               </Row>
             </TabPane>
             <TabPane tabId='4'>
-              <Row style={style}>
-                <Col sm='6'>{}</Col>
-                <Col sm='6'>
-                  <p></p>
-                </Col>
-              </Row>
+              {data.plants[0].user.irrigation_logs.length === 0 ? (
+                "Irrigation Log Empty"
+              ) : (
+                <IrrigationLogTable
+                  logs={data.plants[0].user.irrigation_logs}
+                />
+              )}
             </TabPane>
           </TabContent>
         </Card>

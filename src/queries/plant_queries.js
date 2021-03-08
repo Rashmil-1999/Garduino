@@ -47,6 +47,13 @@ export const GET_EACH_PLANT_INFO = gql`
         irrigation_modes {
           manual
         }
+        irrigation_logs(
+          order_by: { time: desc }
+          where: { time: { _gte: "2021-01-22T00:00:00.000Z" } }
+        ) {
+          time
+          mode
+        }
       }
     }
   }
