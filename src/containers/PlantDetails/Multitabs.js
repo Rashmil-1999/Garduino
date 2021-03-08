@@ -71,6 +71,15 @@ const Multitabs = ({ p_uuid }) => {
                 Current Sensor Data
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === "4" })}
+                onClick={() => {
+                  tabToggle("4");
+                }}>
+                Irrigation Log
+              </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={activeTab}>
             <TabPane tabId='1'>
@@ -130,6 +139,14 @@ const Multitabs = ({ p_uuid }) => {
                       </h2>
                     </div>
                   )}
+                </Col>
+              </Row>
+            </TabPane>
+            <TabPane tabId='4'>
+              <Row style={style}>
+                <Col sm='6'>{}</Col>
+                <Col sm='6'>
+                  <p></p>
                 </Col>
               </Row>
             </TabPane>
