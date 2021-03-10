@@ -20,6 +20,7 @@ import classnames from "classnames";
 import { useQuery } from "@apollo/client";
 import * as plant_queries from "../../queries/plant_queries";
 import IrrigationLogTable from "./IrrigationLogTable";
+import Charts from "../PlantDetails/Charts";
 
 const Multitabs = ({ p_uuid }) => {
   const [activeTab, setActiveTab] = useState("1");
@@ -44,7 +45,7 @@ const Multitabs = ({ p_uuid }) => {
   return (
     <Container>
       <div className='mt-3'>
-        <Card className='p-3'>
+        <Card className='p-3' style={{borderColor:"grey", borderWidth:"1px"}}>
           {console.log("This is data:" + data.plants[0].plant_info.common_name)}
           <Nav tabs>
             <NavItem>
@@ -81,6 +82,15 @@ const Multitabs = ({ p_uuid }) => {
                   tabToggle("4");
                 }}>
                 Irrigation Log
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === "5" })}
+                onClick={() => {
+                  tabToggle("5");
+                }}>
+                Visualization of Sensor Data
               </NavLink>
             </NavItem>
           </Nav>
@@ -154,6 +164,10 @@ const Multitabs = ({ p_uuid }) => {
                 />
               )}
             </TabPane>
+            <TabPane tabId='5'>
+              <br></br>
+                <Charts p_uuid = {p_uuid} current_time = {data.plants[0].sensor_data[0].timestamp}></Charts>
+              </TabPane>
           </TabContent>
         </Card>
       </div>

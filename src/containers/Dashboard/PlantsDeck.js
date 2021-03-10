@@ -30,7 +30,7 @@ const PlantsDeck = ({ info }) => {
         ))}
       </Row> */}
       <Container>
-        <CardDeck className='text-center'>
+        <CardDeck  className='text-center'>
           {info.plants.map((plant, index) => (
             <PlantCard key={index} each_plant={plant} />
           ))}

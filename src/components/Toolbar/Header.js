@@ -26,7 +26,7 @@ const Header = () => {
       className='w-100'
       color='faded'
       light
-      style={{ backgroundColor: "rgb(214,177,177)" }}
+      style={{ backgroundColor: "rgba(255, 0, 0, 0.4)" }}
       expand='sm'>
       <NavbarBrand
         href='/dashboard'
