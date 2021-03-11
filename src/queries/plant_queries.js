@@ -36,12 +36,24 @@ export const GET_EACH_PLANT_INFO = gql`
         soil_quality_suited
         planting_instructions
       }
-      sensor_data {
+      sensor_data(order_by: {timestamp: desc}) {
         timestamp
         soil_temp
         soil_moisture
         air_humidity
         air_temperature
+      }
+      user {
+        irrigation_modes {
+          manual
+        }
+        irrigation_logs(
+          order_by: { time: desc }
+          where: { time: { _gte: "2021-01-22T00:00:00.000Z" } }
+        ) {
+          time
+          mode
+        }
       }
     }
   }

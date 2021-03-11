@@ -13,25 +13,30 @@ import {
   Row,
   Col,
   CardHeader,
+  Table,
 } from "reactstrap";
+
 import classnames from "classnames";
 import { useQuery } from "@apollo/client";
 import * as plant_queries from "../../queries/plant_queries";
+import IrrigationLogTable from "./IrrigationLogTable";
+import Charts from "../PlantDetails/Charts";
 
 const Multitabs = ({ p_uuid }) => {
+  const [activeTab, setActiveTab] = useState("1");
+
   const style = {
     color: "black",
     padding: "10px",
-
     fontSize: "20px",
     textAlign: "left",
   };
   const text = { textAlign: "left" };
-  const [activeTab, setActiveTab] = useState("1");
 
-  const toggle = (tab) => {
+  const tabToggle = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
   };
+
   const { error, loading, data } = useQuery(plant_queries.GET_EACH_PLANT_INFO, {
     variables: { p_uuid },
   });
@@ -40,14 +45,14 @@ const Multitabs = ({ p_uuid }) => {
   return (
     <Container>
       <div className='mt-3'>
-        <Card className='p-3'>
-          {console.log(data.plants[0].plant_info.common_name)}
+        <Card className='p-3' style={{borderColor:"grey", borderWidth:"1px"}}>
+          {console.log("This is data:" + data.plants[0].plant_info.common_name)}
           <Nav tabs>
             <NavItem>
               <NavLink
                 className={classnames({ active: activeTab === "1" })}
                 onClick={() => {
-                  toggle("1");
+                  tabToggle("1");
                 }}>
                 General Info
               </NavLink>
@@ -56,7 +61,7 @@ const Multitabs = ({ p_uuid }) => {
               <NavLink
                 className={classnames({ active: activeTab === "2" })}
                 onClick={() => {
-                  toggle("2");
+                  tabToggle("2");
                 }}>
                 Planting Instructions
               </NavLink>
@@ -65,9 +70,27 @@ const Multitabs = ({ p_uuid }) => {
               <NavLink
                 className={classnames({ active: activeTab === "3" })}
                 onClick={() => {
-                  toggle("3");
+                  tabToggle("3");
                 }}>
                 Current Sensor Data
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === "4" })}
+                onClick={() => {
+                  tabToggle("4");
+                }}>
+                Irrigation Log
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === "5" })}
+                onClick={() => {
+                  tabToggle("5");
+                }}>
+                Visualization of Sensor Data
               </NavLink>
             </NavItem>
           </Nav>
@@ -106,6 +129,7 @@ const Multitabs = ({ p_uuid }) => {
             <TabPane tabId='3'>
               <Row style={style}>
                 <Col sm='12' style={text}>
+                  {console.log(data.plants[0].sensor_data)}
                   {data.plants[0].sensor_data.length === 0 ? (
                     "Sensor Data Not Available"
                   ) : (
@@ -131,6 +155,19 @@ const Multitabs = ({ p_uuid }) => {
                 </Col>
               </Row>
             </TabPane>
+            <TabPane tabId='4'>
+              {data.plants[0].user.irrigation_logs.length === 0 ? (
+                "Irrigation Log Empty"
+              ) : (
+                <IrrigationLogTable
+                  logs={data.plants[0].user.irrigation_logs}
+                />
+              )}
+            </TabPane>
+            <TabPane tabId='5'>
+              <br></br>
+                <Charts p_uuid = {p_uuid} current_time = {data.plants[0].sensor_data[0].timestamp}></Charts>
+              </TabPane>
           </TabContent>
         </Card>
       </div>

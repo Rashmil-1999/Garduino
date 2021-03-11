@@ -118,6 +118,19 @@ const Review = ({ userFormData, techDetails, navigation }) => {
               sensor_mappings: {
                 data: sensorMappings,
               },
+              irrigation_modes: {
+                data: {
+                  ch_1: 0,
+                  ch_2: 0,
+                  ch_3: 0,
+                  ch_4: 0,
+                  ch_5: 0,
+                  ch_6: 0,
+                  ch_7: 0,
+                  ch_8: 0,
+                  manual: false,
+                },
+              },
             },
           };
 

@@ -8,7 +8,7 @@ import navlogo from '../../assets/images/pf1.png';
 function LoginSignupNavbar(props) {
 
   return (
-        <Navbar style={{"height":"4.3em", backgroundColor:'rgb(214,177,177)', borderColor:'rgb(172,99,99)', borderWidth:'100'}}  light expand="md">
+        <Navbar style={{"height":"4.3em", backgroundColor:'rgba(255, 0, 0, 0.4)', borderColor:'rgb(172,99,99)', borderWidth:'100'}}  light expand="md">
           {/* {props.children} */}
           <NavbarBrand href="">
           
