@@ -39,8 +39,8 @@ const Charts = ({ p_uuid }) => {
           labels: sensorData.days,
           datasets: [
             {
-              label: "Average Air Humidity",
-              data: sensorData.airAvgHumidity,
+              label: "Average Soil Moisture",
+              data: sensorData.soilAvgMoisture,
               backgroundColor: [
                 "rgba(0, 0, 0, 0)",
                 "rgba(0, 0, 0, 0)",
