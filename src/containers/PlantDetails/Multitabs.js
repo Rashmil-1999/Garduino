@@ -20,10 +20,13 @@ import classnames from "classnames";
 import { useQuery } from "@apollo/client";
 import * as plant_queries from "../../queries/plant_queries";
 import IrrigationLogTable from "./IrrigationLogTable";
+import axios from "../../axios";
+import { toast } from "react-toastify";
 
 const Multitabs = ({ p_uuid }) => {
   const [activeTab, setActiveTab] = useState("1");
-
+  const [sensorData, setSensorData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const style = {
     color: "black",
     padding: "10px",
@@ -32,8 +35,32 @@ const Multitabs = ({ p_uuid }) => {
   };
   const text = { textAlign: "left" };
 
+  const createToast = (error, type) => {
+    toast(error.message ? error.message : error, {
+      position: toast.POSITION.TOP_CENTER,
+      hideProgressBar: true,
+      autoClose: 3000,
+      type: !type ? "error" : type,
+    });
+  };
+
   const tabToggle = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
+  };
+
+  const getSensorData = (path, data) => {
+    axios
+      .getSensorData(path, data)
+      .then((resp) => {
+        if (resp.status === "success") {
+          setSensorData(resp.data);
+          console.log(resp);
+        }
+      })
+      .catch((error) => {
+        setLoading(false);
+        createToast(error, "error");
+      });
   };
 
   const { error, loading, data } = useQuery(plant_queries.GET_EACH_PLANT_INFO, {

@@ -34,6 +34,26 @@ class Axios {
         });
     });
   };
+
+  getSensorData = (uRL, data) => {
+    return new Promise((resolve, reject) => {
+      this.instance
+        .post(uRL, data)
+        .then((resp) => {
+          if (resp.status === "success") {
+            resolve(resp.data);
+          }
+          reject(new Error(resp.message));
+        })
+        .catch((error) => {
+          if (error.response && error.response.data) {
+            reject(error.response.data);
+          } else {
+            reject(new Error(error));
+          }
+        });
+    });
+  };
 }
 
 export default new Axios();
