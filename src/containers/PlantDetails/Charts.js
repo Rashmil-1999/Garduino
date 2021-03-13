@@ -1,11 +1,37 @@
-import { size } from 'lodash';
-import React , { useState } from 'react';
-import { Line } from 'react-chartjs-2';
+import React, { useState, useEffect } from "react";
+import { Line } from "react-chartjs-2";
+import axios from "../../axios";
+import { toast } from "react-toastify";
 import {Button} from "reactstrap";
-const Charts = () => {
-    
-  const [soil_chart, setSoil_chart] = useState(true); 
 
+const Charts = ({ p_uuid }) => {
+  const [sensorData, setSensorData] = useState([]);
+  const[soil_chart,setSoil_chart] = useState(true)
+
+  const createToast = (error, type) => {
+    toast(error.message ? error.message : error, {
+      position: toast.POSITION.TOP_CENTER,
+      hideProgressBar: true,
+      autoClose: 3000,
+      type: !type ? "error" : type,
+    });
+  };
+  const getSensorData = async (path, data) => {
+    const resp = await axios.getSensorData(path, data);
+    console.log(resp);
+    // createToast(resp.data[0], "success");
+    if (resp.status === "success") {
+      setSensorData(resp.data);
+      console.log(resp);
+    } else {
+      console.log(resp);
+      createToast(resp, "error");
+    }
+  };
+
+  useEffect(() => {
+    getSensorData("/sensor_data", { p_uuid: p_uuid });
+  }, []);
 
     return (
         <div style={{ display:"flex",flexDirection:"column",alignItems:"flex-end"}}>
@@ -16,28 +42,34 @@ const Charts = () => {
           {soil_chart ? 
         <Line
         data={{
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: sensorData.days,
           datasets: [
             {
-              label: '# of votes',
-              data: [12, 19, 3, 5, 2, 3],
+              label: "Average Soil Temperature",
+              data: sensorData.soilAvgTemperature,
               backgroundColor: [
-                'rgba(0, 0, 0, 0)',
-                'rgba(0, 0, 0, 0)',
-                'rgba(0, 0, 0, 0)',
-                'rgba(0, 0, 0, 0)',
-                'rgba(0, 0, 0, 0)',
-                'rgba(0, 0, 0, 0)'
-                
-                ],
-              borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
               ],
+              borderColor: ["rgba(255, 0, 0, 1)"],
+              borderWidth: 3,
+            },
+            {
+              label: "Average Soil Moisture",
+              data: sensorData.soilAvgMoisture,
+              backgroundColor: [
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+                "rgba(0, 0, 0, 0)",
+              ],
+              borderColor: ["rgba(0, 255, 0, 1)"],
               borderWidth: 3,
             },
           ],
@@ -63,28 +95,34 @@ const Charts = () => {
         }}
       /> : <Line
       data={{
-        labels: ['R', 'B', 'Y', 'G', 'P', 'O'],
+        labels: sensorData.days,
         datasets: [
           {
-            label: '# of votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: "Average Air Humidity",
+            data: sensorData.airAvgHumidity,
             backgroundColor: [
-              'rgba(0, 0, 0, 0)',
-              'rgba(0, 0, 0, 0)',
-              'rgba(0, 0, 0, 0)',
-              'rgba(0, 0, 0, 0)',
-              'rgba(0, 0, 0, 0)',
-              'rgba(0, 0, 0, 0)'
-              
-              ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
             ],
+            borderColor: ["rgba(255, 0, 0, 1)"],
+            borderWidth: 3,
+          },
+          {
+            label: "Average Air Temperature",
+            data: sensorData.airAvgTemperature,
+            backgroundColor: [
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+              "rgba(0, 0, 0, 0)",
+            ],
+            borderColor: ["rgba(0, 255, 0, 1)"],
             borderWidth: 3,
           },
         ],
@@ -108,9 +146,9 @@ const Charts = () => {
           },
         },
       }}
-    /> }
-        </div>
-    )
-}
+    />}
+    </div>
+  );
+};
 
-export default Charts
+export default Charts;
