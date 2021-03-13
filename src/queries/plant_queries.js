@@ -36,7 +36,7 @@ export const GET_EACH_PLANT_INFO = gql`
         soil_quality_suited
         planting_instructions
       }
-      sensor_data {
+      sensor_data(order_by: {timestamp: desc}) {
         timestamp
         soil_temp
         soil_moisture

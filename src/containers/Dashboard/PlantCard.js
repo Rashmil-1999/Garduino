@@ -18,7 +18,7 @@ const PlantCard = ({ each_plant, u_id }) => {
   };
 
   return (
-    <Card style={{ width: "250px" }}>
+    <Card style={{ width: "250px", borderColor:"black", borderWidth:"2px" }}>
       <CardImg
         top
         width='100%'

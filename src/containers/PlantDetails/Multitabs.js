@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   TabContent,
   TabPane,
@@ -20,13 +20,12 @@ import classnames from "classnames";
 import { useQuery } from "@apollo/client";
 import * as plant_queries from "../../queries/plant_queries";
 import IrrigationLogTable from "./IrrigationLogTable";
-import axios from "../../axios";
-import { toast } from "react-toastify";
+
+import Charts from "../PlantDetails/Charts";
 
 const Multitabs = ({ p_uuid }) => {
   const [activeTab, setActiveTab] = useState("1");
-  const [sensorData, setSensorData] = useState([]);
-  const [loading, setLoading] = useState(false);
+
   const style = {
     color: "black",
     padding: "10px",
@@ -35,32 +34,8 @@ const Multitabs = ({ p_uuid }) => {
   };
   const text = { textAlign: "left" };
 
-  const createToast = (error, type) => {
-    toast(error.message ? error.message : error, {
-      position: toast.POSITION.TOP_CENTER,
-      hideProgressBar: true,
-      autoClose: 3000,
-      type: !type ? "error" : type,
-    });
-  };
-
   const tabToggle = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
-  };
-
-  const getSensorData = (path, data) => {
-    axios
-      .getSensorData(path, data)
-      .then((resp) => {
-        if (resp.status === "success") {
-          setSensorData(resp.data);
-          console.log(resp);
-        }
-      })
-      .catch((error) => {
-        setLoading(false);
-        createToast(error, "error");
-      });
   };
 
   const { error, loading, data } = useQuery(plant_queries.GET_EACH_PLANT_INFO, {
@@ -71,7 +46,9 @@ const Multitabs = ({ p_uuid }) => {
   return (
     <Container>
       <div className='mt-3'>
-        <Card className='p-3'>
+        <Card
+          className='p-3'
+          style={{ borderColor: "grey", borderWidth: "1px" }}>
           {console.log("This is data:" + data.plants[0].plant_info.common_name)}
           <Nav tabs>
             <NavItem>
@@ -108,6 +85,15 @@ const Multitabs = ({ p_uuid }) => {
                   tabToggle("4");
                 }}>
                 Irrigation Log
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === "5" })}
+                onClick={() => {
+                  tabToggle("5");
+                }}>
+                Visualization of Sensor Data
               </NavLink>
             </NavItem>
           </Nav>
@@ -180,6 +166,12 @@ const Multitabs = ({ p_uuid }) => {
                   logs={data.plants[0].user.irrigation_logs}
                 />
               )}
+            </TabPane>
+            <TabPane tabId='5'>
+              <br></br>
+              <Charts
+                p_uuid={p_uuid}
+                current_time={data.plants[0].sensor_data[0].timestamp}></Charts>
             </TabPane>
           </TabContent>
         </Card>
