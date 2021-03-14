@@ -19,6 +19,11 @@ function App() {
     window.location.href !== process.env.REACT_APP_LOGIN_URL + "/"
   ) {
     window.location = `${process.env.REACT_APP_LOGIN_URL}`;
+  } else if (
+    isLoggedIn &&
+    window.location.href === process.env.REACT_APP_LOGIN_URL + "/"
+  ) {
+    window.location = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
   }
   let roles = null;
   if (isLoggedIn) {
