@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   TabContent,
   TabPane,
@@ -20,6 +20,7 @@ import classnames from "classnames";
 import { useQuery } from "@apollo/client";
 import * as plant_queries from "../../queries/plant_queries";
 import IrrigationLogTable from "./IrrigationLogTable";
+
 import Charts from "../PlantDetails/Charts";
 
 const Multitabs = ({ p_uuid }) => {
@@ -45,7 +46,9 @@ const Multitabs = ({ p_uuid }) => {
   return (
     <Container>
       <div className='mt-3'>
-        <Card className='p-3' style={{borderColor:"grey", borderWidth:"1px"}}>
+        <Card
+          className='p-3'
+          style={{ borderColor: "grey", borderWidth: "1px" }}>
           {console.log("This is data:" + data.plants[0].plant_info.common_name)}
           <Nav tabs>
             <NavItem>
@@ -175,12 +178,19 @@ const Multitabs = ({ p_uuid }) => {
             </TabPane>
             <TabPane tabId='5'>
               <br></br>
+
                 <Charts p_uuid = {p_uuid} current_time = {data.plants[0].sensor_data[0].timestamp}></Charts>
-              </TabPane>
-              <TabPane tabId='6'>
+            </TabPane>
+            <TabPane tabId='6'>
               <br></br>
                 
-              </TabPane>
+             
+
+              <Charts
+                p_uuid={p_uuid}
+                current_time={data.plants[0].sensor_data[0].timestamp}></Charts>
+            </TabPane>
+
           </TabContent>
         </Card>
       </div>
