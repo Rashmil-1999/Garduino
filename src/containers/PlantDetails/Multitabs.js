@@ -93,6 +93,15 @@ const Multitabs = ({ p_uuid }) => {
                 Visualization of Sensor Data
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === "6" })}
+                onClick={() => {
+                  tabToggle("6");
+                }}>
+                Live status of Garden
+              </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={activeTab}>
             <TabPane tabId='1'>
@@ -134,22 +143,22 @@ const Multitabs = ({ p_uuid }) => {
                     "Sensor Data Not Available"
                   ) : (
                     <div>
-                      <h2>
+                      <h6>
                         Air Humidity is:{" "}
                         {data.plants[0].sensor_data[0].air_humidity}
-                      </h2>
-                      <h2>
+                      </h6>
+                      <h6>
                         Air Temperature is :{" "}
                         {data.plants[0].sensor_data[0].air_temperature}
-                      </h2>
-                      <h2>
+                      </h6>
+                      <h6>
                         Soil Temperature is:{" "}
                         {data.plants[0].sensor_data[0].soil_temp}
-                      </h2>
-                      <h2>
+                      </h6>
+                      <h6>
                         Soil Moisture is :{" "}
                         {data.plants[0].sensor_data[0].soil_moisture}
-                      </h2>
+                      </h6>
                     </div>
                   )}
                 </Col>
@@ -167,6 +176,10 @@ const Multitabs = ({ p_uuid }) => {
             <TabPane tabId='5'>
               <br></br>
                 <Charts p_uuid = {p_uuid} current_time = {data.plants[0].sensor_data[0].timestamp}></Charts>
+              </TabPane>
+              <TabPane tabId='6'>
+              <br></br>
+                
               </TabPane>
           </TabContent>
         </Card>

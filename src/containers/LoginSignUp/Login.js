@@ -111,7 +111,7 @@ const Login = (props) => {
         <Container>
           <Row xs="3">
             <Col>
-           {/*} <img src={wd} style={{ width: "20", position: "relative" }}></img>*/}
+            {/*<img src={wd} style={{ width: "10", position: "relative" }}></img>*/}
             </Col>
             <Col></Col>
           
