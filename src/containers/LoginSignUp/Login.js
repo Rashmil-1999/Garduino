@@ -123,6 +123,7 @@ const Login = (props) => {
           <CardImg src={pf1} style={{ height: "15em" }} />
           <CardText>
             <Input
+                style={{focus:backgroundColor="yellow"}}
               type='email'
               placeholder={"E-mail"}
               label={"Email "}

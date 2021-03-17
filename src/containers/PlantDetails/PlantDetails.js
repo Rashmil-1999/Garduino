@@ -113,7 +113,7 @@ const PlantDetails = (props) => {
         </ModalBody>
       </Modal>
       <Row>
-        <Card  className='mt-4 ml-auto mr-auto w-75' style={{ height: "250px", borderColor:"black", borderWidth:"2px" }}>
+        <Card  className='mt-4 ml-auto mr-auto w-75' style={{ height: "250px", borderColor:"black", borderWidth:"2px", display:"flex", flexDirection:"Column", position:"relative",  }}>
           <Row className='no-gutters'>
             <Col xs='4'>
               <CardImg
@@ -123,6 +123,7 @@ const PlantDetails = (props) => {
                   width: "auto",
                   border: "1px solid #c3c3c3",
                   display: "flex",
+                  flexDirection:"row",
                   flexWrap: "wrap",
                   alignContent: "center",
                 }}

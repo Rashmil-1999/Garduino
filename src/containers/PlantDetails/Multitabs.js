@@ -110,11 +110,11 @@ const Multitabs = ({ p_uuid }) => {
             <TabPane tabId='1'>
               <Row style={style}>
                 <Col sm='12'>
-                  <h2>
+                  <p>
                     {data.plants[0].plant_info.common_name
                       ? data.plants[0].plant_info.common_name
                       : "Common Name not available"}
-                  </h2>
+                  </p>
                   <br />
                   <p>
                     {data.plants[0].plant_info.description
@@ -126,16 +126,14 @@ const Multitabs = ({ p_uuid }) => {
             </TabPane>
             <TabPane tabId='2'>
               <Row style={style}>
-                <Col sm='6'>
+                <Col>
                   <p>
                     {data.plants[0].plant_info.planting_instructions
                       ? data.plants[0].plant_info.planting_instructions
                       : "Planting Instructions Not Available"}
                   </p>
                 </Col>
-                <Col sm='6'>
-                  <p></p>
-                </Col>
+                
               </Row>
             </TabPane>
             <TabPane tabId='3'>
@@ -179,16 +177,12 @@ const Multitabs = ({ p_uuid }) => {
             <TabPane tabId='5'>
               <br></br>
 
-                <Charts p_uuid = {p_uuid} current_time = {data.plants[0].sensor_data[0].timestamp}></Charts>
+
+                <Charts p_uuid = {p_uuid} ></Charts>
             </TabPane>
             <TabPane tabId='6'>
               <br></br>
-                
-             
 
-              <Charts
-                p_uuid={p_uuid}
-                current_time={data.plants[0].sensor_data[0].timestamp}></Charts>
             </TabPane>
 
           </TabContent>
