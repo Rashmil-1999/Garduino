@@ -169,9 +169,7 @@ const Multitabs = ({ p_uuid }) => {
             </TabPane>
             <TabPane tabId='5'>
               <br></br>
-              <Charts
-                p_uuid={p_uuid}
-                current_time={data.plants[0].sensor_data[0].timestamp}></Charts>
+              <Charts p_uuid={p_uuid}></Charts>
             </TabPane>
           </TabContent>
         </Card>

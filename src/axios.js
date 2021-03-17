@@ -45,6 +45,9 @@ class Axios {
       if (data.status === "success") {
         console.log("success");
         return data;
+      } else {
+        console.log("No data available");
+        return data;
       }
     } catch (e) {
       if (e.response && e.response.data) {
