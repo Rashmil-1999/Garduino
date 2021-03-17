@@ -27,8 +27,8 @@ import vid from "../../assets/Videos/vid2.mp4";
 import gif1 from "../../assets/images/giphy-1.gif";
 import gif2 from "../../assets/images/giphy-3.gif";
 import pm from "../../assets/images/plantmonitor.png";
-import wd from "../../assets/images/gif_1.gif";
-import { transform } from "lodash";
+import wd from "../../assets/images/plants.png";
+import { repeat, transform } from "lodash";
 import bg1 from "../../assets/images/bg-2.jpg";
 
 const Login = (props) => {
@@ -90,93 +90,81 @@ const Login = (props) => {
   };
   return (
     <>
-      <div>
-        <div style={{ backgroundColor: "rgba(255, 0, 0, 0.1)" }}>
-          {/*<video autoPlay loop muted style={{position: "fixed" ,right:"0",bottom: "0", width: "50vw",height: "50vh",objectFit:"cover"}}>
-    <source src={Berries} type='video/mp4' />
-             
-  </video>
-      {/* <LoginSignupNavbar /> */}
-          <br></br>
-          <h5
+      
+      <div style={{ display:"flex",flexDirection:"column",alignItems:"centre",width: "100%", backgroundColor: "#25274d", background:"radial-gradient(circle,#535888 ,#22264a,#25274d)"}}>
+        <h5
             style={{
-              color: "rgb(79,91,102)",
+              color: "white",
               fontFamily: "cursive",
               fontSize: 50,
               fontWeight: 500,
+              flexGrow: 1,
+              margin: "10px",
+              padding: "10px",
+              textAlign: "center"
             }}>
-            {" "}
-            Welcome to Garduino- A smart gardening system{" "}
-          </h5>
-          <Container>
-            <Row xs='3'>
-              <Col>
-                {/*} <img src={wd} style={{ width: "20", position: "relative" }}></img>*/}
-              </Col>
-              <Col></Col>
-
-              <Col>
-                <Card
-                  style={{ width: "400px", top: "50", left: "20" }}
-                  className='my-5 shadow p-3 mb-5 bg-white rounded mx-auto'>
-                  <CardImg src={pf1} style={{ height: "15em" }} />
-                  <CardText>
-                    <Input
-                      type='email'
-                      placeholder={"E-mail"}
-                      label={"Email "}
-                      valid={isValidEmail}
-                      value={email}
-                      onChange={onEmailChange}
-                    />
-                    <Input
-                      type='password'
-                      placeholder={"password"}
-                      label={"Password "}
-                      valid={isValidPassword}
-                      value={password}
-                      onChange={onPassChange}
-                    />
-                    <Button
-                      style={{}}
-                      name='Log In'
-                      classes={["btn-check"]}
-                      onClick={onLogin}
-                      isLoading={loading}
-                      isDisabled={!isValidEmail || !isValidPassword}
-                    />
-                  </CardText>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-          <br></br>
-          <br></br>
-        </div>
-
-        <div style={{ backgroundColor: "white" }}>
-          <br></br>
-
+            
+            Welcome To Garduino- A Smart Gardening System
+      </h5>
+      <div style={{ display:"flex",flexDirection:"row", alignSelf: "centre"}}>
+      
+      <Card style={{ width: "400px", backgroundColor: "#aaabb8"}}
+        className='my-5 shadow p-3 mb-5 rounded mx-auto'>
+          <CardImg /*src={pf1} style={{ height: "15em", padding: "10px" }} *//>
+            <CardText style={{ color: "black"}}>
+              <Input style={{ }}
+                type='email'
+                placeholder={"E-mail"} 
+                label={"Email "}
+                valid={isValidEmail}
+                value={email}
+                onChange={onEmailChange}
+                />
+                <Input 
+                  type='password'
+                  placeholder={"password"}
+                  label={"Password "}
+                  valid={isValidPassword}
+                  value={password}
+                  onChange={onPassChange}
+                />
+                <Button
+                  style={{}}
+                  name='Log In'
+                  classes={["btn-check"]}
+                  onClick={onLogin}
+                  isLoading={loading}
+                  isDisabled={!isValidEmail || !isValidPassword}
+                />
+              </CardText>
+            </Card>
+            <img src={wd} style={{}}></img>
+          </div>
           <h2
             style={{
-              color: "black",
+              color: "white",
               textAlign: "center",
               fontFamily: "cursive",
+              paddingTop: "30px",
+              fontSize: 30,
+              fontWeight: 500,
+              
             }}>
             The Key Features that Our system has are depicted below:
           </h2>
-          <br></br>
-
-          <Container>
-            <Card
+          <div style={{ display:"flex",flexDirection:"row", alignSelf: "centre", 
+          paddingRight: "170px", paddingLeft: "170px", paddingTop: "65px",paddingBottom: "75px"}}>
+          <Card
               style={{
                 borderColor: "black",
                 borderWidth: "3px",
                 padding: "30px",
+                flexShrink: "1",
+                backgroundColor : "#aaabb8",
               }}>
               <Row>
                 <Col>
-                  <Card className='h-100'>
+                  <Card className='h-100' style={{ backgroundColor: "#E8F4F0"}}>
                     <CardImg top width='100%' src={gif2} alt='Card image cap' />
                     <CardBody>
                       <CardTitle tag='h5'>Automated Irrigation</CardTitle>
@@ -197,7 +185,7 @@ const Login = (props) => {
                 </Col>
 
                 <Col>
-                  <Card className='h-100'>
+                  <Card className='h-100'style={{ backgroundColor: "#E8F4F0"}}>
                     <CardImg
                       top
                       width='100%'
@@ -224,7 +212,7 @@ const Login = (props) => {
                 </Col>
 
                 <Col>
-                  <Card className='h-100'>
+                  <Card className='h-100' style={{ backgroundColor: "#E8F4F0"}}>
                     <CardImg
                       width='50%'
                       top
@@ -249,22 +237,19 @@ const Login = (props) => {
               </Row>
               <br></br>
             </Card>
-          </Container>
-        </div>
-        <br></br>
-
-        <footer
+          </div>
+          
+          <footer
           style={{
             textAlign: "center",
-            padding: "20px",
-            backgroundColor: "rgba(255, 0, 0, 0.4)",
+            
+            backgroundColor: "#aaabb8",
             color: "black",
             fontFamily: "cursive",
-            color: "rgb(52,61,70)",
+            fontWeight: 500,
           }}>
-          <Row xs='2'>
-            <Col style={{ textAlign: "" }}>
-              <br></br>
+          <Row xs="2">
+            <Col style={{ paddingLeft: "80px", paddingTop: "20px" }}>
               <h4>Vision and Mission</h4>
               <p>
                 It all started with a resolve to use the opportunities offered
@@ -277,8 +262,7 @@ const Login = (props) => {
             </Col>
 
             <Col>
-              <br></br>
-              <h4>Contact</h4>
+              <h4 style={{ paddingRight: "20px", paddingTop: "20px"}}>Contact</h4>
               <p>
                 For further Queries you can reach us on: <br></br>
                 priyal0561@gmail.com<br></br> milonisangani15@gmail.com<br></br>{" "}
@@ -287,6 +271,7 @@ const Login = (props) => {
             </Col>
           </Row>
         </footer>
+      
       </div>
     </>
   );

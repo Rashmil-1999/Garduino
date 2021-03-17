@@ -40,7 +40,7 @@ const Charts = ({ p_uuid }) => {
           <Button color="primary" style={{flexBasis:"auto",margin:"8px"}} onClick={() => setSoil_chart(true)}>View Soil Sensor Data</Button>
           </div>
           {soil_chart ? 
-        <Line
+        <Line style={{}}
         data={{
           labels: sensorData.days,
           datasets: [
