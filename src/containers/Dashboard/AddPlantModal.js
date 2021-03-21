@@ -40,12 +40,33 @@ const AddPlantModal = (props) => {
   });
 
   console.log(sm_data, pi_data);
-  for (var i = asm_data.length; i < sm_data.length; i++) {
-    sensorMappingOptions.push({
-      name: sm_data[i].alias,
-      value: sm_data[i].sm_uuid,
-    });
+  var i = 0,
+    j = 0;
+  while (i < asm_data.length && j < sm_data.length) {
+    if (asm_data[i].alias !== sm_data[j].alias) {
+      sensorMappingOptions.push({
+        name: asm_data[i].alias,
+        value: asm_data[i].sm_uuid,
+      });
+    } else {
+      j++;
+    }
+    i++;
   }
+  if (i < asm_data.length) {
+    while (i < asm_data.length) {
+      sensorMappingOptions.push({
+        name: asm_data[i].alias,
+        value: asm_data[i].sm_uuid,
+      });
+    }
+  }
+  // for (var i = 0; i < asm_data.length; i++) {
+  //   sensorMappingOptions.push({
+  //     name: asm_data[i].alias,
+  //     value: asm_data[i].sm_uuid,
+  //   });
+  // }
 
   for (var i = 0; i < pi_data.length; i++) {
     plantOptions.push({

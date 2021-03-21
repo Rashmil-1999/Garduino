@@ -28,6 +28,7 @@ import LoadingPopup from "../../components/Loader/LoadingPopup";
 import { createToast } from "../../utils/toast";
 import Multitabs from "../PlantDetails/Multitabs";
 import ManualControl from "./ManualControl";
+import PlantDeleteAlertBox from "./PlantDeleteAlertBox";
 
 import plant_icon from "../../assets/images/plant_icon1.png";
 import { client } from "../../UserApp";
@@ -37,7 +38,9 @@ const PlantDetails = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [manualMode, setManualMode] = useState(false);
   const [modal, setModal] = useState(false);
+  const [visible, setVisible] = useState(false);
 
+  const onDismiss = () => setVisible(false);
   const manualTabToggle = () => setIsOpen(!isOpen);
   const modalToggle = () => setModal(!modal);
 
@@ -112,8 +115,15 @@ const PlantDetails = (props) => {
           </ModalFooter>
         </ModalBody>
       </Modal>
+      <PlantDeleteAlertBox
+        p_uuid={p_uuid}
+        visible={visible}
+        onDismiss={onDismiss}
+      />
       <Row>
-        <Card  className='mt-4 ml-auto mr-auto w-75' style={{ height: "250px", borderColor:"black", borderWidth:"2px" }}>
+        <Card
+          className='mt-4 ml-auto mr-auto w-75'
+          style={{ height: "250px", borderColor: "black", borderWidth: "2px" }}>
           <Row className='no-gutters'>
             <Col xs='4'>
               <CardImg
@@ -145,7 +155,11 @@ const PlantDetails = (props) => {
                   </CardSubtitle>
                 </Col>
                 <Col xs='3'>
-                  <Button className='mr-0' color='danger'>
+                  <Button
+                    className='mr-0'
+                    color='danger'
+                    disabled={data.plants[0].is_uprooted}
+                    onClick={() => setVisible(true)}>
                     <i className='far fa-trash-alt mr-0'></i>
                   </Button>
                 </Col>
@@ -169,7 +183,8 @@ const PlantDetails = (props) => {
                     color={isOpen && manualMode ? "success" : "danger"}
                     onClick={() => {
                       modalToggle();
-                    }}>
+                    }}
+                    disabled={data.plants[0].is_uprooted}>
                     {isOpen && manualMode ? "Auto Mode" : "Manual Mode"}
                   </Button>
                 </Col>
@@ -178,9 +193,20 @@ const PlantDetails = (props) => {
           </Row>
         </Card>
       </Row>
-      <Collapse isOpen={isOpen && manualMode}>
-        <ManualControl />
-      </Collapse>
+      {data.plants[0].is_uprooted ? (
+        <Card className='mt-4 mb-4 w-50 mr-auto ml-auto'>
+          <CardBody>
+            <CardText>
+              Manual Control not available as the plant is uprooted.
+            </CardText>
+          </CardBody>
+        </Card>
+      ) : (
+        <Collapse isOpen={isOpen && manualMode}>
+          <ManualControl />
+        </Collapse>
+      )}
+
       {mutationLoading && <LoadingPopup isOpen />}
       {mutationError && createToast({ message: "some Error Occurred" })}
       <Multitabs p_uuid={p_uuid}></Multitabs>

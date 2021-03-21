@@ -28,8 +28,8 @@ const Dashboard = ({ userid }) => {
         modal={modal}
         toggle={toggle}
         u_uuid={userid}
-        asm_data={data.sensor_mapping}
-        sm_data={data.all_sensor_mappings}
+        sm_data={data.sensor_mapping}
+        asm_data={data.all_sensor_mappings}
         pi_data={data.plant_info}
       />
     </div>

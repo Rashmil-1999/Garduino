@@ -1,0 +1,6 @@
+card-hover-not-uprooted:hover {
+  box-shadow: "5px 5px 6px 3px rgba(0, 255, 0, 0.2)";
+}
+card-hover-uprooted:hover {
+  box-shadow: "5px 5px 6px 3px rgba(0, 0, 0, 0.2)";
+}
