@@ -26,18 +26,18 @@ const Header = () => {
       className='w-100'
       color='faded'
       light
-      style={{ backgroundColor: "rgba(255, 0, 0, 0.4)" }}
+      style={{ backgroundColor: "#aaabb8" }}
       expand='sm'>
       <NavbarBrand
         href='/dashboard'
         className='mr-auto'
-        style={{ color: "white" }}>
+        style={{ color: "black", fontWeight: "bold" }}>
         Welcome!
       </NavbarBrand>
 
       <Nav className='me-auto' navbar>
         <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle nav caret>
+          <DropdownToggle nav caret style={{ color : "black", fontWeight: "bold"}}>
             Options
           </DropdownToggle>
           <DropdownMenu right>
