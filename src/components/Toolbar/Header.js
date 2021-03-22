@@ -9,7 +9,7 @@ import {
   NavLink,
   NavbarText,
 } from "reactstrap";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/green_logo4.png";
 
 const Header = () => {
   //const [collapsed, setCollapsed] = useState(true);
@@ -21,14 +21,13 @@ const Header = () => {
   return (
     <Navbar
       className='w-100'
-      color='faded'
-      light
-      style={{ backgroundColor: "#aaabb8" }}
+      
+      style={{ backgroundColor: "#305534" }}
       expand='md'>
       <NavbarBrand
         href='/dashboard'
         className=''
-        style={{ color: "black", fontWeight: "bold" }}>
+        style={{ color: "white", fontWeight: "bold" }}>
         <img
           src={logo}
           width='50'
@@ -40,7 +39,7 @@ const Header = () => {
         href='/dashboard'
         className='mr-auto display-1'
         // tag='h1'
-        style={{ color: "black", fontWeight: "bold" }}>
+        style={{ color: "white", fontWeight: "bold" }}>
         Garduino
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
