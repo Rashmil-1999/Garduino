@@ -40,12 +40,12 @@ const Header = () => {
         href='/dashboard'
         className='mr-auto display-1'
         // tag='h1'
-        style={{ color: "black", fontWeight: "bold" }}>
+        style={{ color: "white", fontWeight: "bold" }}>
         Garduino
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
-        <NavbarText className='ml-auto'>Welcome!</NavbarText>
+        <NavbarText className='ml-auto' style={{ color: "white", paddingRight: "20px"}}>Welcome!</NavbarText>
         <Nav className='' navbar>
           {/* <UncontrolledDropdown nav inNavbar>
           <DropdownToggle
