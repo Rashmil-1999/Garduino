@@ -838,7 +838,7 @@ const Login = (props) => {
                     </div>  
                 </div>
                 <br></br><br></br><br></br>
-                <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered">
+                <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered" style={{top:"500px"}}>
                     <div class="column column-12 md:column-4 mb-3 md:mb-0">
                         <img class="" src="https://mudpi.app/svg/home.svg"></img>
                     </div>    
@@ -867,7 +867,7 @@ const Login = (props) => {
 
                 <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered">
                     <div class="column column-12 md:column-4 mb-3 md:mb-0">
-                        <img class="" src="https://mudpi.app/svg/check_list.svg"></img>
+                        <img class=""style={{height:"120px"}} src="https://mudpi.app/svg/check_list.svg"></img>
                     </div>    
                     <div class="column column-12 md:column-8">
                         <h3 class="h4 text-primary">Gather Garden Insights</h3>
@@ -881,21 +881,26 @@ const Login = (props) => {
                         <img class="" src="https://mudpi.app/svg/sensor_stats.svg"></img>
                     </div>    
                     <div class="column column-12 md:column-8">
-                        <h3 class="h4 text-primary">Multi-Sensor Support</h3>
-                        <p class="mb-2">Gather useful data with a variety of sensors and components supported out of the box. Additional sensor and units can be integrated with the core system.</p> 
+                        <h3 class="h4 text-primary">Obtain Live Status Of Plants</h3>
+                        <p class="mb-2">An email will be sent on the registered email of the user with the live images of the plant.In this way the user can view their plants remotely. </p> 
                     </div> 
                 </div>
 
             </div>
             </div>
-            <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>    
+               
             <div class="mb-5 sm:mb-9">
             <div class="container"> 
             <div class="columns py-4 is-centered"> 
             <div class="column column-12 sm:column-8 is-centered text-centered mb-3">
                     <div class="box mb-3 rounded-3">
                         <h3 class="h3 text-primary mb-2 relative delimiter-bottom-dark">Vision and Mission</h3>
-                        <p class="text-grey">Use our configuration tool to quickly add units and change your system as you scale.</p>
+                        <p class="text-grey">It all started with a resolve to use the opportunities offered
+                by technology in doing something for the society. Reseacgers
+                have predicted that " A family that practices gardening tends to
+                be more inclined towards adopting a healthy lifestyle and home
+                gardening promotes values of science, environmental stewardship
+                and healthy eating among children"</p>
                     </div>
                     
                 </div>
