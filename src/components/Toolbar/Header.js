@@ -69,7 +69,7 @@ const Header = () => {
           <NavItem>
             <NavLink href='/dashboard' style={{ color: "white"}}>Profile Settings</NavLink>
           </NavItem>
-          <NavLink href='/logout'>
+          <NavLink href='/logout' style={{ color: "white"}}>
             <i class='fas fa-sign-out-alt fa-x'> Logout</i>
           </NavLink>
         </Nav>

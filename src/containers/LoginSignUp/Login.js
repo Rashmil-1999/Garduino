@@ -96,8 +96,8 @@ const Login = (props) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "centre",
-          width: "100%",
+          alignItems: "center",
+          //width: "100%",
           // backgroundColor: "#25274d",
           // background: "radial-gradient(circle,#535888 ,#22264a,#25274d)",
         }}>
