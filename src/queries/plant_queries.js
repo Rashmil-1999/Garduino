@@ -88,3 +88,11 @@ export const UPROOT_USER_PLANT = gql`
     }
   }
 `;
+
+export const INSERT_SENSOR_MAPPINGS = gql`
+  mutation insertSensorMappings($object: [sensor_mapping_insert_input!]!) {
+    insert_sensor_mapping(objects: $object) {
+      affected_rows
+    }
+  }
+`;

@@ -21,14 +21,14 @@ const PlantCard = ({ each_plant, u_id }) => {
   return (
     <Card
       style={{
-        width: "250px",
+        width: "200px",
         borderColor: each_plant.is_uprooted ? "red" : "green",
         borderWidth: "2px",
       }}
       className={
         each_plant.is_uprooted
-          ? "card-hover-uprooted"
-          : "card-hover-not-uprooted"
+          ? "card-hover-uprooted mb-3 mt-3 mr-2 ml-2"
+          : "card-hover-not-uprooted mb-3 mt-3 mr-2 ml-2"
       }>
       <CardImg
         top
