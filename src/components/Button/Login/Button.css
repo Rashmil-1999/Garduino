@@ -11,15 +11,16 @@
 }
 
 .btn-check {
-  background: rgb(24, 175, 159);
+  background: #00880f;
   color: #000000;
 }
 .btn-check:disabled {
-  background: rgb(115, 184, 177);
-  opacity: 0.26;
+  background: #53a55d;
+  /* opacity: 0.26; */
   color: #000000;
 }
 
 .btn-waiting:disabled {
-  opacity: 1 !important;
+  background: #53a55d;
+  /* opacity: 1 !important; */
 }

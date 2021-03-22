@@ -23,7 +23,7 @@ const Header = () => {
       className='w-100'
       color='faded'
       light
-      style={{ backgroundColor: "#aaabb8" }}
+      style={{ backgroundColor: "#305534" }}
       expand='md'>
       <NavbarBrand
         href='/dashboard'

@@ -13,13 +13,14 @@ import {
   CardBody,
   Jumbotron,
   CardColumns,
+  Button,
 } from "reactstrap";
 
 import axios from "../../axios";
-import Button from "../../components/Button/Login/Button";
+// import Button from "../../components/Button/Login/Button";
 import { toast } from "react-toastify";
 import * as tokenUtils from "../../utils/tokenUtils";
-import pf1 from "../../assets/images/logo.png";
+import pf1 from "../../assets/images/green_logo4.png";
 import blue from "../../assets/images/blue.jpg";
 import { Link } from "react-router-dom";
 //import LoginSignupNavbar from "../../components/Toolbar/LoginSignupNavbar";
@@ -124,9 +125,9 @@ const Login = (props) => {
           }}>
           <Card
             style={{
-              width: "400px",
-              height: "650px",
-              backgroundColor: "#aaabb8",
+              width: "500px",
+              height: "700px",
+              backgroundColor: "#EFF6F0",
             }}
             className='my-5 shadow p-3 mb-5 rounded mx-auto'>
             <CardImg
@@ -151,14 +152,27 @@ const Login = (props) => {
                 value={password}
                 onChange={onPassChange}
               />
-              <Button
+              {/* <Button
                 style={{}}
                 name='Log In'
                 classes={["btn-check"]}
                 onClick={onLogin}
                 isLoading={loading}
                 isDisabled={!isValidEmail || !isValidPassword}
-              />
+              /> */}
+              <Button
+                color='success'
+                onClick={onLogin}
+                disabled={!isValidEmail || !isValidPassword}>
+                {loading ? (
+                  <div>
+                    <i className='fa fa-circle-o-notch fa-spin'></i>
+                    &nbsp;&nbsp;Loading
+                  </div>
+                ) : (
+                  "Login"
+                )}
+              </Button>
             </CardText>
           </Card>
           <div
