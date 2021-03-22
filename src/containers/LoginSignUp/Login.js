@@ -91,7 +91,7 @@ const Login = (props) => {
     // The Mutation Of user will be carried out here
   };
   return (
-    <>
+    
       <div
         style={{
           display: "flex",
@@ -246,6 +246,7 @@ const Login = (props) => {
 
           {/* Flexbox div End */}
         </div>
+        <br></br><br></br><br></br><br></br>
         <div className='columns relative is-centered'>
           <svg
             class='circuit-no-fill'
@@ -808,8 +809,8 @@ const Login = (props) => {
               />
             </g>
           </svg>
-        </div>
-
+        
+        
         <div className='column column-12 sm:column-6 md:column-6 mb-3'>
           <div className='box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered'>
             <div className='column column-12 md:column-4 mb-3 md:mb-0'>
@@ -817,15 +818,96 @@ const Login = (props) => {
                 class=''
                 src='https://mudpi.app/svg/plant_in_mobile.svg'></img>
             </div>
+          
             <div class='column column-12 md:column-8'>
               <h3 class='h4 text-primary'>Configurable</h3>
               <p class='mb-2'>
-                Configure and customize MudPi to your specific garden needs
+                Configure and customize Garduino to your specific garden needs
                 providing personalized care.
               </p>
             </div>
           </div>
+          <br></br><br></br><br></br>
+          <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered">
+                    <div class="column column-12 md:column-4 mb-3 md:mb-0">
+                        <img class="" src="https://mudpi.app/svg/schedules.svg"></img>
+                    </div>    
+                    <div class="column column-12 md:column-8">
+                        <h3 class="h4 text-primary">Remote & Scheduled Control</h3>
+                        <p class="mb-2">Create powerful schedules to care for your garden while your away or busy with other things. You can also take manual control for the more involved gardeners.</p>
+                    </div>  
+                </div>
+                <br></br><br></br><br></br>
+                <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered">
+                    <div class="column column-12 md:column-4 mb-3 md:mb-0">
+                        <img class="" src="https://mudpi.app/svg/home.svg"></img>
+                    </div>    
+                    <div class="column column-12 md:column-8">
+                        <h3 class="h4 text-primary">Save Resources</h3>
+                        <p class="mb-2">Spend less time, water and money by giving your plants care when they need it most. Using valuable sensor readings and schedules you can reduce your waste and help maintain a healthy thriving garden.</p>  
+                    </div>
+                </div>
+                
+
         </div>
+
+        <div class="column column-12 sm:column-6 md:column-6 mb-3">
+                
+
+                <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered">
+                    <div class="column column-12 md:column-4 mb-3 md:mb-0">
+                        <img class="" src="https://mudpi.app/svg/phone_check.svg"></img>
+                    </div>    
+                    <div class="column column-12 md:column-8">
+                        <h3 class="h4 text-primary">Automated Watering</h3>
+                        <p class="mb-2">Efficiently water plants when they need it most by using automated watering schedules.</p>  
+                    </div> 
+                </div>
+                <br></br><br></br><br></br>
+
+                <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered">
+                    <div class="column column-12 md:column-4 mb-3 md:mb-0">
+                        <img class="" src="https://mudpi.app/svg/check_list.svg"></img>
+                    </div>    
+                    <div class="column column-12 md:column-8">
+                        <h3 class="h4 text-primary">Gather Garden Insights</h3>
+                        <p class="mb-2">Monitor and maintain your garden at peak efficiency with useful data such as soil moisture, weather and more.</p>
+                    </div> 
+                </div>
+
+                <br></br><br></br><br></br>
+                <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered">
+                    <div class="column column-12 md:column-4 mb-3 md:mb-0">
+                        <img class="" src="https://mudpi.app/svg/sensor_stats.svg"></img>
+                    </div>    
+                    <div class="column column-12 md:column-8">
+                        <h3 class="h4 text-primary">Multi-Sensor Support</h3>
+                        <p class="mb-2">Gather useful data with a variety of sensors and components supported out of the box. Additional sensor and units can be integrated with the core system.</p> 
+                    </div> 
+                </div>
+
+            </div>
+            </div>
+            <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>    
+            <div class="mb-5 sm:mb-9">
+            <div class="container"> 
+            <div class="columns py-4 is-centered"> 
+            <div class="column column-12 sm:column-8 is-centered text-centered mb-3">
+                    <div class="box mb-3 rounded-3">
+                        <h3 class="h3 text-primary mb-2 relative delimiter-bottom-dark">Vision and Mission</h3>
+                        <p class="text-grey">Use our configuration tool to quickly add units and change your system as you scale.</p>
+                    </div>
+                    
+                </div>
+
+                
+                </div>
+                </div>
+            </div>
+
+
+        
+                
 
         {/* <div style="background: url('https://mudpi.app/img/circuit-design-2.png') 105% 80% no-repeat;background-size:55%;"> */}
         {/* <img style={{background: "url('https://mudpi.app/img/circuit-design-2.png') 105% 80% no-repeat;background-size:55%;"}} ></img> */}
@@ -975,8 +1057,9 @@ const Login = (props) => {
             <br></br>
           </Card>
         </div> */}
-
-        {/* <footer
+      
+        
+        {/*<footer
           style={{
             textAlign: "center",
 
@@ -1009,9 +1092,10 @@ const Login = (props) => {
               </p>
             </Col>
           </Row>
-        </footer> */}
-      </div>
-    </>
+        </footer>*/}
+        
+        </div>
+    
   );
 };
 

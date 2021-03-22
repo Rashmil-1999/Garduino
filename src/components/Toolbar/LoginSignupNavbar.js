@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 import { NavLink as RouteLink } from "react-router-dom";
 // import unicodelogo from './unicodelogo.png'
-import navlogo from "../../assets/images/pf1.png";
+import navlogo from "../../assets/images/green_logo4.png";
 
 function LoginSignupNavbar(props) {
   return (

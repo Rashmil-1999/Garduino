@@ -38,7 +38,7 @@ function App() {
       className='App'
       style={{
         backgroundColor: " white ",
-        height: "100%",
+        height: "200%",
       }}>
       <Toolbar user={roles} u_uuid={u_uuid} />
       <Switch>
