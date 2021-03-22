@@ -26,9 +26,11 @@ function App() {
     window.location = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
   }
   let roles = null;
+  let u_uuid = null;
   if (isLoggedIn) {
     roles = tokenUtils.roles(tokenUtils.getToken());
     roles = roles[0];
+    u_uuid = tokenUtils.userId();
   }
 
   return (
@@ -38,7 +40,7 @@ function App() {
         backgroundColor: " white ",
         height: "100%",
       }}>
-      <Toolbar user={roles} />
+      <Toolbar user={roles} u_uuid={u_uuid} />
       <Switch>
         <Route exact path='/' component={Login} />
         <Route exact path='/signup' component={SignUp} />
