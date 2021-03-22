@@ -67,7 +67,7 @@ const Header = () => {
         </UncontrolledDropdown> */}
 
           <NavItem>
-            <NavLink href='/dashboard'>Profile Settings</NavLink>
+            <NavLink href='/dashboard' style={{ color: "white"}}>Profile Settings</NavLink>
           </NavItem>
           <NavLink href='/logout'>
             <i class='fas fa-sign-out-alt fa-x'> Logout</i>
