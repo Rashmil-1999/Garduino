@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery, useLazyQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 import DisplayPlant from "./DisplayPlant";
 import AddPlantButton from "../../components/Button/AddPlantButton";
@@ -22,14 +22,15 @@ const Dashboard = ({ userid }) => {
   if (error) return `Error! ${error.message}`;
   return (
     <div>
-      <DisplayPlant name={data} u_id={userid} />
+      {console.log(data)}
+      <DisplayPlant u_id={userid} asm_data={data.all_sensor_mappings} />
       <AddPlantButton isDisabled={false} onClick={toggle} />
       <AddPlantModal
         modal={modal}
         toggle={toggle}
         u_uuid={userid}
-        asm_data={data.sensor_mapping}
-        sm_data={data.all_sensor_mappings}
+        sm_data={data.sensor_mapping}
+        asm_data={data.all_sensor_mappings}
         pi_data={data.plant_info}
       />
     </div>

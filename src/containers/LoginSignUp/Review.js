@@ -130,6 +130,11 @@ const Review = ({ userFormData, techDetails, navigation }) => {
                   ch_8: 0,
                   manual: false,
                 },
+                mailing_table: {
+                  data: {
+                    signal: false,
+                  },
+                },
               },
             },
           };

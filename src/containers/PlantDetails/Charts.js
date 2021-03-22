@@ -62,11 +62,13 @@ const Charts = ({ p_uuid }) => {
       {soil_chart ? (
         <Line
           data={{
-            labels: sensorData.days,
+            labels: sensorData.days ? sensorData.days : [],
             datasets: [
               {
                 label: "Average Soil Temperature",
-                data: sensorData.soilAvgTemperature,
+                data: sensorData.soilAvgTemperature
+                  ? sensorData.soilAvgTemperature
+                  : [],
                 backgroundColor: [
                   "rgba(0, 0, 0, 0)",
                   "rgba(0, 0, 0, 0)",
@@ -80,7 +82,9 @@ const Charts = ({ p_uuid }) => {
               },
               {
                 label: "Average Soil Moisture",
-                data: sensorData.soilAvgMoisture,
+                data: sensorData.soilAvgMoisture
+                  ? sensorData.soilAvgMoisture
+                  : [],
                 backgroundColor: [
                   "rgba(0, 0, 0, 0)",
                   "rgba(0, 0, 0, 0)",
@@ -117,11 +121,13 @@ const Charts = ({ p_uuid }) => {
       ) : (
         <Line
           data={{
-            labels: sensorData.days,
+            labels: sensorData.days ? sensorData.days : [],
             datasets: [
               {
                 label: "Average Air Humidity",
-                data: sensorData.airAvgHumidity,
+                data: sensorData.airAvgHumidity
+                  ? sensorData.airAvgHumidity
+                  : [],
                 backgroundColor: [
                   "rgba(0, 0, 0, 0)",
                   "rgba(0, 0, 0, 0)",
@@ -135,7 +141,9 @@ const Charts = ({ p_uuid }) => {
               },
               {
                 label: "Average Air Temperature",
-                data: sensorData.airAvgTemperature,
+                data: sensorData.airAvgTemperature
+                  ? sensorData.airAvgTemperature
+                  : [],
                 backgroundColor: [
                   "rgba(0, 0, 0, 0)",
                   "rgba(0, 0, 0, 0)",

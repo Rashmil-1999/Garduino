@@ -1,40 +1,24 @@
 import React, { useState } from "react";
 import PlantCard from "./PlantCard";
-import {
-  CardDeck,
-  Card,
-  CardBody,
-  CardImg,
-  Row,
-  Col,
-  Container,
-} from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
+import { CardDeck, Container } from "reactstrap";
 
 const PlantsDeck = ({ info }) => {
-  // const deck = []
-
-  // for(var i = 0; i < info.plants.length; i++ ){
-
-  // }
-  console.log(info);
+  // console.log(info);
   return (
     <>
-      {/* <Row xs='4'>
-        {info.plants.map((plant, index) => (
-          <Col>
-            <PlantCard key={index} each_plant={plant} />
-            <br />
-          </Col>
-        ))}
-      </Row> */}
       <Container>
-        <CardDeck  className='text-center'>
+        <div
+          className='text-center'
+          style={{
+            display: "flex",
+            flexFlow: "row wrap",
+            justifyContent: "space-around",
+            alignContent: "center",
+          }}>
           {info.plants.map((plant, index) => (
             <PlantCard key={index} each_plant={plant} />
           ))}
-        </CardDeck>
+        </div>
       </Container>
     </>
   );

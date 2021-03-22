@@ -10,6 +10,7 @@ import {
   Button,
 } from "reactstrap";
 import plant_icon from "../../assets/images/plant_icon.png";
+import "./PlantCard.css";
 
 const PlantCard = ({ each_plant, u_id }) => {
   const handleCardClick = (e) => {
@@ -18,7 +19,17 @@ const PlantCard = ({ each_plant, u_id }) => {
   };
 
   return (
-    <Card style={{ width: "250px", borderColor:"black", borderWidth:"2px" }}>
+    <Card
+      style={{
+        width: "200px",
+        borderColor: each_plant.is_uprooted ? "red" : "green",
+        borderWidth: "2px",
+      }}
+      className={
+        each_plant.is_uprooted
+          ? "card-hover-uprooted mb-3 mt-3 mr-2 ml-2"
+          : "card-hover-not-uprooted mb-3 mt-3 mr-2 ml-2"
+      }>
       <CardImg
         top
         width='100%'

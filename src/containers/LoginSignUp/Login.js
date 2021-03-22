@@ -30,6 +30,7 @@ import pm from "../../assets/images/plantmonitor.png";
 import wd from "../../assets/images/plants.png";
 import { repeat, transform } from "lodash";
 import bg1 from "../../assets/images/bg-2.jpg";
+import gd from "../../assets/images/garden_landscape.jpg";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -90,8 +91,9 @@ const Login = (props) => {
   };
   return (
     <>
+
       
-      <div style={{ display:"flex",flexDirection:"column",alignItems:"centre",width: "100%", backgroundColor: "#25274d", background:"radial-gradient(circle,#535888 ,#22264a,#25274d)"}}>
+      <div style={{ backgroundImage: 'url(' + gd + ')',  display:"flex",flexDirection:"column",alignItems:"centre",width: "100%", backgroundColor: "#25274d", background:"radial-gradient(circle,#535888 ,#22264a,#25274d)"}}>
         <h5
             style={{
               color: "white",

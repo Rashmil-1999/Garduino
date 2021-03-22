@@ -7,12 +7,9 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText,
 } from "reactstrap";
+import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   //const [collapsed, setCollapsed] = useState(true);
@@ -27,17 +24,34 @@ const Header = () => {
       color='faded'
       light
       style={{ backgroundColor: "#aaabb8" }}
-      expand='sm'>
+      expand='md'>
       <NavbarBrand
         href='/dashboard'
-        className='mr-auto'
+        className=''
         style={{ color: "black", fontWeight: "bold" }}>
-        Welcome!
+        <img
+          src={logo}
+          width='50'
+          height='50'
+          alt=''
+          className='d-inline-block align-top'></img>
       </NavbarBrand>
-
-      <Nav className='me-auto' navbar>
-        <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle nav caret style={{ color : "black", fontWeight: "bold"}}>
+      <NavbarBrand
+        href='/dashboard'
+        className='mr-auto display-1'
+        // tag='h1'
+        style={{ color: "black", fontWeight: "bold" }}>
+        Garduino
+      </NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
+        <NavbarText className='ml-auto'>Welcome!</NavbarText>
+        <Nav className='' navbar>
+          {/* <UncontrolledDropdown nav inNavbar>
+          <DropdownToggle
+            nav
+            caret
+            style={{ color: "black", fontWeight: "bold" }}>
             Options
           </DropdownToggle>
           <DropdownMenu right>
@@ -51,8 +65,16 @@ const Header = () => {
               </NavLink>
             </DropdownItem>
           </DropdownMenu>
-        </UncontrolledDropdown>
-      </Nav>
+        </UncontrolledDropdown> */}
+
+          <NavItem>
+            <NavLink href='/dashboard'>Profile Settings</NavLink>
+          </NavItem>
+          <NavLink href='/logout'>
+            <i class='fas fa-sign-out-alt fa-x'> Logout</i>
+          </NavLink>
+        </Nav>
+      </Collapse>
     </Navbar>
   );
 };
