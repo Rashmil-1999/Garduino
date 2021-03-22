@@ -44,7 +44,7 @@ const Header = () => {
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
-        <NavbarText className='ml-auto'>Welcome!</NavbarText>
+        <NavbarText className='ml-auto' style={{ color: "white", paddingRight: "20px"}}>Welcome!</NavbarText>
         <Nav className='' navbar>
           {/* <UncontrolledDropdown nav inNavbar>
           <DropdownToggle
@@ -67,7 +67,7 @@ const Header = () => {
         </UncontrolledDropdown> */}
 
           <NavItem>
-            <NavLink href='/dashboard'>Profile Settings</NavLink>
+            <NavLink href='/dashboard' style={{ color: "white"}}>Profile Settings</NavLink>
           </NavItem>
           <NavLink href='/logout'>
             <i class='fas fa-sign-out-alt fa-x'> Logout</i>

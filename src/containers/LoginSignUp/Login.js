@@ -838,7 +838,7 @@ const Login = (props) => {
                     </div>  
                 </div>
                 <br></br><br></br><br></br>
-                <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered">
+                <div class="box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered" style={{top:"500px"}}>
                     <div class="column column-12 md:column-4 mb-3 md:mb-0">
                         <img class="" src="https://mudpi.app/svg/home.svg"></img>
                     </div>    
@@ -895,7 +895,12 @@ const Login = (props) => {
             <div class="column column-12 sm:column-8 is-centered text-centered mb-3">
                     <div class="box mb-3 rounded-3">
                         <h3 class="h3 text-primary mb-2 relative delimiter-bottom-dark">Vision and Mission</h3>
-                        <p class="text-grey">Use our configuration tool to quickly add units and change your system as you scale.</p>
+                        <p class="text-grey">It all started with a resolve to use the opportunities offered
+                by technology in doing something for the society. Reseacgers
+                have predicted that " A family that practices gardening tends to
+                be more inclined towards adopting a healthy lifestyle and home
+                gardening promotes values of science, environmental stewardship
+                and healthy eating among children"</p>
                     </div>
                     
                 </div>
