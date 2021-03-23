@@ -133,6 +133,7 @@ const PlantDetails = (props) => {
                   width: "auto",
                   border: "1px solid #c3c3c3",
                   display: "flex",
+                  flexDirection:"row",
                   flexWrap: "wrap",
                   alignContent: "center",
                 }}

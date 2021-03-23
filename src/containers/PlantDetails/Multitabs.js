@@ -96,16 +96,25 @@ const Multitabs = ({ p_uuid }) => {
                 Visualization of Sensor Data
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === "6" })}
+                onClick={() => {
+                  tabToggle("6");
+                }}>
+                Live status of Garden
+              </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={activeTab}>
             <TabPane tabId='1'>
               <Row style={style}>
                 <Col sm='12'>
-                  <h2>
+                  <p>
                     {data.plants[0].plant_info.common_name
                       ? data.plants[0].plant_info.common_name
                       : "Common Name not available"}
-                  </h2>
+                  </p>
                   <br />
                   <p>
                     {data.plants[0].plant_info.description
@@ -117,16 +126,14 @@ const Multitabs = ({ p_uuid }) => {
             </TabPane>
             <TabPane tabId='2'>
               <Row style={style}>
-                <Col sm='6'>
+                <Col>
                   <p>
                     {data.plants[0].plant_info.planting_instructions
                       ? data.plants[0].plant_info.planting_instructions
                       : "Planting Instructions Not Available"}
                   </p>
                 </Col>
-                <Col sm='6'>
-                  <p></p>
-                </Col>
+                
               </Row>
             </TabPane>
             <TabPane tabId='3'>
@@ -137,22 +144,22 @@ const Multitabs = ({ p_uuid }) => {
                     "Sensor Data Not Available"
                   ) : (
                     <div>
-                      <h2>
+                      <h6>
                         Air Humidity is:{" "}
                         {data.plants[0].sensor_data[0].air_humidity}
-                      </h2>
-                      <h2>
+                      </h6>
+                      <h6>
                         Air Temperature is :{" "}
                         {data.plants[0].sensor_data[0].air_temperature}
-                      </h2>
-                      <h2>
+                      </h6>
+                      <h6>
                         Soil Temperature is:{" "}
                         {data.plants[0].sensor_data[0].soil_temp}
-                      </h2>
-                      <h2>
+                      </h6>
+                      <h6>
                         Soil Moisture is :{" "}
                         {data.plants[0].sensor_data[0].soil_moisture}
-                      </h2>
+                      </h6>
                     </div>
                   )}
                 </Col>
@@ -169,8 +176,15 @@ const Multitabs = ({ p_uuid }) => {
             </TabPane>
             <TabPane tabId='5'>
               <br></br>
-              <Charts p_uuid={p_uuid}></Charts>
+
+
+                <Charts p_uuid = {p_uuid} ></Charts>
             </TabPane>
+            <TabPane tabId='6'>
+              <br></br>
+
+            </TabPane>
+
           </TabContent>
         </Card>
       </div>

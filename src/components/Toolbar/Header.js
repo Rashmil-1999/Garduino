@@ -9,7 +9,7 @@ import {
   NavLink,
   NavbarText,
 } from "reactstrap";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/green_logo4.png";
 
 const Header = () => {
   //const [collapsed, setCollapsed] = useState(true);
@@ -20,15 +20,13 @@ const Header = () => {
 
   return (
     <Navbar
-      className='w-100'
-      color='faded'
-      light
+      className='w-100 navbar-dark bg-inverse'
       style={{ backgroundColor: "#305534" }}
       expand='md'>
       <NavbarBrand
         href='/dashboard'
         className=''
-        style={{ color: "black", fontWeight: "bold" }}>
+        style={{ color: "white", fontWeight: "bold" }}>
         <img
           src={logo}
           width='50'
@@ -40,37 +38,23 @@ const Header = () => {
         href='/dashboard'
         className='mr-auto display-1'
         // tag='h1'
-        style={{ color: "black", fontWeight: "bold" }}>
+        style={{ color: "white", fontWeight: "bold" }}>
         Garduino
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <NavbarText className='ml-auto'>Welcome!</NavbarText>
-        <Nav className='' navbar>
-          {/* <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle
-            nav
-            caret
-            style={{ color: "black", fontWeight: "bold" }}>
-            Options
-          </DropdownToggle>
-          <DropdownMenu right>
-            <DropdownItem>
-              <NavLink href='/components/'>Profile Settings</NavLink>
-            </DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>
-              <NavLink href='/logout'>
-                <i class='fas fa-sign-out-alt fa-x'> Logout</i>
-              </NavLink>
-            </DropdownItem>
-          </DropdownMenu>
-        </UncontrolledDropdown> */}
-
+      <Collapse isOpen={isOpen} className='' navbar>
+        <Nav className='ml-auto' navbar>
+          <NavbarText
+            className=''
+            style={{ color: "white", paddingRight: "20px" }}>
+            Welcome!
+          </NavbarText>
           <NavItem>
-            <NavLink href='/dashboard'>Profile Settings</NavLink>
+            <NavLink href='/dashboard' style={{ color: "white" }}>
+              Profile Settings
+            </NavLink>
           </NavItem>
-          <NavLink href='/logout'>
+          <NavLink href='/logout' style={{ color: "white" }}>
             <i class='fas fa-sign-out-alt fa-x'> Logout</i>
           </NavLink>
         </Nav>
