@@ -1,0 +1,405 @@
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fadein {
+  from {
+    stroke-width: 0;
+  }
+  to {
+    stroke-width: 0.4;
+  }
+}
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes drawtwo {
+  from {
+    stroke-dashoffset: 180;
+  }
+  to {
+    stroke-dashoffset: 300;
+  }
+}
+@keyframes drawthree {
+  0% {
+    stroke-dashoffset: 250;
+  }
+  100% {
+    stroke-dashoffset: 750;
+  }
+}
+
+.circuit-read-pulse {
+  stroke-width: 1px;
+  stroke-miterlimit: 1;
+}
+
+.circuit-read-pulse line,
+.circuit-read-pulse polyline {
+  fill: none;
+  stroke: #8ebb54;
+  stroke-width: 2px;
+  fill-opacity: 1;
+  stroke-dasharray: 1 500;
+  stroke-dashoffset: 250;
+  animation: 24s linear 1s infinite reverse forwards running drawthree;
+}
+
+.circuit-read-pulse path:nth-child(3),
+.circuit-read-pulse line:nth-child(4),
+.circuit-read-pulse polyline:nth-child(5) {
+  animation-delay: 4s;
+  animation-duration: 32s;
+}
+.circuit-read-pulse path:nth-child(5),
+.circuit-read-pulse line:nth-child(3),
+.circuit-read-pulse polyline:nth-child(4) {
+  animation-delay: 3.1s;
+  animation-duration: 25s;
+}
+.circuit-read-pulse path:nth-child(4),
+.circuit-read-pulse line:nth-child(5),
+.circuit-read-pulse polyline:nth-child(3) {
+  animation-delay: 1s;
+  animation-duration: 18s;
+}
+
+.circuit-no-fill path,
+.circuit-no-fill line,
+.circuit-no-fill polyline {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 0.5;
+  fill-opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-name: draw, fill;
+  animation-fill-mode: forwards;
+  animation-duration: 16s, 3s;
+  animation-delay: 1s, 9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite, initial;
+}
+
+.circuit-no-fill,
+.circuit-pulse {
+  position: absolute;
+  height:170%;
+  width: auto;
+  top: calc(-50);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 1000px;
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 2px;
+  stroke-miterlimit: 10;
+}
+
+.circuit-pulse {
+  /*stroke:;*/
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.circuit-pulse path,
+.circuit-pulse line,
+.circuit-pulse polyline {
+  fill: none;
+  stroke: #98ca56;
+  stroke-width: 0;
+  fill-opacity: 0;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 180;
+  /*animation-name: draw2, fadein;
+    animation-fill-mode: forwards;
+    animation-duration: 10s, 3s;
+    animation-delay: 18s, 16s;
+    animation-direction: normal;
+    animation-iteration-count: infinite, initial;*/
+
+  /*duration | timing-function | delay | 
+  iteration-count | direction | fill-mode | play-state | name*/
+  animation: 14s linear 15s infinite normal forwards running drawtwo,
+    3s ease-in-out 12s 1 alternate forwards running fadein;
+}
+
+.circuit-pulse path:nth-child(5n + 1),
+.circuit-pulse line:nth-child(5n + 1),
+.circuit-pulse polyline:nth-child(5n + 1) {
+  animation: 10s linear 18s infinite normal forwards running drawtwo,
+    3s ease-in-out 12s 1 alternate forwards running fadein;
+}
+.circuit-pulse path:nth-child(3n + 2),
+.circuit-pulse line:nth-child(3n + 2),
+.circuit-pulse polyline:nth-child(3n + 2) {
+  animation: 16s linear 17s infinite normal forwards running drawtwo,
+    3s ease-in-out 12s 1 alternate forwards running fadein;
+}
+
+.circuit-no-fill .group-2 path,
+.circuit-no-fill .group-3 path,
+.circuit-no-fill .group-4 path,
+.circuit-no-fill .group-2 line,
+.circuit-no-fill .group-3 line,
+.circuit-no-fill .group-4 line,
+.circuit-no-fill .group-2 polyline,
+.circuit-no-fill .group-3 polyline,
+.circuit-no-fill .group-4 polyline {
+  animation-name: draw, fill;
+  fill-opacity: 0;
+  animation-duration: 10s, 3s;
+  animation-delay: 5s;
+  stroke-dasharray: 250;
+  animation-direction: alternate;
+  stroke-dashoffset: 250;
+}
+
+.circuit-no-fill .group-3 path,
+.circuit-no-fill .group-3 line,
+.circuit-no-fill .group-3 polyline {
+  animation-duration: 10s, 3s;
+  animation-delay: 9s;
+}
+
+.circuit-no-fill .group-4 path,
+.circuit-no-fill .group-4 line,
+.circuit-no-fill .group-4 polyline {
+  animation-delay: 10s;
+}
+
+@media (max-width: 827px) {
+  .circuit-no-fill,
+  .circuit-pulse {
+    left: 50%;
+    bottom: initial;
+    top: 0;
+    bottom: 60%;
+  }
+
+  .sm\:overflow-x-hidden {
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 828px) {
+  .sm\:level {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.bg-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%2357769f' fill-opacity='0.25'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+.bg-white-faded {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 3rem;
+}
+.toggle:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 4px rgba(52, 144, 220, 0.5);
+  box-shadow: 0 0 0 4px rgba(52, 144, 220, 0.5);
+}
+.toggle:before {
+  display: inline-block;
+  border-radius: 9999px;
+  height: 100%;
+  width: 100%;
+  background-color: #dae1e7;
+  content: "";
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.toggle[aria-checked="true"]:before {
+  background-color: #5c9347;
+}
+.toggle:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #fff;
+  border-width: 1px;
+  border-color: #dae1e7;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  content: "";
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.toggle[aria-checked="true"]:after {
+  -webkit-transform: translateX(1.5rem);
+  transform: translateX(1.5rem);
+}
+
+.pin {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.top {
+  top: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.x-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.y-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.text-white::placeholder {
+  color: #fff;
+}
+
+.delimiter-top::before {
+  content: "";
+  display: block;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -40%;
+  height: 1px;
+  background: -o-radial-gradient(
+    center,
+    ellipse,
+    rgba(222, 228, 239, 0.2) 0,
+    rgba(255, 255, 255, 0) 75%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(222, 228, 239, 0.2) 0,
+    rgba(255, 255, 255, 0) 75%
+  );
+}
+
+.delimiter-bottom::before {
+  content: "";
+  display: block;
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40%;
+  height: 1px;
+  background: -o-radial-gradient(
+    center,
+    ellipse,
+    rgba(222, 228, 239, 0.2) 0,
+    rgba(255, 255, 255, 0) 75%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(222, 228, 239, 0.2) 0,
+    rgba(255, 255, 255, 0) 75%
+  );
+}
+
+.delimiter-bottom-dark::before {
+  content: "";
+  display: block;
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40%;
+  height: 1px;
+  background: -o-radial-gradient(
+    center,
+    ellipse,
+    rgb(222, 228, 239) 0,
+    rgba(255, 255, 255, 0) 80%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgb(222, 228, 239) 0,
+    rgba(255, 255, 255, 0) 80%
+  );
+}
+
+.columns .columns {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 635px) {
+  .columns {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .md\:mt-half-pull {
+    margin-top: -40%;
+    transition: transform 0.4s cubic-bezier(0.1, 1, 0.98, 0.95);
+  }
+  .md\:mt-half-pull:hover {
+    transform: translateY(-20px);
+  }
+}

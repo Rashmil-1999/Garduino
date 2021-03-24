@@ -1,10 +1,21 @@
 import React, { useState } from "react";
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
+import {
+  Navbar,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarToggler,
+  Collapse,
+} from "reactstrap";
 import { NavLink as RouteLink } from "react-router-dom";
 // import unicodelogo from './unicodelogo.png'
 import navlogo from "../../assets/images/green_logo4.png";
 
 function LoginSignupNavbar(props) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <Navbar
       style={{
@@ -13,23 +24,26 @@ function LoginSignupNavbar(props) {
         borderWidth: "100",
       }}
       light
-      expand='md'>
+      expand='md'
+      className='w-100 navbar-dark bg-inverse'>
       {/* {props.children} */}
       <NavbarBrand href=''>
         {<img src={navlogo} style={{ width: "44px", height: "44px" }}></img>}
       </NavbarBrand>
-      <Nav className='ml-auto' navbar>
-        <button
-          class='navbar-toggler'
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} className='' navbar>
+        <Nav className='ml-auto' navbar>
+          {/* <button
+          className='navbar-toggler'
           type='button'
           data-toggle='collapse'
           data-target='#navbarTogglerDemo02'
           aria-controls='navbarTogglerDemo02'
           aria-expanded='false'
           aria-label='Toggle navigation'>
-          <span class='navbar-toggler-icon'></span>
-        </button>
-        <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
+          <span className='navbar-toggler-icon'></span>
+        </button> */}
+          {/* <div class='collapse navbar-collapse' id='navbarTogglerDemo02'> */}
           <NavItem
             style={{
               fontSize: "20px",
@@ -41,8 +55,9 @@ function LoginSignupNavbar(props) {
               Sign up
             </NavLink>
           </NavItem>
-        </div>
-      </Nav>
+          {/* </div> */}
+        </Nav>
+      </Collapse>
     </Navbar>
   );
 }

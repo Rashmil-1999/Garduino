@@ -35,10 +35,10 @@ function App() {
 
   return (
     <div
-      className='App'
+      className=''
       style={{
-        backgroundColor: " white ",
-        height: "200%",
+        backgroundColor: "#f5f6f7",
+        // height: "100%",
       }}>
       <Toolbar user={roles} u_uuid={u_uuid} />
       <Switch>
