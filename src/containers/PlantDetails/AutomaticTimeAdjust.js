@@ -65,7 +65,7 @@ const AutomaticTimeAdjust = (props) => {
     <>
       <Alert
         color='success'
-        className='mt-4'
+        className='mt-4 w-75 text-center mx-auto'
         isOpen={visible}
         toggle={onDismiss}>
         Irrigation Timings Updated!
