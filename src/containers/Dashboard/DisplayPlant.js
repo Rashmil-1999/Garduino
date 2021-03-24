@@ -151,7 +151,7 @@ const DisplayPlant = ({ u_id, asm_data }) => {
           </CardText>
         </CardBody>
       </Card>
-      <Jumbotron>
+      <Jumbotron className='text-center mb-3'>
         <h4 className='display-4'>Want to add more sensors?</h4>
         <p className='lead'>
           Have you bought extra sensors? You can add new sensor set by filling
@@ -171,7 +171,7 @@ const DisplayPlant = ({ u_id, asm_data }) => {
             </Col>
           </FormGroup>
           {sensorSetNum === "--------" || sensorSetNum === 0 ? (
-            <p className='lead'>Please Select Sensor Set Count</p>
+            <p className='lead mx-auto'>Please Select Sensor Set Count</p>
           ) : (
             <FormGroup>
               {channelDetails
@@ -222,6 +222,7 @@ const DisplayPlant = ({ u_id, asm_data }) => {
           </FormGroup>
         </form>
       </Jumbotron>
+      <br />
     </div>
   );
 };

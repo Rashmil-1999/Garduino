@@ -59,3 +59,11 @@ export const SET_MANUAL_MODE = gql`
     }
   }
 `;
+
+export const GET_USER_NAME = gql`
+  query getUserName($u_uuid: uuid!) {
+    users(where: { u_uuid: { _eq: $u_uuid } }) {
+      full_name
+    }
+  }
+`;
