@@ -135,6 +135,19 @@ const Review = ({ userFormData, techDetails, navigation }) => {
                     signal: false,
                   },
                 },
+                irrigation_timings: {
+                  data: {
+                    channel_1: 0,
+                    channel_2: 0,
+                    channel_3: 0,
+                    channel_4: 0,
+                    channel_5: 0,
+                    channel_6: 0,
+                    channel_7: 0,
+                    channel_8: 0,
+                    schedule: "08:13:18",
+                  },
+                },
               },
             },
           };
