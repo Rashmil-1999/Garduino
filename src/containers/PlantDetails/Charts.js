@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "../../axios";
 import { toast } from "react-toastify";
-import { Button } from "reactstrap";
+import { Button, Container,Row, Col } from "reactstrap";
 
 const Charts = ({ p_uuid }) => {
   const [sensorData, setSensorData] = useState([]);
@@ -34,7 +34,27 @@ const Charts = ({ p_uuid }) => {
   }, []);
 
   return (
-    <div
+    <Container>
+      <Row className="justify-content-start">
+        <Col className="col-sm-3">
+          <Button
+            color='primary'
+            style={{}}
+            onClick={() => setSoil_chart(false)}>
+            View Air Sensor Data
+          </Button>
+        </Col>
+        <Col className="col-sm-3">
+          <Button
+            color='primary'
+            style={{}}
+            onClick={() => setSoil_chart(true)}>
+            View Soil Sensor Data
+          </Button>
+        </Col>
+      </Row>
+    </Container>
+    /*<div
       style={{
         display: "flex",
         flexDirection: "column",
@@ -178,7 +198,7 @@ const Charts = ({ p_uuid }) => {
           }}
         />
       )}
-    </div>
+    </div>*/
   );
 };
 
