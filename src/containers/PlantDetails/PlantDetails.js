@@ -249,10 +249,11 @@ const PlantDetails = (props) => {
           </Collapse>
           <Collapse isOpen={irrigationTimeAdjust}>
             <AutomaticTimeAdjust
-              irrigation_timings={data.plants[0].irrigation_timings}
+              irrigation_timings={data.plants[0].user.irrigation_timings}
               alias={
                 data.plants[0].plant_sensor_mappings[0].sensor_mapping.alias
               }
+              u_uuid={data.plants[0].u_uuid}
             />
           </Collapse>
         </div>
