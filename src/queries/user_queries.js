@@ -67,3 +67,33 @@ export const GET_USER_NAME = gql`
     }
   }
 `;
+
+export const UPDATE_IRRIGATION_TIMINGS = gql`
+  mutation updateIrrigationTimingsMutation(
+    $u_uuid: uuid!
+    $channel_1: Int!
+    $channel_2: Int!
+    $channel_3: Int!
+    $channel_4: Int!
+    $channel_5: Int!
+    $channel_6: Int!
+    $channel_7: Int!
+    $channel_8: Int!
+  ) {
+    update_irrigation_timings(
+      where: { u_uuid: { _eq: $u_uuid } }
+      _set: {
+        channel_1: $channel_1
+        channel_2: $channel_2
+        channel_3: $channel_3
+        channel_4: $channel_4
+        channel_5: $channel_5
+        channel_6: $channel_6
+        channel_7: $channel_7
+        channel_8: $channel_8
+      }
+    ) {
+      affected_rows
+    }
+  }
+`;
