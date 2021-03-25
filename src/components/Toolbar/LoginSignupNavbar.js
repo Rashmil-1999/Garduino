@@ -19,16 +19,16 @@ function LoginSignupNavbar(props) {
   return (
     <Navbar
       style={{
-        height: "4.3em",
+        // height: "4.3em",
         backgroundColor: "#305534",
         borderWidth: "100",
       }}
       light
-      expand='md'
+      expand='lg'
       className='w-100 navbar-dark bg-inverse'>
       {/* {props.children} */}
       <NavbarBrand href=''>
-        {<img src={navlogo} style={{ width: "44px", height: "44px" }}></img>}
+        {<img src={navlogo} style={{ width: "60px", height: "60px" }}></img>}
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} className='' navbar>

@@ -18,6 +18,7 @@ import * as plant_queries from "../../queries/plant_queries";
 import PlantsDeck from "./PlantsDeck";
 import Select from "../../components/Input/Select";
 import Input from "../../components/Input/Input";
+import ScheduleChanger from "./ScheduleChanger";
 // import LoadingPopup from "../../components/Loader/LoadingPopup";
 import { client } from "../../UserApp";
 
@@ -144,12 +145,18 @@ const DisplayPlant = ({ u_id, asm_data }) => {
         }}>
         <CardBody>
           <CardTitle tag='h5'> </CardTitle>
-          <CardSubtitle tag='h3'>Your plantlings </CardSubtitle>
+          <CardSubtitle className='display-4 text-center' tag='h4'>
+            Your plantlings
+          </CardSubtitle>
           <br />
           <CardText>
             <PlantsDeck info={data} u_id={u_id} />
           </CardText>
         </CardBody>
+        <ScheduleChanger
+          schedule={data.users_by_pk.irrigation_timings[0].schedule}
+          u_uuid={u_id}
+        />
       </Card>
       <Jumbotron className='text-center mb-3'>
         <h4 className='display-4'>Want to add more sensors?</h4>

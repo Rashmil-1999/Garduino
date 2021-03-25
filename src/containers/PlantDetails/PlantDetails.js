@@ -205,12 +205,12 @@ const PlantDetails = (props) => {
                   <Col>
                     {console.log(data.plants[0].is_uprooted && manualMode)}
                     <Button
-                      color='info'
+                      color='success'
                       className='mb-3 mt-3'
                       disabled={data.plants[0].is_uprooted || manualMode}
                       onClick={() => onAdjustTimeToggle()}>
                       {!irrigationTimeAdjust
-                        ? "Adjust Automatic Irrigation Time"
+                        ? "Adjust Irrigation Time"
                         : "Done"}
                     </Button>
                   </Col>
