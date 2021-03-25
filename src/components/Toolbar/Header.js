@@ -8,13 +8,21 @@ import {
   NavItem,
   NavLink,
   NavbarText,
+  Spinner,
 } from "reactstrap";
 import logo from "../../assets/images/green_logo4.png";
+import { useQuery } from "@apollo/client";
+import * as user_queries from "../../queries/user_queries";
+import { client } from "../../UserApp";
 
-const Header = () => {
+const Header = ({ u_uuid }) => {
   //const [collapsed, setCollapsed] = useState(true);
   //const toggleNavbar = () => setCollapsed(!collapsed);
   const [isOpen, setIsOpen] = useState(false);
+  const { error, loading, data } = useQuery(user_queries.GET_USER_NAME, {
+    client: client,
+    variables: { u_uuid },
+  });
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -47,7 +55,13 @@ const Header = () => {
           <NavbarText
             className=''
             style={{ color: "white", paddingRight: "20px" }}>
-            Welcome!
+            {loading ? (
+              <Spinner size='sm' color='primary' />
+            ) : (
+              <p>
+                <strong>Welcome{" " + data.users[0].full_name}</strong>
+              </p>
+            )}
           </NavbarText>
           <NavItem>
             <NavLink href='/dashboard' style={{ color: "white" }}>

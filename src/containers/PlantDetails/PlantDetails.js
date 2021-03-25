@@ -21,6 +21,7 @@ import {
   ModalBody,
   ModalFooter,
   Button,
+  Table,
 } from "reactstrap";
 
 import Input from "../../components/Input/Input";
@@ -29,6 +30,7 @@ import { createToast } from "../../utils/toast";
 import Multitabs from "../PlantDetails/Multitabs";
 import ManualControl from "./ManualControl";
 import PlantDeleteAlertBox from "./PlantDeleteAlertBox";
+import AutomaticTimeAdjust from "./AutomaticTimeAdjust";
 
 import plant_icon from "../../assets/images/plant_icon1.png";
 import { client } from "../../UserApp";
@@ -39,7 +41,10 @@ const PlantDetails = (props) => {
   const [manualMode, setManualMode] = useState(false);
   const [modal, setModal] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [irrigationTimeAdjust, setIrrigationTimeAdjust] = useState(false);
 
+  const onAdjustTimeToggle = () =>
+    setIrrigationTimeAdjust(!irrigationTimeAdjust);
   const onDismiss = () => setVisible(false);
   const manualTabToggle = () => setIsOpen(!isOpen);
   const modalToggle = () => setModal(!modal);
@@ -57,7 +62,12 @@ const PlantDetails = (props) => {
     var dateDiff = today - thatDay;
     var msec = dateDiff;
     var dd = Math.floor(msec / 1000 / 60 / 60 / 24);
-    return "The Plant is " + dd + " days old!";
+    return (
+      <p>
+        <strong>{"Age: "}</strong>
+        {"The Plant is " + dd + " days old!"}
+      </p>
+    );
   };
 
   const [
@@ -123,73 +133,103 @@ const PlantDetails = (props) => {
       <Row>
         <Card
           className='mt-4 ml-auto mr-auto w-75'
-          style={{ height: "250px", borderColor: "black", borderWidth: "2px" }}>
-          <Row className='no-gutters'>
-            <Col xs='4'>
+          style={{
+            // height: "300px",
+            borderColor: "black",
+            borderWidth: "2px",
+          }}>
+          <Row className=''>
+            <Col md='4'>
               <CardImg
                 src={plant_icon}
+                alt='Plant Icon'
                 style={{
-                  height: "250px",
-                  width: "auto",
                   border: "1px solid #c3c3c3",
-                  display: "flex",
-                  flexDirection:"row",
-                  flexWrap: "wrap",
-                  alignContent: "center",
                 }}
-                className=''
+                className='card-image'
               />
             </Col>
-            <Col xs='8'>
-              <Row className='mt-3'>
-                <Col xs='9'>
-                  <CardSubtitle
-                    className='ml-0'
-                    style={{
-                      fontSize: "20pt",
-                      fontWeight: "800",
-                      fontFamily:
-                        "Alliance No.1,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                    }}>
-                    {data.plants[0].plant_info.common_name}
-                    {/* {console.log(data.plants[0])} */}
-                  </CardSubtitle>
-                </Col>
-                <Col xs='3'>
-                  <Button
-                    className='mr-0'
-                    color='danger'
-                    disabled={data.plants[0].is_uprooted}
-                    onClick={() => setVisible(true)}>
-                    <i className='far fa-trash-alt mr-0'></i>
-                  </Button>
-                </Col>
-              </Row>
+            <Col md='8'>
+              {/* <Table borderless>
+                <thead>
+                  <tr>
+                    <th colSpan='5' className='display-4'>
+                      {data.plants[0].plant_info.common_name}
+                    </th>
+                  </tr>
+                </thead>
+              </Table> */}
+              <Container>
+                <Row className='mt-2 mb-1 '>
+                  <Col xs='9'>
+                    <p
+                      className='text-center display-4 align-middle'
+                      style={{
+                        // fontSize: "20pt",
+                        // fontWeight: "800",
+                        fontFamily:
+                          "Alliance No.1,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                      }}>
+                      {data.plants[0].plant_info.common_name}
+                      {/* {console.log(data.plants[0])} */}
+                    </p>
+                  </Col>
+                  <Col xs='3' className='ml-auto'>
+                    <Button
+                      className='float-right'
+                      color='danger'
+                      disabled={data.plants[0].is_uprooted}
+                      onClick={() => setVisible(true)}>
+                      <i className='far fa-trash-alt mr-0'></i>
+                    </Button>
+                  </Col>
+                </Row>
+                <Row className='mt-1 mb-1'>
+                  <Col>{calculateAge(data.plants[0].planted_on)}</Col>
 
-              <Row className='p-3'>
-                <Col>{calculateAge(data.plants[0].planted_on)}</Col>
-
-                <Col>Date of Sowing: {data.plants[0].planted_on}</Col>
-              </Row>
-              <Row>
-                <Col>
-                  Status: {data.plants[0].is_uprooted ? "Uprooted" : "Alive"}
-                </Col>
-                <Col>Fruit Count: {data.plants[0].fruit_count}</Col>
-              </Row>
-              <Row className='text-center'>
-                <Col>
-                  <Button
-                    className='mb-3 mt-3'
-                    color={isOpen && manualMode ? "success" : "danger"}
-                    onClick={() => {
-                      modalToggle();
-                    }}
-                    disabled={data.plants[0].is_uprooted}>
-                    {isOpen && manualMode ? "Auto Mode" : "Manual Mode"}
-                  </Button>
-                </Col>
-              </Row>
+                  <Col>
+                    <strong>Date of Sowing: </strong>{" "}
+                    {data.plants[0].planted_on}
+                  </Col>
+                </Row>
+                <Row className='mt-1 mb-1'>
+                  <Col>
+                    <strong>Status:</strong>{" "}
+                    {data.plants[0].is_uprooted ? "Uprooted" : "Alive"}
+                  </Col>
+                  <Col>
+                    <strong>Fruit Count:</strong> {data.plants[0].fruit_count}
+                  </Col>
+                </Row>
+                <Row className='mt-3 mb-2 text-center'>
+                  <Col>
+                    {console.log(data.plants[0].is_uprooted && manualMode)}
+                    <Button
+                      color='info'
+                      className='mb-3 mt-3'
+                      disabled={data.plants[0].is_uprooted || manualMode}
+                      onClick={() => onAdjustTimeToggle()}>
+                      {!irrigationTimeAdjust
+                        ? "Adjust Automatic Irrigation Time"
+                        : "Done"}
+                    </Button>
+                  </Col>
+                  {/* <Col></Col> */}
+                  <Col>
+                    <Button
+                      className='mb-3 mt-3'
+                      color={isOpen && manualMode ? "success" : "danger"}
+                      onClick={() => {
+                        // setIrrigationTimeAdjust(false);
+                        modalToggle();
+                      }}
+                      disabled={data.plants[0].is_uprooted}>
+                      {isOpen && manualMode ? "Auto Mode" : "Manual Mode"}
+                    </Button>
+                  </Col>
+                  {/* <Col></Col> */}
+                </Row>
+              </Container>
             </Col>
           </Row>
         </Card>
@@ -203,9 +243,20 @@ const PlantDetails = (props) => {
           </CardBody>
         </Card>
       ) : (
-        <Collapse isOpen={isOpen && manualMode}>
-          <ManualControl />
-        </Collapse>
+        <div>
+          <Collapse isOpen={isOpen && manualMode}>
+            <ManualControl />
+          </Collapse>
+          <Collapse isOpen={irrigationTimeAdjust}>
+            <AutomaticTimeAdjust
+              irrigation_timings={data.plants[0].user.irrigation_timings}
+              alias={
+                data.plants[0].plant_sensor_mappings[0].sensor_mapping.alias
+              }
+              u_uuid={data.plants[0].u_uuid}
+            />
+          </Collapse>
+        </div>
       )}
 
       {mutationLoading && <LoadingPopup isOpen />}
