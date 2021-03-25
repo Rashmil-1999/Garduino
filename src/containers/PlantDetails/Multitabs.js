@@ -116,20 +116,20 @@ const Multitabs = ({ p_uuid }) => {
                       : "Common Name not available"}
                   </p>
                   <br />
-                  <p>
+                  <pre>
                     {data.plants[0].plant_info.description
                       ? data.plants[0].plant_info.description
                       : "Description Not Available"}
-                  </p>
+                  </pre>
                 </Col>
               </Row>
             </TabPane>
             <TabPane tabId='2'>
               <Row style={style}>
                 <Col>
-                  <p>
+                  <p >
                     {data.plants[0].plant_info.planting_instructions
-                      ? data.plants[0].plant_info.planting_instructions
+                      ? data.plants[0].plant_info.planting_instructions.split(";")
                       : "Planting Instructions Not Available"}
                   </p>
                 </Col>

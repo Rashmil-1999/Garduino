@@ -295,6 +295,9 @@ const Login = (props) => {
           // xmlns:xlink='http://www.w3.org/1999/xlink'
           x='0px'
           y='0px'
+          // width='100%'
+          // height='100%'
+          preserveAspectRatio='xMidYMid meet'
           viewBox='0 0 432 648'
           style={{ enableBackground: "new 0 0 432 648", top: "0px" }}
           // style='enable-background:new 0 0 432 648;'
@@ -550,7 +553,10 @@ const Login = (props) => {
           // xmlns:xlink='http://www.w3.org/1999/xlink'
           x='0px'
           y='0px'
+          // width='100%'
+          // height='100%'
           viewBox='0 0 432 648'
+          preserveAspectRatio='xMidYMid meet'
           style={{ top: "0px" }}
           // xml:space='preserve'
         >
@@ -902,15 +908,15 @@ const Login = (props) => {
         </div>
       </div>
 
-      <div class='mb-5 sm:mb-9'>
-        <div class='container' style={{top:"300px"}}>
-          <div class='columns py-4 is-centered'>
-            <div class='column column-12 sm:column-8 is-centered text-centered mb-3'>
-              <div class='box mb-3 rounded-3'>
-                <h3 class='h3 text-primary mb-2 relative delimiter-bottom-dark'>
+      <div className='mb-5 ' style={{ height: "400px" }}>
+        <div className='container resize' style={{ top: "30%" }}>
+          <div className='columns py-3 is-centered'>
+            <div className='column column-12 sm:column-8 is-centered text-centered'>
+              <div className='box mb-4 rounded-3'>
+                <h3 className='h3 text-primary mb-2 relative delimiter-bottom-dark'>
                   Vision and Mission
                 </h3>
-                <p class='text-grey'>
+                <p className='text-grey'>
                   It all started with a resolve to use the opportunities offered
                   by technology in doing something for the society. Reseacgers
                   have predicted that " A family that practices gardening tends

@@ -93,13 +93,12 @@
 .circuit-no-fill,
 .circuit-pulse {
   position: absolute;
-  height:170%;
-  width: auto;
-  top: calc(-50);
+  top: calc(-50%);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(2, 1.1);
   width: 100%;
-  min-width: 1000px;
+  height: 133%;
+  min-width: 900px;
   fill: none;
   stroke: #e0e0e0;
   stroke-dasharray: 1000;
@@ -183,14 +182,22 @@
 @media (max-width: 827px) {
   .circuit-no-fill,
   .circuit-pulse {
-    left: 50%;
-    bottom: initial;
-    top: 0;
-    bottom: 60%;
+    left: 0;
+    /* bottom: initial; */
+    top: 20% !important;
+    /* bottom: 40%; */
+    transform: translateX(-30%) scale(0.52, 2);
+    height: 60%;
+    width: 50%;
   }
 
   .sm\:overflow-x-hidden {
     overflow-x: hidden;
+  }
+}
+@media (max-width: 827px) {
+  .resize {
+    top: 0% !important;
   }
 }
 
