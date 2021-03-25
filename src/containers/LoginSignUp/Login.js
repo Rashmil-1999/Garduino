@@ -923,7 +923,17 @@ const Login = (props) => {
                   to be more inclined towards adopting a healthy lifestyle and
                   home gardening promotes values of science, environmental
                   stewardship and healthy eating among children"
+                
                 </p>
+                <h3 class='h3 text-primary mb-2 relative delimiter-bottom-dark'>
+                  Contact Details
+                </h3>
+                <p>
+                For further Queries you can reach us on: <br></br>
+                priyal0561@gmail.com<br></br> milonisangani15@gmail.com<br></br>{" "}
+                rashmilp833@gmail.com
+              </p>
+                
               </div>
             </div>
           </div>

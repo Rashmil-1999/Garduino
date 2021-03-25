@@ -135,7 +135,9 @@ const Multitabs = ({ p_uuid }) => {
                 <Col>
                   <p>
                     {data.plants[0].plant_info.planting_instructions
-                      ? data.plants[0].plant_info.planting_instructions
+                      ? data.plants[0].plant_info.planting_instructions.split(
+                          ";"
+                        )
                       : "Planting Instructions Not Available"}
                   </p>
                 </Col>
