@@ -108,32 +108,39 @@ const Multitabs = ({ p_uuid }) => {
           </Nav>
           <TabContent activeTab={activeTab}>
             <TabPane tabId='1'>
-              <Row style={style}>
-                <Col sm='12'>
-                  <p>
-                    {data.plants[0].plant_info.common_name
-                      ? data.plants[0].plant_info.common_name
-                      : "Common Name not available"}
-                  </p>
-                  <br />
-                  <p>
-                    {data.plants[0].plant_info.description
-                      ? data.plants[0].plant_info.description
-                      : "Description Not Available"}
-                  </p>
-                </Col>
-              </Row>
+              <Container>
+                <Row style={style}>
+                  <Col sm='12'>
+                    <p className='h3 text-center'>
+                      {data.plants[0].plant_info.common_name
+                        ? data.plants[0].plant_info.common_name
+                        : "Common Name not available"}
+                    </p>
+                    <br />
+                    <p className='text-justified'>
+                      {data.plants[0].plant_info.description
+                        ? data.plants[0].plant_info.description
+                            .split("==")
+                            .map((item, i) => {
+                              return <p key={i}>{item}</p>;
+                            })
+                        : "Description Not Available"}
+                    </p>
+                  </Col>
+                </Row>
+              </Container>
             </TabPane>
             <TabPane tabId='2'>
               <Row style={style}>
                 <Col>
                   <p>
                     {data.plants[0].plant_info.planting_instructions
-                      ? data.plants[0].plant_info.planting_instructions
+                      ? data.plants[0].plant_info.planting_instructions.split(
+                          ";"
+                        )
                       : "Planting Instructions Not Available"}
                   </p>
                 </Col>
-                
               </Row>
             </TabPane>
             <TabPane tabId='3'>
@@ -177,14 +184,11 @@ const Multitabs = ({ p_uuid }) => {
             <TabPane tabId='5'>
               <br></br>
 
-
-                <Charts p_uuid = {p_uuid} ></Charts>
+              <Charts p_uuid={p_uuid}></Charts>
             </TabPane>
             <TabPane tabId='6'>
               <br></br>
-
             </TabPane>
-
           </TabContent>
         </Card>
       </div>

@@ -37,8 +37,8 @@ const Header = ({ u_uuid }) => {
         style={{ color: "white", fontWeight: "bold" }}>
         <img
           src={logo}
-          width='50'
-          height='50'
+          width='60'
+          height='60'
           alt=''
           className='d-inline-block align-top'></img>
       </NavbarBrand>

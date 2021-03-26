@@ -20,6 +20,11 @@ export const GET_USER_PLANT_INFO = gql`
         description
       }
     }
+    users_by_pk(u_uuid: $u_id) {
+      irrigation_timings {
+        schedule
+      }
+    }
   }
 `;
 
