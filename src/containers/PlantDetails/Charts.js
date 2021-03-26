@@ -36,24 +36,159 @@ const Charts = ({ p_uuid }) => {
   return (
     <Container>
       <Row className="justify-content-start">
-        <Col className="col-sm-3">
+        <Col className="col-sm-3 col-xs-5">
           <Button
             color='primary'
-            style={{}}
+            style={{ marginBottom: "15px"}}
             onClick={() => setSoil_chart(false)}>
             View Air Sensor Data
           </Button>
         </Col>
-        <Col className="col-sm-3">
+        <Col className="col-sm-3 col-xs-5">
           <Button
             color='primary'
-            style={{}}
+            style={{ marginBottom: "15px"}}
             onClick={() => setSoil_chart(true)}>
             View Soil Sensor Data
           </Button>
         </Col>
       </Row>
-    </Container>
+      
+      <div style={{ background: "#E4F4E8",
+                    alignSelf: "center",
+                    borderRadius: "5px",
+                    display: "flex",
+                    width: "100%",
+                    marginTop: "15px",
+                    //marginBottom: "1rem",
+                    position: "relative",
+                    margin: "auto",
+                    }}>
+                    
+                   
+      {soil_chart ? (
+        <Line 
+        //width: "100%",
+        //marginTop: "15px",
+        //marginBottom: "1rem",
+        
+          data={{
+            labels: sensorData.days ? sensorData.days : [],
+            datasets: [
+              {
+                label: "Average Soil Temperature (°C)",
+                data: sensorData.soilAvgTemperature
+                  ? sensorData.soilAvgTemperature
+                  : [],
+                backgroundColor: [
+                  "#62AEFF",
+                ],
+                borderColor: ["#62AEFF"],
+                borderWidth: 3,
+                fill: false
+              },
+              {
+                label: "Average Soil Moisture (%)",
+                data: sensorData.soilAvgMoisture
+                  ? sensorData.soilAvgMoisture
+                  : [],
+                backgroundColor: [
+                  "#2AA747"
+                ],
+                borderColor: ["#2AA747"],
+                borderWidth: 3,
+                fill: false
+              },
+            ],
+          }}
+          //height={300}
+          //width={500}
+          options={{
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+            legend: {
+              display: "true",
+              position:"top",
+              align:"start",
+              
+              labels: {
+                fontSize: 15,
+                fontFamily: "archia",
+                fontColor: "black",
+                boxWidth: 15,
+                padding: 25
+              },
+            },
+          }}
+        />
+      ) : (
+        <Line
+          data={{
+            labels: sensorData.days ? sensorData.days : [],
+            datasets: [
+              {
+                label: "Average Air Humidity (%)",
+                data: sensorData.airAvgHumidity
+                  ? sensorData.airAvgHumidity
+                  : [],
+                backgroundColor: ["#2AA747"],
+                borderColor: ["#2AA747"],
+                borderWidth: 3,
+                fill: false
+              },
+              {
+                label: "Average Air Temperature (°C)",
+                data: sensorData.airAvgTemperature
+                  ? sensorData.airAvgTemperature
+                  : [],
+                backgroundColor: [
+                  "#62AEFF"
+                ],
+                borderColor: ["#62AEFF"],
+                borderWidth: 3,
+                fill: false
+              },
+            ],
+          }}
+          //height={300}
+          //width={500}
+          options={{
+            maintainAspectRatio: true,
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+            legend: {
+              labels: {
+                fontSize: 15,
+                fontFamily: "archia",
+                fontColor: "black",
+                boxWidth: 15,
+                padding: 25
+              },
+            },
+          }}
+        />
+      )}
+
+
+      </div>
+      </Container>
+    
     /*<div
       style={{
         display: "flex",
