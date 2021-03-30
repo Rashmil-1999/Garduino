@@ -135,9 +135,18 @@ const Multitabs = ({ p_uuid }) => {
                 <Col>
                   <p>
                     {data.plants[0].plant_info.planting_instructions
-                      ? data.plants[0].plant_info.planting_instructions.split(
-                          ";"
-                        )
+                      ? data.plants[0].plant_info.planting_instructions.split("==")
+                      .map((item, i) => {
+                        return <p key={i}>{item}</p>
+                      })
+                      : "Planting Instructions Not Available"}
+                  </p>
+                  <p>
+                    {data.plants[0].plant_info.soil_quality_suited
+                      ? data.plants[0].plant_info.soil_quality_suited.split("==")
+                      .map((item, i) => {
+                        return <p key={i}>{item}</p>
+                      })
                       : "Planting Instructions Not Available"}
                   </p>
                 </Col>
