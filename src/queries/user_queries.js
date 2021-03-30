@@ -40,7 +40,7 @@ export const GET_USER_INFO = gql`
 `;
 
 export const SET_MANUAL_MODE = gql`
-  mutation MyMutation($u_uuid: uuid!, $manualMode: Boolean!) {
+  mutation setManualMode($u_uuid: uuid!, $manualMode: Boolean!) {
     update_irrigation_mode(
       where: { u_uuid: { _eq: $u_uuid } }
       _set: {
@@ -53,6 +53,36 @@ export const SET_MANUAL_MODE = gql`
         ch_7: 0
         ch_8: 0
         manual: $manualMode
+      }
+    ) {
+      affected_rows
+    }
+  }
+`;
+
+export const MANUAL_IRRIGATION = gql`
+  mutation setManualIrrigationTime(
+    $u_uuid: uuid!
+    $ch_1: Int!
+    $ch_2: Int!
+    $ch_3: Int!
+    $ch_4: Int!
+    $ch_5: Int!
+    $ch_6: Int!
+    $ch_7: Int!
+    $ch_8: Int!
+  ) {
+    update_irrigation_mode(
+      where: { u_uuid: { _eq: $u_uuid } }
+      _set: {
+        ch_1: $ch_1
+        ch_2: $ch_2
+        ch_3: $ch_3
+        ch_4: $ch_4
+        ch_5: $ch_5
+        ch_6: $ch_6
+        ch_7: $ch_7
+        ch_8: $ch_8
       }
     ) {
       affected_rows
@@ -92,6 +122,17 @@ export const UPDATE_IRRIGATION_TIMINGS = gql`
         channel_7: $channel_7
         channel_8: $channel_8
       }
+    ) {
+      affected_rows
+    }
+  }
+`;
+
+export const UPDATE_IRRIGATION_SCHEDULE = gql`
+  mutation updateIrrigationSchedule($u_uuid: uuid!, $schedule: String!) {
+    update_irrigation_timings(
+      where: { u_uuid: { _eq: $u_uuid } }
+      _set: { schedule: $schedule }
     ) {
       affected_rows
     }

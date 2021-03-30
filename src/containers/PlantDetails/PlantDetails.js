@@ -22,6 +22,7 @@ import {
   ModalFooter,
   Button,
   Table,
+  Tooltip,
 } from "reactstrap";
 
 import Input from "../../components/Input/Input";
@@ -42,12 +43,14 @@ const PlantDetails = (props) => {
   const [modal, setModal] = useState(false);
   const [visible, setVisible] = useState(false);
   const [irrigationTimeAdjust, setIrrigationTimeAdjust] = useState(false);
+  const [tooltipOpen, setTooltipOpen] = useState(false);
 
   const onAdjustTimeToggle = () =>
     setIrrigationTimeAdjust(!irrigationTimeAdjust);
   const onDismiss = () => setVisible(false);
   const manualTabToggle = () => setIsOpen(!isOpen);
   const modalToggle = () => setModal(!modal);
+  const toolTipToggle = () => setTooltipOpen(!tooltipOpen);
 
   const calculateAge = (planted_on) => {
     // console.log(planted_on);
@@ -81,6 +84,7 @@ const PlantDetails = (props) => {
       modalToggle();
     },
   });
+
   const { error, loading, data } = useQuery(plant_queries.GET_EACH_PLANT_INFO, {
     variables: { p_uuid },
     onCompleted: (data) => {
@@ -98,6 +102,17 @@ const PlantDetails = (props) => {
   return (
     <Container fluid={true}>
       {console.log(isOpen, manualMode)}
+
+      <Tooltip
+        placement='bottom'
+        isOpen={tooltipOpen}
+        target={"Tooltip-1"}
+        toggle={toolTipToggle}>
+        {data.plants[0].is_uprooted || manualMode
+          ? "Disabled in Manual Mode"
+          : "For Automatic Irrigation"}
+      </Tooltip>
+
       <Modal isOpen={modal} toggle={modalToggle}>
         <ModalHeader toggle={modalToggle}>
           {isOpen && manualMode
@@ -150,15 +165,6 @@ const PlantDetails = (props) => {
               />
             </Col>
             <Col md='8'>
-              {/* <Table borderless>
-                <thead>
-                  <tr>
-                    <th colSpan='5' className='display-4'>
-                      {data.plants[0].plant_info.common_name}
-                    </th>
-                  </tr>
-                </thead>
-              </Table> */}
               <Container>
                 <Row className='mt-2 mb-1 '>
                   <Col xs='9'>
@@ -201,11 +207,22 @@ const PlantDetails = (props) => {
                     <strong>Fruit Count:</strong> {data.plants[0].fruit_count}
                   </Col>
                 </Row>
+                <Row className='mt-3 mb-1'>
+                  <Col>
+                    <strong>Channel:</strong>{" "}
+                    {data.plants[0].plant_sensor_mappings.length
+                      ? data.plants[0].plant_sensor_mappings[0].sensor_mapping
+                          .alias
+                      : "Channel Unavailable"}
+                  </Col>
+                  <Col></Col>
+                </Row>
                 <Row className='mt-3 mb-2 text-center'>
                   <Col>
                     {console.log(data.plants[0].is_uprooted && manualMode)}
                     <Button
                       color='success'
+                      id='Tooltip-1'
                       className='mb-3 mt-3'
                       disabled={data.plants[0].is_uprooted || manualMode}
                       onClick={() => onAdjustTimeToggle()}>
@@ -245,7 +262,14 @@ const PlantDetails = (props) => {
       ) : (
         <div>
           <Collapse isOpen={isOpen && manualMode}>
-            <ManualControl />
+            <ManualControl
+              alias={
+                data.plants[0].plant_sensor_mappings.length
+                  ? data.plants[0].plant_sensor_mappings[0].sensor_mapping.alias
+                  : null
+              }
+              u_uuid={data.plants[0].u_uuid ? data.plants[0].u_uuid : null}
+            />
           </Collapse>
           <Collapse isOpen={irrigationTimeAdjust}>
             <AutomaticTimeAdjust
