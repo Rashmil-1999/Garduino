@@ -19,6 +19,11 @@ export const GET_USER_PLANT_INFO = gql`
         common_name
         description
       }
+      plant_sensor_mappings {
+        sensor_mapping {
+          alias
+        }
+      }
     }
     users_by_pk(u_uuid: $u_id) {
       irrigation_timings {

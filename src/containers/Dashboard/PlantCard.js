@@ -1,3 +1,4 @@
+import { each } from "lodash";
 import React from "react";
 import { Route, Router } from "react-router-dom";
 import {
@@ -13,6 +14,7 @@ import plant_icon from "../../assets/images/plant_icon.png";
 import "./PlantCard.css";
 
 const PlantCard = ({ each_plant, u_id }) => {
+  console.log(each_plant);
   const handleCardClick = (e) => {
     console.log(each_plant.p_uuid);
     window.location = `/plants/${each_plant.p_uuid}`;
@@ -39,7 +41,11 @@ const PlantCard = ({ each_plant, u_id }) => {
       />
       <CardBody>
         <CardTitle tag='h5'>{each_plant.plant_info.common_name}</CardTitle>
-        <CardSubtitle tag='h6' className='mb-2 text-muted'></CardSubtitle>
+        <CardSubtitle tag='h6' className='mb-2 text-muted'>
+          {each_plant.plant_sensor_mappings.length
+            ? each_plant.plant_sensor_mappings[0].sensor_mapping.alias
+            : "Channel Not Allocated properly"}
+        </CardSubtitle>
         <CardText></CardText>
       </CardBody>
     </Card>

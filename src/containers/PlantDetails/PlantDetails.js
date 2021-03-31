@@ -73,6 +73,10 @@ const PlantDetails = (props) => {
     );
   };
 
+  const goToPlantEditPage = () => {
+    window.location = `/plants/${p_uuid}/edit`;
+  };
+
   const [
     updateManualMode,
     { loading: mutationLoading, error: mutationError, data: mutationResponse },
@@ -160,6 +164,15 @@ const PlantDetails = (props) => {
                 alt='Plant Icon'
                 style={{
                   border: "1px solid #c3c3c3",
+                  // position: "absolute",
+                  // // padding: "10px 0",
+                  // top: "50%",
+                  // left: "50%",
+                  // transform: "translate(-50%, -50%)",
+                  // // display: "block",
+                  // margin: "0",
+
+                  // width: "80%",
                 }}
                 className='card-image'
               />
@@ -181,6 +194,13 @@ const PlantDetails = (props) => {
                     </p>
                   </Col>
                   <Col xs='3' className='ml-auto'>
+                    <Button
+                      className='ml-4'
+                      color='warning'
+                      disabled={data.plants[0].is_uprooted}
+                      onClick={goToPlantEditPage}>
+                      <i class='far fa-edit'></i>
+                    </Button>
                     <Button
                       className='float-right'
                       color='danger'
@@ -231,7 +251,7 @@ const PlantDetails = (props) => {
                         : "Done"}
                     </Button>
                   </Col>
-                  {/* <Col></Col> */}
+                  <Col></Col>
                   <Col>
                     <Button
                       className='mb-3 mt-3'
