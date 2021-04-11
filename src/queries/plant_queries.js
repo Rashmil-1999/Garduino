@@ -119,3 +119,14 @@ export const INSERT_SENSOR_MAPPINGS = gql`
     }
   }
 `;
+
+export const UPDATE_FCOUNT = gql`
+  mutation MyMutation($p_uuid: uuid!, $fcount: Int!) {
+    update_plants_by_pk(
+      pk_columns: { p_uuid: $p_uuid }
+      _set: { fruit_count: $fcount }
+    ) {
+      fruit_count
+    }
+  }
+`;

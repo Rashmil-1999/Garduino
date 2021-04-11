@@ -23,7 +23,7 @@ const UserApp = (props) => {
         <Route exact path='/dashboard'>
           <Dashboard userid={user_Id} />
         </Route>
-        <Route path='/plants/:plant_id/edit' exact component={EditPlant} />
+        {/* <Route path='/plants/:plant_id/edit' exact component={EditPlant} /> */}
         <Route path='/plants/:plant_id' exact component={PlantDetails} />
         <Route path='/logout' exact component={Logout} />
       </ApolloProvider>

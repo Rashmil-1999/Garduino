@@ -34,6 +34,8 @@ import PlantDeleteAlertBox from "./PlantDeleteAlertBox";
 import AutomaticTimeAdjust from "./AutomaticTimeAdjust";
 
 import plant_icon from "../../assets/images/plant_icon1.png";
+import circuit from "../../assets/images/circuit-flipped-green.png";
+import circuit_2 from "../../assets/images/circuit-design-4.png";
 import { client } from "../../UserApp";
 
 const PlantDetails = (props) => {
@@ -44,12 +46,15 @@ const PlantDetails = (props) => {
   const [visible, setVisible] = useState(false);
   const [irrigationTimeAdjust, setIrrigationTimeAdjust] = useState(false);
   const [tooltipOpen, setTooltipOpen] = useState(false);
+  const [plantEditModal, setPlantEditModal] = useState(false);
+  const [fCount, setFCount] = useState(0);
 
   const onAdjustTimeToggle = () =>
     setIrrigationTimeAdjust(!irrigationTimeAdjust);
   const onDismiss = () => setVisible(false);
   const manualTabToggle = () => setIsOpen(!isOpen);
   const modalToggle = () => setModal(!modal);
+  const plantEditModalToggle = () => setPlantEditModal(!plantEditModal);
   const toolTipToggle = () => setTooltipOpen(!tooltipOpen);
 
   const calculateAge = (planted_on) => {
@@ -73,9 +78,9 @@ const PlantDetails = (props) => {
     );
   };
 
-  const goToPlantEditPage = () => {
-    window.location = `/plants/${p_uuid}/edit`;
-  };
+  // const goToPlantEditPage = () => {
+  //   window.location = `/plants/${p_uuid}/edit`;
+  // };
 
   const [
     updateManualMode,
@@ -89,6 +94,22 @@ const PlantDetails = (props) => {
     },
   });
 
+  const [
+    updateFruitCount,
+    {
+      loading: fcmutationLoading,
+      error: fcmutationError,
+      data: fcmutationResponse,
+    },
+  ] = useMutation(plant_queries.UPDATE_FCOUNT, {
+    client: client,
+    onCompleted: (data) => {
+      console.log("Fruit Count Updated!");
+      setFCount(data.update_plants_by_pk.fruit_count);
+      plantEditModalToggle();
+    },
+  });
+
   const { error, loading, data } = useQuery(plant_queries.GET_EACH_PLANT_INFO, {
     variables: { p_uuid },
     onCompleted: (data) => {
@@ -98,15 +119,54 @@ const PlantDetails = (props) => {
       if (data.plants[0].user.irrigation_modes[0].manual) {
         manualTabToggle();
       }
+      setFCount(data.plants[0].fruit_count);
       // console.log(isOpen, manualMode);
     },
   });
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   return (
-    <Container fluid={true}>
+    <Container
+      fluid={true}
+      style={{
+        background:
+          "url('https://mudpi.app/img/circuit-flipped-green.png') -5% 0% / 60% no-repeat",
+        position: "relative",
+      }}>
+      <img
+        src={circuit}
+        alt='Curcuit Img'
+        style={{
+          WebkitTransform: "scaleX(-1)",
+          transform: "scaleX(-1)",
+          zIndex: "0",
+          position: "absolute",
+          top: "50%",
+          right: "0%",
+        }}></img>
+      <img
+        src={circuit_2}
+        alt='Curcuit Img'
+        style={{
+          // WebkitTransform: "scaleX(-1)",
+          transform: "translateX(25%) translateY(-25%) scale(0.5)",
+          zIndex: "0",
+          position: "absolute",
+          top: "0%",
+          right: "0%",
+        }}></img>
+      <img
+        src={circuit_2}
+        alt='Curcuit Img'
+        style={{
+          // WebkitTransform: "scaleX(-1)",
+          transform: "translateX(-25%) translateY(30%) scale(0.5)",
+          zIndex: "0",
+          position: "absolute",
+          top: "0%",
+          left: "0%",
+        }}></img>
       {console.log(isOpen, manualMode)}
-
       <Tooltip
         placement='bottom'
         isOpen={tooltipOpen}
@@ -144,6 +204,49 @@ const PlantDetails = (props) => {
           </ModalFooter>
         </ModalBody>
       </Modal>
+
+      <Modal isOpen={plantEditModal} toggle={plantEditModalToggle}>
+        <ModalHeader toggle={plantEditModalToggle}>
+          Edit Plant Details
+        </ModalHeader>
+        <ModalBody>
+          <Container>
+            <Row>
+              <Col className='text-center'>
+                <Input
+                  type='number'
+                  placeholder={"Enter Harvest/Fruit Count"}
+                  label={"Harvest/Fruit Count: "}
+                  valid={true}
+                  value={fCount}
+                  onChange={(curr) => {
+                    // console.log(curr);
+                    setFCount(curr);
+                  }}
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col className='text-center'>
+                <Button
+                  color='success'
+                  onClick={() => {
+                    updateFruitCount({
+                      variables: {
+                        p_uuid: p_uuid,
+                        fcount: fCount,
+                      },
+                    });
+                  }}
+                  className='mx-auto'>
+                  Update Fruit Count
+                </Button>
+              </Col>
+            </Row>
+          </Container>
+        </ModalBody>
+      </Modal>
+
       <PlantDeleteAlertBox
         p_uuid={p_uuid}
         visible={visible}
@@ -194,20 +297,28 @@ const PlantDetails = (props) => {
                     </p>
                   </Col>
                   <Col xs='3' className='ml-auto'>
-                    <Button
-                      className='ml-4'
-                      color='warning'
-                      disabled={data.plants[0].is_uprooted}
-                      onClick={goToPlantEditPage}>
-                      <i class='far fa-edit'></i>
-                    </Button>
-                    <Button
-                      className='float-right'
-                      color='danger'
-                      disabled={data.plants[0].is_uprooted}
-                      onClick={() => setVisible(true)}>
-                      <i className='far fa-trash-alt mr-0'></i>
-                    </Button>
+                    <Row>
+                      <Col className='text-center mb-2'>
+                        <Button
+                          className='float-left'
+                          color='warning'
+                          disabled={data.plants[0].is_uprooted}
+                          onClick={plantEditModalToggle}
+                          // onClick={goToPlantEditPage}
+                        >
+                          <i class='far fa-edit'></i>
+                        </Button>
+                      </Col>
+                      <Col className='text-center mb-2'>
+                        <Button
+                          className='float-right'
+                          color='danger'
+                          disabled={data.plants[0].is_uprooted}
+                          onClick={() => setVisible(true)}>
+                          <i className='far fa-trash-alt mr-0'></i>
+                        </Button>
+                      </Col>
+                    </Row>
                   </Col>
                 </Row>
                 <Row className='mt-1 mb-1'>
@@ -224,7 +335,7 @@ const PlantDetails = (props) => {
                     {data.plants[0].is_uprooted ? "Uprooted" : "Alive"}
                   </Col>
                   <Col>
-                    <strong>Fruit Count:</strong> {data.plants[0].fruit_count}
+                    <strong>Fruit Count:</strong> {fCount}
                   </Col>
                 </Row>
                 <Row className='mt-3 mb-1'>
@@ -303,8 +414,9 @@ const PlantDetails = (props) => {
         </div>
       )}
 
-      {mutationLoading && <LoadingPopup isOpen />}
-      {mutationError && createToast({ message: "some Error Occurred" })}
+      {mutationLoading || (fcmutationLoading && <LoadingPopup isOpen />)}
+      {mutationError ||
+        (fcmutationError && createToast({ message: "some Error Occurred" }))}
       <Multitabs p_uuid={p_uuid}></Multitabs>
     </Container>
   );

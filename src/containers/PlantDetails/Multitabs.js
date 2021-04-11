@@ -44,8 +44,8 @@ const Multitabs = ({ p_uuid }) => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   return (
-    <Container>
-      <div className='mt-3'>
+    <Container className='mb-3'>
+      <div className='mt-3 mb-3 p-4'>
         <Card
           className='p-3'
           style={{ borderColor: "grey", borderWidth: "1px" }}>
@@ -135,18 +135,20 @@ const Multitabs = ({ p_uuid }) => {
                 <Col>
                   <p>
                     {data.plants[0].plant_info.planting_instructions
-                      ? data.plants[0].plant_info.planting_instructions.split("==")
-                      .map((item, i) => {
-                        return <p key={i}>{item}</p>
-                      })
+                      ? data.plants[0].plant_info.planting_instructions
+                          .split("==")
+                          .map((item, i) => {
+                            return <p key={i}>{item}</p>;
+                          })
                       : "Planting Instructions Not Available"}
                   </p>
                   <p>
                     {data.plants[0].plant_info.soil_quality_suited
-                      ? data.plants[0].plant_info.soil_quality_suited.split("==")
-                      .map((item, i) => {
-                        return <p key={i}>{item}</p>
-                      })
+                      ? data.plants[0].plant_info.soil_quality_suited
+                          .split("==")
+                          .map((item, i) => {
+                            return <p key={i}>{item}</p>;
+                          })
                       : "Planting Instructions Not Available"}
                   </p>
                 </Col>

@@ -142,6 +142,8 @@ const DisplayPlant = ({ u_id, asm_data }) => {
           borderRadius: "15px",
           borderColor: "rgb(158,158,158)",
           borderWidth: "4px",
+          // background:
+          //   "url('https://mudpi.app/img/circuit-flipped-green.png') -5% 50% / 60% no-repeat",
         }}>
         <CardBody>
           <CardTitle tag='h5'> </CardTitle>
