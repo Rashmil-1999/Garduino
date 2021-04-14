@@ -37,6 +37,7 @@ import bg1 from "../../assets/images/bg-2.jpg";
 import circuitDesign from "../../assets/images/circuit-design-2.png";
 import hasuraIcon from "../../assets/images/hasura_icon.png";
 import graphQLIcon from "../../assets/images/graphql_icon.png";
+import ct from "../../assets/images/contact.JPG";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -927,14 +928,14 @@ const Login = (props) => {
                   stewardship and healthy eating among children"
                 
                 </p>
-                <h3 class='h3 text-primary mb-2 relative delimiter-bottom-dark'>
+                {/*<h3 class='h3 text-primary mb-2 relative delimiter-bottom-dark'>
                   Contact Details
                 </h3>
                 <p>
                 For further Queries you can reach us on: <br></br>
                 priyal0561@gmail.com<br></br> milonisangani15@gmail.com<br></br>{" "}
                 rashmilp833@gmail.com
-              </p>
+        </p>*/}
                 
               </div>
             </div>
@@ -1047,40 +1048,45 @@ const Login = (props) => {
           </Card>
         </div> */}
 
-      {/* <footer
+       <footer
           style={{
             textAlign: "center",
 
-            backgroundColor: "#aaabb8",
+            backgroundColor: "#dfe6ed",
             color: "black",
             fontFamily: "cursive",
             fontWeight: 500,
           }}>
-          <Row xs='2'>
-            <Col style={{ paddingLeft: "80px", paddingTop: "20px" }}>
-              <h4>Vision and Mission</h4>
-              <p>
-                It all started with a resolve to use the opportunities offered
-                by technology in doing something for the society. Reseacgers
-                have predicted that " A family that practices gardening tends to
-                be more inclined towards adopting a healthy lifestyle and home
-                gardening promotes values of science, environmental stewardship
-                and healthy eating among children"
-              </p>
-            </Col>
-
+          <Row xs='3'>
             <Col>
-              <h4 style={{ paddingRight: "20px", paddingTop: "20px" }}>
-                Contact
+            <h4 style={{ paddingRight: "20px", paddingTop: "20px", textAlign:"center", fontFamily: "cursive" }}>
+                <pre>  Contact Details</pre>
               </h4>
-              <p>
-                For further Queries you can reach us on: <br></br>
+              <p style={{ paddingRight: "20px", paddingTop: "5px", textAlign:"center" }}>
+                For further Queries you can reach us on: <br></br><br></br>
                 priyal0561@gmail.com<br></br> milonisangani15@gmail.com<br></br>{" "}
                 rashmilp833@gmail.com
               </p>
             </Col>
+
+            <Col>
+             <img src={ct} style={{paddingTop:"35px"}}></img>
+            </Col>
+            <Col>
+            <h6 style={{ paddingRight: "20px", paddingTop: "20px", textAlign:"center",fontFamily: "cursive" }}>
+            We would like to thank the creators of the following websites for providing us with all the relevant information about plants:
+              </h6>
+              <br></br>
+
+              <p>indiaplants.com <br></br>
+              garden.org<br></br>
+              healthline.com<br></br>
+              krishijagran.com</p>
+            
+            </Col>
+            
           </Row>
-        </footer> */}
+        </footer> 
     </>
   );
 };
