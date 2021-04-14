@@ -133,7 +133,7 @@ const PlantDetails = (props) => {
           "url('https://mudpi.app/img/circuit-flipped-green.png') -5% 0% / 60% no-repeat",
         position: "relative",
       }}>
-      <img
+      {/* <img
         src={circuit}
         alt='Curcuit Img'
         style={{
@@ -143,7 +143,7 @@ const PlantDetails = (props) => {
           position: "absolute",
           top: "50%",
           right: "0%",
-        }}></img>
+        }}></img> */}
       <img
         src={circuit_2}
         alt='Curcuit Img'
@@ -155,7 +155,7 @@ const PlantDetails = (props) => {
           top: "0%",
           right: "0%",
         }}></img>
-      <img
+      {/* <img
         src={circuit_2}
         alt='Curcuit Img'
         style={{
@@ -165,7 +165,7 @@ const PlantDetails = (props) => {
           position: "absolute",
           top: "0%",
           left: "0%",
-        }}></img>
+        }}></img> */}
       {console.log(isOpen, manualMode)}
       <Tooltip
         placement='bottom'
