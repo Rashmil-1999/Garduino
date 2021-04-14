@@ -138,3 +138,14 @@ export const UPDATE_IRRIGATION_SCHEDULE = gql`
     }
   }
 `;
+
+export const UPDATE_MAILING_TABLE = gql`
+  mutation UpdateMailingTable($u_uuid: uuid!) {
+    update_mailing_table(
+      where: { u_uuid: { _eq: $u_uuid } }
+      _set: { signal: true }
+    ) {
+      affected_rows
+    }
+  }
+`;

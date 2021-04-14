@@ -130,3 +130,19 @@ export const UPDATE_FCOUNT = gql`
     }
   }
 `;
+
+export const GET_DETAILED_PLANT_INFO = gql`
+  query GetDetailedPlantInfo {
+    plant_info {
+      common_name
+      description
+      germination_period
+      growing_months
+      planting_instructions
+      atmospheric_temp_low
+      scientific_name
+      soil_quality_suited
+      atmospheric_temp_high
+    }
+  }
+`;

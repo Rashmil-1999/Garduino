@@ -11,7 +11,7 @@ import {
   Spinner,
 } from "reactstrap";
 import logo from "../../assets/images/green_logo4.png";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import * as user_queries from "../../queries/user_queries";
 import { client } from "../../UserApp";
 
@@ -19,6 +19,19 @@ const Header = ({ u_uuid }) => {
   //const [collapsed, setCollapsed] = useState(true);
   //const toggleNavbar = () => setCollapsed(!collapsed);
   const [isOpen, setIsOpen] = useState(false);
+
+  const [
+    updateMailingTable,
+    { loading: mutationLoading, error: mutationError, data: mutationResponse },
+  ] = useMutation(user_queries.UPDATE_MAILING_TABLE, {
+    client: client,
+    onCompleted: (data) => {
+      alert(
+        "The email with Image Stills will be sent to your registered email-id."
+      );
+    },
+  });
+
   const { error, loading, data } = useQuery(user_queries.GET_USER_NAME, {
     client: client,
     variables: { u_uuid },
@@ -65,7 +78,25 @@ const Header = ({ u_uuid }) => {
           </NavbarText>
           <NavItem>
             <NavLink href='/dashboard' style={{ color: "white" }}>
-              Profile Settings
+              Dashboard
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='/plants_info' style={{ color: "white" }}>
+              Plant Information
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={() => {
+                updateMailingTable({
+                  variables: {
+                    u_uuid: u_uuid,
+                  },
+                });
+              }}
+              style={{ color: "white" }}>
+              Image Stills
             </NavLink>
           </NavItem>
           <NavLink href='/logout' style={{ color: "white" }}>
