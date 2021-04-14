@@ -145,6 +145,7 @@ const Login = (props) => {
                 isLoading={loading}
                 isDisabled={!isValidEmail || !isValidPassword}
               /> */}
+          <Row style={{ justifyContent:"center"}}>
             <Button
               color='success'
               onClick={onLogin}
@@ -158,6 +159,7 @@ const Login = (props) => {
                 "Login"
               )}
             </Button>
+          </Row>
           </CardText>
         </Card>
         <div

@@ -26,6 +26,7 @@ const PlantCard = ({ each_plant, u_id }) => {
         width: "200px",
         borderColor: each_plant.is_uprooted ? "red" : "green",
         borderWidth: "2px",
+        cursor:"pointer",
       }}
       className={
         each_plant.is_uprooted

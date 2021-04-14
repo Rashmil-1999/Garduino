@@ -96,15 +96,7 @@ const Multitabs = ({ p_uuid }) => {
                 Visualization of Sensor Data
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink
-                className={classnames({ active: activeTab === "6" })}
-                onClick={() => {
-                  tabToggle("6");
-                }}>
-                Live status of Garden
-              </NavLink>
-            </NavItem>
+            
           </Nav>
           <TabContent activeTab={activeTab}>
             <TabPane tabId='1'>
@@ -162,22 +154,37 @@ const Multitabs = ({ p_uuid }) => {
                     "Sensor Data Not Available"
                   ) : (
                     <div>
-                      <h6>
-                        Air Humidity is:{" "}
-                        {data.plants[0].sensor_data[0].air_humidity}
-                      </h6>
-                      <h6>
-                        Air Temperature is :{" "}
-                        {data.plants[0].sensor_data[0].air_temperature}
-                      </h6>
-                      <h6>
-                        Soil Temperature is:{" "}
-                        {data.plants[0].sensor_data[0].soil_temp}
-                      </h6>
-                      <h6>
-                        Soil Moisture is :{" "}
-                        {data.plants[0].sensor_data[0].soil_moisture}
-                      </h6>
+                      <Table size="sm">
+                        <thead>
+                          <tr style={{color:"black"}}>
+                            <th>#</th>
+                            <th>Sensor Name</th>
+                            <th>Sensor Value</th>
+                          </tr>
+                        </thead>
+                        <tbody style={{ fontSize:"17px"}}>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Air Humidity</td>
+                            <td>{data.plants[0].sensor_data[0].air_humidity}%</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Air Temperature</td>
+                            <td>{data.plants[0].sensor_data[0].air_temperature}°C</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Soil Moisture</td>
+                            <td>{data.plants[0].sensor_data[0].soil_moisture}%</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Soil Temperature</td>
+                            <td>{data.plants[0].sensor_data[0].soil_temp}°C</td>
+                          </tr>
+                        </tbody>
+                      </Table>
                     </div>
                   )}
                 </Col>
@@ -197,9 +204,7 @@ const Multitabs = ({ p_uuid }) => {
 
               <Charts p_uuid={p_uuid}></Charts>
             </TabPane>
-            <TabPane tabId='6'>
-              <br></br>
-            </TabPane>
+            
           </TabContent>
         </Card>
       </div>
