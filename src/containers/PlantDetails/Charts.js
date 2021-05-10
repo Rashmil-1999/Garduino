@@ -37,7 +37,7 @@ const Charts = ({ p_uuid }) => {
   return (
     <Container>
       <Row className='justify-content-center'>
-        <Col className='col-sm-6 col-xs-6 flex-shrink-1'>
+        <Col className='col-sm-6 col-xs-6 flex-shrink-1 text-center'>
           <Button
             color='primary'
             style={{ marginBottom: "15px" }}
@@ -45,7 +45,7 @@ const Charts = ({ p_uuid }) => {
             View Air Sensor Data
           </Button>
         </Col>
-        <Col className='col-sm-6 col-xs-6'>
+        <Col className='col-sm-6 col-xs-6 text-center'>
           <Button
             color='primary'
             style={{ marginBottom: "15px" }}

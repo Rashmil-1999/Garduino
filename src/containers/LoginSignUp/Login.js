@@ -146,21 +146,21 @@ const Login = (props) => {
                 isLoading={loading}
                 isDisabled={!isValidEmail || !isValidPassword}
               /> */}
-          <Row style={{ justifyContent:"center"}}>
-            <Button
-              color='success'
-              onClick={onLogin}
-              disabled={!isValidEmail || !isValidPassword}>
-              {loading ? (
-                <div>
-                  <i className='fa fa-circle-o-notch fa-spin'></i>
-                  &nbsp;&nbsp;Loading
-                </div>
-              ) : (
-                "Login"
-              )}
-            </Button>
-          </Row>
+            <Row style={{ justifyContent: "center" }}>
+              <Button
+                color='success'
+                onClick={onLogin}
+                disabled={!isValidEmail || !isValidPassword}>
+                {loading ? (
+                  <div>
+                    <i className='fa fa-circle-o-notch fa-spin'></i>
+                    &nbsp;&nbsp;Loading
+                  </div>
+                ) : (
+                  "Login"
+                )}
+              </Button>
+            </Row>
           </CardText>
         </Card>
         <div
@@ -926,7 +926,6 @@ const Login = (props) => {
                   to be more inclined towards adopting a healthy lifestyle and
                   home gardening promotes values of science, environmental
                   stewardship and healthy eating among children"
-                
                 </p>
                 {/*<h3 class='h3 text-primary mb-2 relative delimiter-bottom-dark'>
                   Contact Details
@@ -936,7 +935,6 @@ const Login = (props) => {
                 priyal0561@gmail.com<br></br> milonisangani15@gmail.com<br></br>{" "}
                 rashmilp833@gmail.com
         </p>*/}
-                
               </div>
             </div>
           </div>
@@ -1048,45 +1046,64 @@ const Login = (props) => {
           </Card>
         </div> */}
 
-       <footer
-          style={{
-            textAlign: "center",
+      <footer
+        style={{
+          textAlign: "center",
 
-            backgroundColor: "#dfe6ed",
-            color: "black",
-            fontFamily: "cursive",
-            fontWeight: 500,
-          }}>
-          <Row xs='3'>
-            <Col>
-            <h4 style={{ paddingRight: "20px", paddingTop: "20px", textAlign:"center", fontFamily: "cursive" }}>
-                <pre>  Contact Details</pre>
-              </h4>
-              <p style={{ paddingRight: "20px", paddingTop: "5px", textAlign:"center" }}>
-                For further Queries you can reach us on: <br></br><br></br>
-                priyal0561@gmail.com<br></br> milonisangani15@gmail.com<br></br>{" "}
-                rashmilp833@gmail.com
-              </p>
-            </Col>
-
-            <Col>
-             <img src={ct} style={{paddingTop:"35px"}}></img>
-            </Col>
-            <Col>
-            <h6 style={{ paddingRight: "20px", paddingTop: "20px", textAlign:"center",fontFamily: "cursive" }}>
-            We would like to thank the creators of the following websites for providing us with all the relevant information about plants:
-              </h6>
+          backgroundColor: "#dfe6ed",
+          color: "black",
+          fontFamily: "cursive",
+          fontWeight: 500,
+        }}>
+        <Row xs='3'>
+          <Col>
+            <h4
+              style={{
+                paddingRight: "20px",
+                paddingTop: "20px",
+                textAlign: "center",
+                fontFamily: "cursive",
+              }}>
+              <pre> Contact Details</pre>
+            </h4>
+            <p
+              style={{
+                paddingRight: "20px",
+                paddingTop: "5px",
+                textAlign: "center",
+              }}>
+              For further Queries you can reach us on: <br></br>
               <br></br>
+              priyal0561@gmail.com<br></br> milonisangani15@gmail.com<br></br>{" "}
+              rashmilp833@gmail.com
+            </p>
+          </Col>
 
-              <p>indiaplants.com <br></br>
+          <Col>
+            <img src={ct} style={{ paddingTop: "35px" }}></img>
+          </Col>
+          <Col>
+            <h6
+              style={{
+                paddingRight: "20px",
+                paddingTop: "20px",
+                textAlign: "center",
+                fontFamily: "cursive",
+              }}>
+              We would like to thank the creators of the following websites for
+              providing us with all the relevant information about plants:
+            </h6>
+            <br></br>
+
+            <p>
+              indiaplants.com <br></br>
               garden.org<br></br>
               healthline.com<br></br>
-              krishijagran.com</p>
-            
-            </Col>
-            
-          </Row>
-        </footer> 
+              krishijagran.com
+            </p>
+          </Col>
+        </Row>
+      </footer>
     </>
   );
 };
