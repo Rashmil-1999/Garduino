@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //import the login and signup pages
 import Login from "./containers/LoginSignUp/Login";
 import SignUp from "../src/containers/LoginSignUp/SignUp";
-import PlantDetails from "./containers/PlantDetails/PlantDetails";
+
 import Toolbar from "./components/Toolbar/Toolbar";
 //import the user app
 import UserApp from "./UserApp";
