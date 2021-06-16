@@ -17,7 +17,7 @@ const PlantCard = ({ each_plant, u_id }) => {
   console.log(each_plant);
   const handleCardClick = (e) => {
     console.log(each_plant.p_uuid);
-    window.location = `/plants/${each_plant.p_uuid}`;
+    window.location.pathname = `/plants/${each_plant.p_uuid}`;
   };
 
   return (

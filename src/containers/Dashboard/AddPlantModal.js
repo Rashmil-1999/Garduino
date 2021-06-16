@@ -30,7 +30,7 @@ const AddPlantModal = (props) => {
     client: client,
     onCompleted: (data) => {
       console.log("Plant Created!");
-      window.location = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
+      window.location.pathname = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
     },
   });
 

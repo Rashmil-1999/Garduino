@@ -46,7 +46,7 @@ const ScheduleChanger = (props) => {
     onCompleted: (data) => {
       console.log("Irrigation Schedule Updated!");
       // alert("sensor Mapping inserted");
-      window.location = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
+      window.location.pathname = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
     },
   });
 

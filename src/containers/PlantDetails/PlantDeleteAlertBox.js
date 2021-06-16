@@ -16,7 +16,7 @@ const PlantDeleteAlertBox = (props) => {
     onCompleted: (data) => {
       console.log(data);
       console.log("Plant Uprooted!");
-      window.location = `/plants/${p_uuid}`;
+      window.location.pathname = `/plants/${p_uuid}`;
     },
   });
 

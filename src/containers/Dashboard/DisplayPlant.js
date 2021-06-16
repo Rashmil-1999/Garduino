@@ -85,7 +85,7 @@ const DisplayPlant = ({ u_id, asm_data }) => {
     onCompleted: (data) => {
       console.log("Sensor Mappings Inserted!");
       alert("sensor Mapping inserted");
-      window.location = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
+      window.location.pathname = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
     },
   });
 

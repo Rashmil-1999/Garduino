@@ -14,16 +14,25 @@ import * as tokenUtils from "./utils/tokenUtils";
 
 function App() {
   const isLoggedIn = useMemo(() => tokenUtils.isLoggedIn(), []);
+  console.log(process.env.REACT_APP_LOGIN_URL)
+  console.log(window.location.hostname)
+  console.log(window.location.pathname)
+  console.log(!isLoggedIn &&
+    window.location.pathname !== process.env.REACT_APP_LOGIN_URL + "/")
+  console.log(isLoggedIn &&
+    window.location.pathname !== process.env.REACT_APP_LOGIN_URL + "/")
+  console.log(isLoggedIn)
   if (
     !isLoggedIn &&
-    window.location.href !== process.env.REACT_APP_LOGIN_URL + "/"
+    window.location.pathname !== process.env.REACT_APP_LOGIN_URL
   ) {
-    window.location = `${process.env.REACT_APP_LOGIN_URL}`;
+    console.log(process.env.REACT_APP_LOGIN_URL)
+    window.location.pathname = `${process.env.REACT_APP_LOGIN_URL}`;
   } else if (
     isLoggedIn &&
-    window.location.href === process.env.REACT_APP_LOGIN_URL + "/"
+    window.location.pathname === process.env.REACT_APP_LOGIN_URL
   ) {
-    window.location = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
+    window.location.pathname = `${process.env.REACT_APP_REDIRECT_PATHNAME}`;
   }
   let roles = null;
   let u_uuid = null;
@@ -42,7 +51,7 @@ function App() {
       }}>
       <Toolbar user={roles} u_uuid={u_uuid} />
       <Switch>
-        <Route exact path='/' component={Login} />
+        <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={SignUp} />
         <UserApp />
       </Switch>

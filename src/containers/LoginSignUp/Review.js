@@ -96,7 +96,7 @@ const Review = ({ userFormData, techDetails, navigation }) => {
     client: client,
     onCompleted: (data) => {
       console.log("User Created!");
-      window.location = `${process.env.REACT_APP_LOGIN_URL}`;
+      window.location.pathname = `${process.env.REACT_APP_LOGIN_URL}`;
     },
   });
 
