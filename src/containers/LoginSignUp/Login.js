@@ -18,6 +18,8 @@ import { toast } from "react-toastify";
 import pf1 from "../../assets/images/green_logo4.png";
 import circuitDesign from "../../assets/images/circuit-design-2.png";
 
+import ct from "../../assets/images/contact.JPG";
+
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
