@@ -2,6 +2,7 @@
   "name": "garduino",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://smart-garden-site.netlify.app",
   "engines": {
     "node": "14.x"
   },

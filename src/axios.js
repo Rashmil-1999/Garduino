@@ -19,7 +19,6 @@ class Axios {
             const cookie = new Cookies();
             cookie.set(process.env.REACT_APP_USER_TOKEN, resp.data.user.token, {
               path: "/",
-              domain: process.env.REACT_APP_DOMAIN,
             });
             resolve(resp.data);
           }

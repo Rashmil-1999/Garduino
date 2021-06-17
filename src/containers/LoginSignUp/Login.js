@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import Input from "../../components/Input/Input";
 import {
-  Container,
   Row,
   Col,
   Card,
   CardImg,
-  CardTitle,
   CardText,
-  CardDeck,
-  CardSubtitle,
-  CardBody,
-  Jumbotron,
-  CardColumns,
   Button,
 } from "reactstrap";
 
@@ -22,22 +15,8 @@ import "../../assets/CSS/theme.css";
 import axios from "../../axios";
 // import Button from "../../components/Button/Login/Button";
 import { toast } from "react-toastify";
-import * as tokenUtils from "../../utils/tokenUtils";
 import pf1 from "../../assets/images/green_logo4.png";
-import blue from "../../assets/images/blue.jpg";
-import { Link } from "react-router-dom";
-//import LoginSignupNavbar from "../../components/Toolbar/LoginSignupNavbar";
-import vid from "../../assets/Videos/vid2.mp4";
-import gif1 from "../../assets/images/giphy-1.gif";
-import gif2 from "../../assets/images/giphy-3.gif";
-import pm from "../../assets/images/plantmonitor.png";
-import wd from "../../assets/images/plants.png";
-import { repeat, transform } from "lodash";
-import bg1 from "../../assets/images/bg-2.jpg";
 import circuitDesign from "../../assets/images/circuit-design-2.png";
-import hasuraIcon from "../../assets/images/hasura_icon.png";
-import graphQLIcon from "../../assets/images/graphql_icon.png";
-import ct from "../../assets/images/contact.JPG";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
