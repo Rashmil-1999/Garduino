@@ -94,11 +94,11 @@
 .circuit-pulse {
   position: absolute;
   top: calc(-50%);
-  left: 50%;
-  transform: translateX(-50%) scale(2, 1.1);
-  width: 100%;
+  /* left: 50%;
+  transform: translateX(-50%) scale(2, 1.1);*/
+  width: 95%;
   height: 133%;
-  min-width: 900px;
+  /* min-width: 900px; */
   fill: none;
   stroke: #e0e0e0;
   stroke-dasharray: 1000;
@@ -186,9 +186,9 @@
     /* bottom: initial; */
     top: 20% !important;
     /* bottom: 40%; */
-    transform: translateX(-30%) scale(0.52, 2);
+    /* transform: translateX(-30%) scale(0.52, 2);
     height: 60%;
-    width: 50%;
+    width: 50%; */
   }
 
   .sm\:overflow-x-hidden {

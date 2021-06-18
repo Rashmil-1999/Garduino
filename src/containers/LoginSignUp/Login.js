@@ -9,7 +9,7 @@ import {
   Button,
 } from "reactstrap";
 
-import "../../assets/CSS/app.css";
+import "../../assets/CSS/login.css";
 import "../../assets/CSS/theme.css";
 
 import axios from "../../axios";
@@ -271,21 +271,19 @@ const Login = (props) => {
       <br></br>
       {/* <br></br> */}
       {/* <br></br> */}
-      <div className='columns relative is-centered'>
+      <div className='container-fluid relative'>
         <svg
           class='circuit-no-fill'
           version='1.1'
           xmlns='http://www.w3.org/2000/svg'
-          // xmlns:xlink='http://www.w3.org/1999/xlink'
+          xmlnsXlink='http://www.w3.org/1999/xlink'
           x='0px'
           y='0px'
-          // width='100%'
-          // height='100%'
           preserveAspectRatio='xMidYMid meet'
           viewBox='0 0 432 648'
           style={{ enableBackground: "new 0 0 432 648", top: "0px" }}
           // style='enable-background:new 0 0 432 648;'
-          // xml:space='preserve'
+          xmlSpace='preserve'
         >
           <g id='Layer_2'>
             <polyline
@@ -534,15 +532,13 @@ const Login = (props) => {
           class='circuit-pulse fadein'
           version='1.1'
           xmlns='http://www.w3.org/2000/svg'
-          // xmlns:xlink='http://www.w3.org/1999/xlink'
+          xmlnsXlink='http://www.w3.org/1999/xlink'
           x='0px'
           y='0px'
-          // width='100%'
-          // height='100%'
           viewBox='0 0 432 648'
           preserveAspectRatio='xMidYMid meet'
           style={{ top: "0px" }}
-          // xml:space='preserve'
+          xmlSpace='preserve'
         >
           <g id='Layer_2'>
             <polyline
@@ -786,8 +782,8 @@ const Login = (props) => {
             <polyline class='st0' points='267,280.3 287.7,280.3 301.7,265   ' />
           </g>
         </svg>
-        <div className='column column-12 sm:column-6 md:column-6 mb-3'>
-          <div className='box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered '>
+        {/* <div className='column column-12 sm:column-6 md:column-6 mb-3'>
+          <div className='hover:scale-1 relative rounded-3 py-1 mb-3 columns is-centered '>
             <div className='column column-12 md:column-4 mb-3 md:mb-0'>
               <img
                 class=''
@@ -795,7 +791,7 @@ const Login = (props) => {
             </div>
 
             <div class='column column-12 md:column-8'>
-              <h3 class='h4 text-primary'>Configurable</h3>
+              <h3 class='h5 text-primary'>Configurable</h3>
               <p class='mb-2'>
                 Configure and customize Garduino to your specific garden needs
                 providing personalized care.
@@ -805,12 +801,12 @@ const Login = (props) => {
           <br></br>
           <br></br>
           <br></br>
-          <div class='box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered'>
+          <div class='hover:scale-1 relative rounded-3 py-1 mb-3 columns is-centered'>
             <div class='column column-12 md:column-4 mb-3 md:mb-0'>
               <img class='' src='https://mudpi.app/svg/schedules.svg'></img>
             </div>
             <div class='column column-12 md:column-8'>
-              <h3 class='h4 text-primary'>Remote & Scheduled Control</h3>
+              <h3 class='h5 text-primary'>Remote & Scheduled Control</h3>
               <p class='mb-2'>
                 Create powerful schedules to care for your garden while your
                 away or busy with other things. You can also take manual control
@@ -822,14 +818,14 @@ const Login = (props) => {
           <br></br>
           <br></br>
           <div
-            class='box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered'
+            class='hover:scale-1 relative rounded-3 py-1 mb-3 columns is-centered'
             // style={{ top: "500px" }}
           >
             <div class='column column-12 md:column-4 mb-3 md:mb-0'>
               <img class='' src='https://mudpi.app/svg/home.svg'></img>
             </div>
             <div class='column column-12 md:column-8'>
-              <h3 class='h4 text-primary'>Save Resources</h3>
+              <h3 class='h5 text-primary'>Save Resources</h3>
               <p class='mb-2'>
                 Spend less time, water and money by giving your plants care when
                 they need it most. Using valuable sensor readings and schedules
@@ -838,15 +834,15 @@ const Login = (props) => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div class='column column-12 sm:column-6 md:column-6 mb-3'>
-          <div class='box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered'>
+        {/* <div class='column column-12 sm:column-6 md:column-6'>
+          <div class='hover:scale-1 relative rounded-3 mb-3 columns is-centered'>
             <div class='column column-12 md:column-4 mb-3 md:mb-0'>
               <img class='' src='https://mudpi.app/svg/phone_check.svg'></img>
             </div>
             <div class='column column-12 md:column-8'>
-              <h3 class='h4 text-primary'>Automated Watering</h3>
+              <h3 class='h5 text-primary'>Automated Watering</h3>
               <p class='mb-2'>
                 Efficiently water plants when they need it most by using
                 automated watering schedules.
@@ -857,7 +853,7 @@ const Login = (props) => {
           <br></br>
           <br></br>
 
-          <div class='box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered'>
+          <div class='hover:scale-1 relative rounded-3 mb-3 columns is-centered'>
             <div class='column column-12 md:column-4 mb-3 md:mb-0'>
               <img
                 class=''
@@ -865,7 +861,7 @@ const Login = (props) => {
                 src='https://mudpi.app/svg/check_list.svg'></img>
             </div>
             <div class='column column-12 md:column-8'>
-              <h3 class='h4 text-primary'>Gather Garden Insights</h3>
+              <h3 class='h5 text-primary'>Gather Garden Insights</h3>
               <p class='mb-2'>
                 Monitor and maintain your garden at peak efficiency with useful
                 data such as soil moisture, weather and more.
@@ -876,12 +872,12 @@ const Login = (props) => {
           <br></br>
           <br></br>
           <br></br>
-          <div class='box hover:scale-2 relative rounded-3 py-1 mb-3 columns is-centered'>
+          <div class='hover:scale-1 relative rounded-3 mb-3 columns is-centered'>
             <div class='column column-12 md:column-4 mb-3 md:mb-0'>
               <img class='' src='https://mudpi.app/svg/sensor_stats.svg'></img>
             </div>
             <div class='column column-12 md:column-8'>
-              <h3 class='h4 text-primary'>Obtain Live Status Of Plants</h3>
+              <h3 class='h5 text-primary'>Obtain Live Status Of Plants</h3>
               <p class='mb-2'>
                 An email will be sent on the registered email of the user with
                 the live images of the plant.In this way the user can view their
@@ -889,7 +885,102 @@ const Login = (props) => {
               </p>
             </div>
           </div>
+        </div> */}
+        <div class="row">
+        <div class="col">
+            <div class="row box rounded-3 no-gutters py-1 mb-3">
+                <div class="col-md-4">
+                    <img class='' src='https://mudpi.app/svg/plant_in_mobile.svg'></img>
+                </div>
+                <div class="col-md-8">
+                    <h3 class='h5 text-primary'>Configurable</h3>
+                    <p class='mb-2'>
+                        Configure and customize Garduino to your specific garden needs
+                        providing personalized care.
+                    </p>
+                </div>
+            </div>    
         </div>
+        <div class="col">
+            <div class="row box rounded-3 no-gutters py-1 mb-3">
+                <div class="col-md-4">
+                    <img class='' src='https://mudpi.app/svg/phone_check.svg'></img>
+                </div>
+                <div class="col-md-8">
+                    <h3 class='h5 text-primary'>Automated Watering</h3>
+                    <p class='mb-2'>
+                        Efficiently water plants when they need it most by using
+                automated watering schedules.
+                    </p>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row box rounded-3 no-gutters py-1 mb-3">
+                <div class="col-md-4">
+                    <img class='' src='https://mudpi.app/svg/schedules.svg'></img>
+                </div>
+                <div class="col-md-8">
+                    <h3 class='h5 text-primary'>Remote & Scheduled Control</h3>
+                    <p class='mb-2'>
+                        Create powerful schedules to care for your garden while your
+                away or busy with other things. You can also take manual control
+                for the more involved gardeners.
+                    </p>
+                </div>
+            </div>    
+        </div>
+        <div class="col">
+            <div class="row box rounded-3 no-gutters py-1 mb-3">
+                <div class="col-md-4">
+                    <img class='' src='https://mudpi.app/svg/check_list.svg'></img>
+                </div>
+                <div class="col-md-8">
+                    <h3 class='h5 text-primary'>Gather Garden Insights</h3>
+                    <p class='mb-2'>
+                        Monitor and maintain your garden at peak efficiency with useful
+                data such as soil moisture, weather and more.
+                    </p>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="row box rounded-3 no-gutters py-1 mb-3">
+                <div class="col-md-4">
+                    <img class='' src='https://mudpi.app/svg/home.svg'></img>
+                </div>
+                <div class="col-md-8">
+                    <h3 class='h5 text-primary'>Save Resources</h3>
+                    <p class='mb-2'>
+                        Spend less time, water and money by giving your plants care when
+                they need it most. Using valuable sensor readings and schedules
+                you can reduce your waste and help maintain a healthy thriving
+                garden.
+                    </p>
+                </div>
+            </div>    
+        </div>
+        <div class="col">
+            <div class="row box rounded-3 no-gutters py-1 mb-3">
+                <div class="col-md-4">
+                    <img class='' src='https://mudpi.app/svg/sensor_stats.svg'></img>
+                </div>
+                <div class="col-md-8">
+                    <h3 class='h5 text-primary'>Obtain Live Status Of Plants</h3>
+                    <p class='mb-2'>
+                        An email will be sent on the registered email of the user with
+                the live images of the plant.In this way the user can view their
+                plants remotely.
+                    </p>
+                </div>
+            </div> 
+        </div>
+    </div>
+
       </div>
 
       <div className='mb-5 ' style={{ height: "400px" }}>
