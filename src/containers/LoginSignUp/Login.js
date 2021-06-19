@@ -9,7 +9,7 @@ import {
   Button,
 } from "reactstrap";
 
-import "../../assets/CSS/login.css";
+import "../../assets/CSS/login_page.css";
 import "../../assets/CSS/theme.css";
 
 import axios from "../../axios";
@@ -119,14 +119,6 @@ const Login = (props) => {
               value={password}
               onChange={onPassChange}
             />
-            {/* <Button
-                style={{}}
-                name='Log In'
-                classes={["btn-check"]}
-                onClick={onLogin}
-                isLoading={loading}
-                isDisabled={!isValidEmail || !isValidPassword}
-              /> */}
             <Row style={{ justifyContent: "center" }}>
               <Button
                 color='success'
@@ -149,9 +141,9 @@ const Login = (props) => {
             // border: "2px solid red",
             flex: "0 1 auto",
             position: "relative",
-            height: "724.56px",
+            height: "500px",
           }}
-          className='mb-4'>
+          className='mb-2'>
           <img
             src={circuitDesign}
             style={{ height: "auto", width: "700px", zIndex: "-1" }}></img>
@@ -221,7 +213,7 @@ const Login = (props) => {
               {/* Hasura */}
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                // xmlns:xlink='http://www.w3.org/1999/xlink'
+                xmlnsXlink='http://www.w3.org/1999/xlink'
                 aria-hidden='true'
                 focusable='false'
                 width='4em'
@@ -247,7 +239,7 @@ const Login = (props) => {
               {/* Graph QL */}
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                // xmlns:xlink='http://www.w3.org/1999/xlink'
+                xmlnsXlink='http://www.w3.org/1999/xlink'
                 aria-hidden='true'
                 focusable='false'
                 width='5em'
@@ -267,10 +259,6 @@ const Login = (props) => {
         </div>
         {/* Flexbox div End */}
       </div>
-      <br></br>
-      <br></br>
-      {/* <br></br> */}
-      {/* <br></br> */}
       <div className='container-fluid relative'>
         <svg
           class='circuit-no-fill'
@@ -281,7 +269,7 @@ const Login = (props) => {
           y='0px'
           preserveAspectRatio='xMidYMid meet'
           viewBox='0 0 432 648'
-          style={{ enableBackground: "new 0 0 432 648", top: "0px" }}
+          style={{ enableBackground: "new 0 0 432 648", zIndex:"0" }}
           // style='enable-background:new 0 0 432 648;'
           xmlSpace='preserve'
         >
@@ -537,7 +525,7 @@ const Login = (props) => {
           y='0px'
           viewBox='0 0 432 648'
           preserveAspectRatio='xMidYMid meet'
-          style={{ top: "0px" }}
+          style={{zIndex:"0" }}
           xmlSpace='preserve'
         >
           <g id='Layer_2'>
@@ -888,7 +876,7 @@ const Login = (props) => {
         </div> */}
         <div class="row">
         <div class="col">
-            <div class="row box rounded-3 no-gutters py-1 mb-3">
+            <div class="row box hover:scale-2 rounded-3 no-gutters py-1 mb-3">
                 <div class="col-md-4">
                     <img class='' src='https://mudpi.app/svg/plant_in_mobile.svg'></img>
                 </div>
@@ -902,7 +890,7 @@ const Login = (props) => {
             </div>    
         </div>
         <div class="col">
-            <div class="row box rounded-3 no-gutters py-1 mb-3">
+            <div class="row box hover:scale-2 rounded-3 no-gutters py-1 mb-3">
                 <div class="col-md-4">
                     <img class='' src='https://mudpi.app/svg/phone_check.svg'></img>
                 </div>
@@ -918,7 +906,7 @@ const Login = (props) => {
     </div>
     <div class="row">
         <div class="col">
-            <div class="row box rounded-3 no-gutters py-1 mb-3">
+            <div class="row box hover:scale-2 rounded-3 no-gutters py-1 mb-3">
                 <div class="col-md-4">
                     <img class='' src='https://mudpi.app/svg/schedules.svg'></img>
                 </div>
@@ -933,7 +921,7 @@ const Login = (props) => {
             </div>    
         </div>
         <div class="col">
-            <div class="row box rounded-3 no-gutters py-1 mb-3">
+            <div class="row box hover:scale-2 rounded-3 no-gutters py-1 mb-3">
                 <div class="col-md-4">
                     <img class='' src='https://mudpi.app/svg/check_list.svg'></img>
                 </div>
@@ -949,7 +937,7 @@ const Login = (props) => {
     </div>
     <div class="row">
         <div class="col">
-            <div class="row box rounded-3 no-gutters py-1 mb-3">
+            <div class="row box hover:scale-2 rounded-3 no-gutters py-1 mb-3">
                 <div class="col-md-4">
                     <img class='' src='https://mudpi.app/svg/home.svg'></img>
                 </div>
@@ -965,7 +953,7 @@ const Login = (props) => {
             </div>    
         </div>
         <div class="col">
-            <div class="row box rounded-3 no-gutters py-1 mb-3">
+            <div class="row box hover:scale-2 rounded-3 no-gutters py-1 mb-3">
                 <div class="col-md-4">
                     <img class='' src='https://mudpi.app/svg/sensor_stats.svg'></img>
                 </div>
@@ -983,12 +971,10 @@ const Login = (props) => {
 
       </div>
 
-      <div className='mb-5 ' style={{ height: "400px" }}>
-        <div className='container resize' style={{ top: "30%" }}>
-          <div className='columns py-3 is-centered'>
-            <div className='column column-12 sm:column-8 is-centered text-centered'>
-              <div className='box mb-4 rounded-3'>
-                <h3 className='h3 text-primary mb-2 relative delimiter-bottom-dark'>
+      <div className='mb-4' style={{marginTop:"140px", zIndex:"10" }}>
+        <div className='container resize text-center' style={{ top: "30%", zIndex:"10" }}>
+              <div className='box mb-1 rounded-3' style={{zIndex:"10 !important"}}>
+                <h3 className='h3 text-primary mb-1 relative delimiter-bottom-dark'>
                   Vision and Mission
                 </h3>
                 <p className='text-grey'>
@@ -999,17 +985,7 @@ const Login = (props) => {
                   home gardening promotes values of science, environmental
                   stewardship and healthy eating among children"
                 </p>
-                {/*<h3 class='h3 text-primary mb-2 relative delimiter-bottom-dark'>
-                  Contact Details
-                </h3>
-                <p>
-                For further Queries you can reach us on: <br></br>
-                priyal0561@gmail.com<br></br> milonisangani15@gmail.com<br></br>{" "}
-                rashmilp833@gmail.com
-        </p>*/}
               </div>
-            </div>
-          </div>
         </div>
       </div>
 

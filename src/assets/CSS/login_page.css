@@ -1,0 +1,193 @@
+img {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+figure img {
+  display: block;
+}
+
+.box {
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.414rem;
+  border-radius: 0.125rem;
+  -webkit-box-shadow: 0 8px 20px rgba(50, 50, 93, 0.05),
+    0 5px 10px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 8px 20px rgba(50, 50, 93, 0.05), 0 5px 10px rgba(0, 0, 0, 0.07);
+}
+
+.hover\:scale-2 {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0, 1, 0.95, 0.98);
+  transition: -webkit-transform 0.4s cubic-bezier(0, 1, 0.95, 0.98);
+  transition: transform 0.4s cubic-bezier(0, 1, 0.95, 0.98);
+  transition: transform 0.4s cubic-bezier(0, 1, 0.95, 0.98),
+    -webkit-transform 0.4s cubic-bezier(0, 1, 0.95, 0.98);
+}
+.hover\:scale-2:hover {
+  position: relative;
+  z-index: 3;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.rounded-3 {
+  border-radius: 0.5rem;
+}
+
+.py-1 {
+  padding-top: 0.3535rem;
+  padding-bottom: 0.3535rem;
+}
+
+.column {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[class*="column-"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.column-12 {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 769px) {
+  .md\:columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .md\:column-6 {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  .md\:column-offset-6 {
+    margin-left: 50%;
+  }
+}
+.w-100 {
+  width: 100%;
+}
+.pin {
+  position: absolute;
+}
+.mw-100 {
+  max-width: 100%;
+}
+
+.floaty-ball {
+  background: #f5f6f7;
+  border-radius: 9999px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-box-shadow: 0 30px 40px 0 rgba(31, 45, 61, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 30px 40px 0 rgba(31, 45, 61, 0.1), 0 4px 6px rgba(0, 0, 0, 0.07);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  -webkit-animation: float 3s cubic-bezier(0.29, 0.18, 0.59, 0.9) 1s infinite
+    forwards;
+  animation: float 3s cubic-bezier(0.29, 0.18, 0.59, 0.9) 1s infinite forwards;
+}
+.floaty-ball img {
+  margin: 0 auto;
+}
+.floaty-ball.big {
+  width: 82px;
+  height: 82px;
+}
+.floaty-ball.bigger {
+  width: 100px;
+  height: 100px;
+}
+.floaty-ball:nth-child(2) {
+  -webkit-animation-delay: 1.7s;
+  animation-delay: 1.7s;
+}
+.floaty-ball:nth-child(3) {
+  -webkit-animation-delay: 2.2s;
+  animation-delay: 2.2s;
+  -webkit-animation-duration: 2.7s;
+  animation-duration: 2.7s;
+}
+.floaty-ball:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+}
+.floaty-ball:nth-child(5) {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+}
+.floaty-ball:nth-child(6) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+  -webkit-animation-duration: 3.3s;
+  animation-duration: 3.3s;
+}
+@-webkit-keyframes float {
+  0%,
+  25%,
+  75%,
+  100% {
+    -webkit-transform: traslateY(0);
+    transform: traslateY(0);
+  }
+  50% {
+    -webkit-transform: translate(-50%, calc(-50% + -15px));
+    transform: translate(-50%, calc(-50% + -15px));
+  }
+}
+@keyframes float {
+  0%,
+  25%,
+  75%,
+  100% {
+    -webkit-transform: traslateY(0);
+    transform: traslateY(0);
+  }
+  50% {
+    -webkit-transform: translate(-50%, calc(-50% + -15px));
+    transform: translate(-50%, calc(-50% + -15px));
+  }
+}
+.floaty-ball img {
+  margin: 0 auto;
+}

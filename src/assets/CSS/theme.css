@@ -93,11 +93,10 @@
 .circuit-no-fill,
 .circuit-pulse {
   position: absolute;
-  top: calc(-50%);
-  /* left: 50%;
-  transform: translateX(-50%) scale(2, 1.1);*/
-  width: 95%;
-  height: 133%;
+  top: calc(-130%);
+  transform: scale(1, 0.3);
+  /* width: 95%; */
+  /* height: 133%; */
   /* min-width: 900px; */
   fill: none;
   stroke: #e0e0e0;
@@ -184,10 +183,10 @@
   .circuit-pulse {
     left: 0;
     /* bottom: initial; */
-    top: 20% !important;
+    top: 30% !important;
     /* bottom: 40%; */
-    /* transform: translateX(-30%) scale(0.52, 2);
-    height: 60%;
+    transform: scale(1, 2.3);
+    /* height: 60%;
     width: 50%; */
   }
 

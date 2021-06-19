@@ -36,7 +36,7 @@ const Dashboard = ({ userid }) => {
           transform: "scaleX(-1)",
           zIndex: "0",
           position: "absolute",
-          top: "50%",
+          top: "39%",
           right: "0%",
         }}></img>
       {console.log(data)}

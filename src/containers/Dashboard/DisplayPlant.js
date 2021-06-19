@@ -160,7 +160,7 @@ const DisplayPlant = ({ u_id, asm_data }) => {
           u_uuid={u_id}
         />
       </Card>
-      <Jumbotron className='text-center mb-3'>
+      <Jumbotron className='text-center mb-3' style={{zIndex:"3"}}>
         <h4 className='display-4'>Want to add more sensors?</h4>
         <p className='lead'>
           Have you bought extra sensors? You can add new sensor set by filling
